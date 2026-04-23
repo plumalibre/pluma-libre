@@ -1,163 +1,131 @@
 # 📰 Pluma Libre — Sitio Web
 
-Medio digital independiente de El Salvador.
-Sitio web estático listo para publicar en Netlify de forma gratuita.
+Medio digital independiente de Sonsonate, El Salvador.
+Sitio en producción: **https://plumalibre.github.io**
 
 ---
+
+## 🧰 Stack actual
+
+- **HTML + CSS + JavaScript vanilla** (sin frameworks)
+- **Hosting**: GitHub Pages (repo `plumalibre/plumalibre.github.io`)
+- **Analytics**: Google Analytics 4 (`G-TZRTJLP5KT`, cuenta `prensaplumalibre@gmail.com`)
+- **Formulario de contacto**: Formspree (endpoint `xdayypog`, recibe al correo configurado en el dashboard)
+- **Editor propio**: `herramientas/editor.html` v9 (publica directo a GitHub vía API)
+- **Tipografías**: Newsreader (titulares) + Outfit (cuerpo)
+- **Favicon multisize**: `assets/favicon.ico` + PNGs 32/192 + apple-touch-icon 180
 
 ## 📁 Estructura del sitio
 
 ```
 pluma-libre/
-├── index.html              ← Página de inicio
-├── sobre-nosotros.html     ← Página "Sobre Nosotros"
-├── style.css               ← Estilos (no tocar a menos que sea necesario)
-├── netlify.toml            ← Configuración de Netlify
+├── index.html                  ← Página de inicio
+├── sobre-nosotros.html         ← Sobre + formulario de contacto (Formspree)
+├── style.css                   ← Estilos globales
+├── robots.txt
+├── sitemap.xml
+├── .gitignore                  ← Ignora .netlify, .claude, logs, IDE, OS junk
 ├── assets/
-│   └── logo.jpg            ← Tu logo
+│   ├── logo.jpg                ← Logo principal
+│   ├── favicon.ico             ← Favicon 16/32/48
+│   ├── favicon-32x32.png
+│   ├── favicon-192x192.png
+│   └── apple-touch-icon.png    ← 180x180 para iOS
 ├── secciones/
-│   ├── religioso.html      ← #AcontecerReligioso
-│   ├── politico.html       ← #AcontecerPolítico
-│   ├── cultural.html       ← #AcontecerCultural
-│   ├── social.html         ← #AcontecerSocial
-│   └── economico.html      ← #AcontecerEconómico
-└── articulos/
-    └── plantilla.html      ← Plantilla para notas nuevas
+│   ├── religioso.html          ← #AcontecerReligioso
+│   ├── politico.html           ← #AcontecerPolítico
+│   ├── cultural.html           ← #AcontecerCultural
+│   ├── social.html             ← #AcontecerSocial
+│   └── economico.html          ← #AcontecerEconómico
+├── articulos/
+│   └── plantilla.html          ← Plantilla base (no borrar)
+└── herramientas/
+    ├── editor.html             ← Editor v9 (publicación y posts de redes)
+    └── generar-clave.html      ← Utility local para encriptar el token
 ```
 
 ---
 
-## 🚀 PASO 1: Subir el sitio a Netlify (primera vez)
+## ✏️ Cómo publicar una nota nueva
 
-1. Andá a **https://app.netlify.com**
-2. Creá una cuenta gratis (podés usar tu cuenta de Google o correo)
-3. En el panel, hacé clic en **"Add new site" → "Deploy manually"**
-4. Arrastrá la carpeta `pluma-libre` completa al área de carga
-5. ¡Listo! Tu sitio estará en una URL como `random-name.netlify.app`
+### Flujo recomendado — editor v9 (desde el celular o la compu)
 
-### Conectar tu dominio plumalibre.netlify.app:
-1. En Netlify, andá a **Site settings → Domain management**
-2. Hacé clic en **"Add custom domain"**
-3. Escribí `plumalibre.netlify.app`
-4. Seguí las instrucciones para apuntar tu dominio (cambiar los DNS)
+1. Abrí **https://plumalibre.github.io/herramientas/editor.html**
+2. Ingresá tu clave (desbloquea el token de GitHub encriptado).
+3. Usá las pestañas:
+   - **📝 Escribir** — título, subtítulo, sección, cuerpo (con toolbar: H2, H3, cita, negrita, cursiva, imagen, video, línea, 2 columnas).
+   - **👁 Preview** — ves cómo queda la nota antes de publicar.
+   - **🚀 Publicar** — el editor commitea el `.html` al repo vía API de GitHub. GitHub Pages redeploya solo en ~1 minuto.
+   - **📱 Redes** — genera posts listos para Facebook, X, Instagram y Threads (con hashtags y conteo por plataforma).
+   - **📋 Historial** — lista notas publicadas, permite editar y borrar.
 
----
+### Markup especial del editor
 
-## ✏️ PASO 2: Cómo publicar una nota nueva (desde el celular)
+- `## texto` → subtítulo H2
+- `### texto` → subtítulo H3
+- `> texto` → cita destacada
+- `**texto**` → negrita · `_texto_` → cursiva
+- `[IMAGEN:nombre.jpg]` → imagen inline (usa un archivo de `assets/`)
+- `[VIDEO_YOUTUBE:id]`, `[VIDEO_FACEBOOK:url]`, `[VIDEO_TIKTOK:url]` → embed de videos
+- `[COL2]...[/COL]...[/COL2]` → 2 columnas
+- `---` → separador
 
-### Opción A: Usando GitHub (RECOMENDADO)
+### Flujo manual (alternativa, solo si el editor no funciona)
 
-1. Creá una cuenta en **https://github.com**
-2. Subí toda la carpeta `pluma-libre` como un repositorio
-3. En Netlify, conectá tu sitio a ese repositorio de GitHub
-4. Ahora, cada vez que edités un archivo en GitHub, el sitio se actualiza solo
-
-**Para publicar una nota desde el celular:**
-1. Abrí GitHub en el navegador del celular
-2. Andá a la carpeta `articulos/`
-3. Hacé clic en **"Add file" → "Create new file"**
-4. Nombralo: `mi-nota-nueva.html`
-5. Copiá todo el contenido de `plantilla.html`
-6. Editá el título, texto e imagen
-7. Hacé clic en **"Commit new file"**
-8. ¡La nota se publica sola en unos segundos!
-
-### Opción B: Subir archivos directamente en Netlify
-
-1. Abrí **https://app.netlify.com** en tu celular
-2. Andá a tu sitio → **Deploys**
-3. Subí la carpeta actualizada
+1. Copiá `articulos/plantilla.html` → renombralo `mi-nota.html`.
+2. Editá el título, subtítulo, sección, imagen y cuerpo.
+3. Commit/push al repo (`plumalibre/plumalibre.github.io`).
+4. Agregá una card a `index.html` en la grilla "Últimas Noticias" con el link a la nota.
 
 ---
 
-## 📝 PASO 3: Cómo editar la plantilla de artículo
+## 🚀 Deploy
 
-Abrí el archivo `articulos/plantilla.html` y buscá los comentarios con ✏️.
-Cada sección editable está marcada claramente.
+**Automático**: cada `git push` a `master` actualiza el sitio en GitHub Pages en 1–2 minutos.
+El editor v9 hace el push por vos; no hace falta tocar git para publicar.
 
-### Lo que tenés que cambiar en cada nota nueva:
+## 🖼️ Imágenes
 
-1. **En la parte de arriba (`<head>`):**
-   - `<title>` → Ponné el título de tu nota
-   - `og:title` → Mismo título (para cuando lo compartan en Facebook)
-   - `og:description` → Una línea resumiendo la nota
+- Subilas a `assets/` con nombres descriptivos en minúsculas (ej: `semana-santa-2026.jpg`).
+- Formato recomendado: `.jpg` (fotos) o `.png` (logos / gráficos).
+- Tamaño objetivo: **800×450 px** (horizontal) para notas, **720×720** o mayor para logos.
+- Peso objetivo: **< 500 KB** por imagen (usa https://squoosh.app si necesitás comprimir).
 
-2. **La sección:**
-   - Cambiá "Acontecer Político" por la sección correcta
+## 📬 Formulario de contacto
 
-3. **El título:**
-   - Dentro de `<h1>` escribí el título de la nota
+El form en `sobre-nosotros.html` envía a Formspree (endpoint `xdayypog`).
+Los mensajes llegan al correo configurado en el dashboard de Formspree:
+**https://formspree.io/forms/xdayypog**
 
-4. **La imagen:**
-   - Subí tu imagen a la carpeta `assets/`
-   - Cambiá `src="..."` por `src="../assets/nombre-de-tu-imagen.jpg"`
+- Tiene honeypot anti-spam (`_gotcha`), submit via AJAX, mensajes de error por campo y confirmación visual al enviarse.
 
-5. **El cuerpo:**
-   - Cada párrafo va entre `<p>` y `</p>`
-   - Para subtítulos usá `<h2>` y `</h2>`
-   - Para citas usá `<blockquote>` y `</blockquote>`
+## 📊 Google Analytics 4
 
-### Ejemplo rápido de un párrafo:
-```html
-<p>Las autoridades confirmaron que el proyecto iniciará en mayo.</p>
-```
-
----
-
-## 📋 PASO 4: Cómo agregar la nota al inicio
-
-Después de crear el archivo de tu nota, tenés que agregarla al inicio (index.html):
-
-1. Abrí `index.html`
-2. Buscá `<!-- === NOTA 1 === -->`
-3. Copiá todo el bloque de la Nota 1
-4. Pegalo ARRIBA de la Nota 1
-5. Cambiá:
-   - La imagen
-   - La sección (etiqueta)
-   - El título
-   - El enlace (`href="articulos/TU-ARCHIVO.html"`)
-   - La fecha
-
-### Bloque para copiar y pegar:
-```html
-<article class="tarjeta-noticia">
-  <div class="thumb">
-    <img src="assets/nombre-imagen.jpg" alt="">
-  </div>
-  <div class="info">
-    <span class="etiqueta-sm">Acontecer Social</span>
-    <h3><a href="articulos/mi-nota.html">Título de mi nota nueva</a></h3>
-    <p class="meta">12 de abril, 2026</p>
-  </div>
-</article>
-```
-
----
-
-## 🖼️ Sobre las imágenes
-
-- Subí tus imágenes a la carpeta `assets/`
-- Usá fotos en formato `.jpg` o `.png`
-- Tamaño recomendado: **800x450 píxeles** (horizontal)
-- Tratá de que pesen menos de **500 KB** para que carguen rápido
-- Podés reducir el tamaño en: https://squoosh.app (gratis)
+- ID: `G-TZRTJLP5KT`
+- Dashboard: **https://analytics.google.com** (iniciá sesión con `prensaplumalibre@gmail.com`).
+- Para debug en tiempo real: abrí el sitio con `?debug_mode=1` y revisá GA4 → Admin → DebugView.
 
 ---
 
 ## ❓ Preguntas frecuentes
 
-**¿Cuánto cuesta Netlify?**
-Nada. El plan gratuito permite hasta 100 GB de transferencia al mes, más que suficiente para un medio local.
+**¿Cuánto cuesta GitHub Pages?**
+Nada. Es gratis y sin límite práctico de tráfico para sitios estáticos.
 
-**¿Puedo editar desde el celular?**
-Sí, usando GitHub en el navegador de tu celular.
+**¿Puedo publicar desde el celular?**
+Sí. El editor v9 está pensado para eso — abrilo en el navegador móvil y publicás desde ahí.
 
-**¿Qué pasa si me equivoco?**
-Si usás GitHub, podés ver el historial de cambios y restaurar versiones anteriores.
+**¿Qué pasa si me equivoco publicando?**
+Todo queda en el historial de git (`https://github.com/plumalibre/plumalibre.github.io/commits`). Podés revertir desde el editor ("📋 Historial" → borrar o editar la nota) o desde GitHub.
 
 **¿Puedo agregar más secciones?**
-Sí, copiá cualquier archivo de la carpeta `secciones/`, cambiá el nombre y editá el contenido.
+Sí: copiá cualquier `secciones/*.html`, cambiá el nombre y el contenido. Después agregá un `<li>` al `<nav>` de las páginas y un `<url>` al `sitemap.xml`.
 
 **¿Puedo cambiar los colores?**
-Sí, abrí `style.css` y cambiá los valores en la sección `:root` al inicio del archivo.
+Sí. Editá `style.css`, sección `:root` al inicio — ahí están las variables `--brand`, `--accent`, `--bg`, `--card`.
+
+**El formulario no me llega al correo.**
+Revisá que el dashboard de Formspree (endpoint `xdayypog`) tenga tu correo verificado y que el mail no haya ido a spam. El plan gratuito de Formspree permite 50 envíos/mes.
+
+**El editor me pide una clave que no me acuerdo.**
+La clave desencripta el token de GitHub. Si la perdés, hay que generar un token nuevo en GitHub (Settings → Developer settings → Tokens) y re-encriptarlo con `herramientas/generar-clave.html`.
