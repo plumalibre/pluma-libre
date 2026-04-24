@@ -355,7 +355,26 @@ function toggleDark(){document.body.classList.toggle('dark');const d=document.bo
 if(localStorage.getItem('pl_dark')==='1'){document.body.classList.add('dark');$('darkBtn').textContent='☀️';}
 
 function handleImg(input){const file=input.files[0];if(!file)return;imgOrig=file.size;const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const MAX=1200;let w=img.width,h=img.height;if(w>MAX){h=Math.round(h*(MAX/w));w=MAX;}if(h>MAX){w=Math.round(w*(MAX/h));h=MAX;}const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);const du=c.toDataURL('image/jpeg',0.8);imgB64=du.split(',')[1];imgNew=Math.round(imgB64.length*0.75);imgName=file.name.toLowerCase().replace(/[^a-z0-9.]/g,'-').replace(/-+/g,'-').replace(/\.[^.]+$/,'.jpg');$('imgPv').src=du;$('imgPv').classList.remove('hidden');$('imgDrop').style.display='none';$('imgRm').classList.remove('hidden');const info=$('imgInfo');info.classList.remove('hidden');const sv=Math.round((1-imgNew/imgOrig)*100);info.textContent=w+'×'+h+'px · '+fmtS(imgNew)+(sv>0?' ('+sv+'% más liviana)':'');autoSave();};img.src=e.target.result;};reader.readAsDataURL(file);}
-function removeImg(){imgB64=null;imgName=null;$('imgPv').classList.add('hidden');$('imgDrop').style.display='';$('imgRm').classList.add('hidden');$('imgInfo').classList.add('hidden');$('imgIn').value='';autoSave();}
+function removeImg(){
+  // En modo edit: si hay imagen original conocida, "Quitar" vuelve a esa
+  // (no destruye la referencia, sólo descarta la nueva pendiente). Si no hay
+  // original o no estamos editando, comportamiento legacy: limpiar todo.
+  if(window._editingOriginalImg){
+    const orig=window._editingOriginalImg;
+    imgB64=null;
+    imgName=orig;
+    const pv=$('imgPv');
+    pv.src='https://plumalibre.github.io/assets/'+orig+'?t='+Date.now();
+    pv.classList.remove('hidden');
+    $('imgDrop').style.display='none';
+    $('imgInfo').textContent='Imagen actual: assets/'+orig+' · se preserva al guardar · subí otra para reemplazar';
+    $('imgInfo').classList.remove('hidden');
+    $('imgRm').classList.add('hidden');
+    $('imgIn').value='';
+    return;
+  }
+  imgB64=null;imgName=null;$('imgPv').classList.add('hidden');$('imgDrop').style.display='';$('imgRm').classList.add('hidden');$('imgInfo').classList.add('hidden');$('imgIn').value='';autoSave();
+}
 function fmtS(b){return b<1024?b+'B':b<1048576?(b/1024).toFixed(1)+'KB':(b/1048576).toFixed(1)+'MB';}
 
 function updStats(){const t=$('cuerpo').value.trim();const w=t?t.split(/\s+/).length:0;$('wc').textContent=w;$('rt').textContent=Math.max(1,Math.ceil(w/200));}
@@ -541,6 +560,8 @@ async function clearForm(skipConfirm){
   }
   ['titulo','subtitulo','cuerpo','piefoto'].forEach(id=>$(id).value='');
   $('autor').value='Pluma Libre';
+  // Resetear ANTES de removeImg para que el branch "modo edit" no aplique.
+  window._editingOriginalImg=null;
   removeImg();
   localStorage.removeItem('pl_recovery');
   updStats();
@@ -709,6 +730,7 @@ async function publicar(fn,destacar){
     localStorage.removeItem('pl_recovery');
     window._editingFile=null;
     window._loadedForEdit=false;
+    window._editingOriginalImg=null;
     const aUrl='https://plumalibre.github.io/articulos/'+fn,su=encodeURIComponent(aUrl),st=encodeURIComponent(d.titulo+' — Pluma Libre');
     closePreviewModal();
     toast('☁️✅ Publicado en línea · se actualiza en ~30s','online');
@@ -805,25 +827,35 @@ async function editNote(filename){
   const c=getCfg();
   try {
     showSt('stArea','⏳ Cargando nota para editar...','info');
+    // Si había un banner de recuperación visible (de una sesión previa en este
+    // dispositivo), ocultarlo: ya no aplica al flujo actual y un click confundido
+    // en "Recuperar" pisaría la nota recién cargada con basura de pl_recovery.
+    $('recoveryBanner').classList.add('hidden');
     const res=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/articulos/'+filename,{
       headers:{'Authorization':'Bearer '+c.token}
     });
     if(!res.ok)throw new Error('No se pudo cargar la nota');
-    
+
     const data=await res.json();
     const html=decodeURIComponent(escape(atob(data.content)));
-    
+
     // Parse the HTML to extract fields
     const getMeta=(pattern)=>{const m=html.match(pattern);return m?m[1]:'';};
-    
+
     // Anchored al article-header: si no, matcheaba el <h1>Pluma Libre</h1> del logo
     const titulo=getMeta(/<div class="article-header">[\s\S]*?<h1>([^<]+)<\/h1>/);
     const subtitulo=getMeta(/<p class="subtitle">([^<]+)<\/p>/);
     const secEl=html.match(/class="badge badge-brand">([^<]+)<\/span>/);
     const piefoto=getMeta(/<figcaption>([^<]+)<\/figcaption>/);
-    
-    // Extract body content between <div class="article-body"> and </div>
-    const bodyMatch=html.match(/<div class="article-body">([\s\S]*?)<\/div>\s*<div class="share">/);
+    // Imagen principal: capturamos el path para preservarla al re-guardar.
+    // No descargamos el binario; publicar() respeta imgB64=null y no re-sube
+    // (el archivo ya existe en assets/), y genHTML usa imgName para el src.
+    const imgMatch=html.match(/<figure class="article-img">[\s\S]*?<img src="(?:\.\.\/)?(assets\/[^"]+)"/);
+
+    // Body: tolerante al bloque <section class="follow-us"> insertado en commit
+    // 18aa5a1 entre article-body y share. Sin esta tolerancia, todas las notas
+    // post-commit se cargaban con cuerpo vacío.
+    const bodyMatch=html.match(/<div class="article-body">([\s\S]*?)<\/div>\s*<(?:section class="follow-us"|div class="share")/);
     let cuerpo='';
     if(bodyMatch){
       cuerpo=bodyMatch[1]
@@ -835,7 +867,7 @@ async function editNote(filename){
         .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')
         .trim();
     }
-    
+
     // Detect section from badge
     let seccion='politico';
     if(secEl){
@@ -844,13 +876,35 @@ async function editNote(filename){
         if(v===secName){seccion=k;break;}
       }
     }
-    
+
     // Fill form
     $('seccion').value=seccion;
     $('titulo').value=titulo;
     $('subtitulo').value=subtitulo;
     $('cuerpo').value=cuerpo;
     $('piefoto').value=piefoto;
+
+    // Imagen existente: preview desde GitHub Pages + bloqueo de "Quitar".
+    // Guardamos el nombre original en _editingOriginalImg para que, si el
+    // usuario sube una nueva y después la quita, removeImg pueda restaurar
+    // la original en lugar de dejar imgName=null (que rompe genHTML).
+    if(imgMatch){
+      const origName=imgMatch[1].replace(/^assets\//,'');
+      imgName=origName;
+      imgB64=null;
+      window._editingOriginalImg=origName;
+      const pv=$('imgPv');
+      pv.src='https://plumalibre.github.io/assets/'+origName+'?t='+Date.now();
+      pv.classList.remove('hidden');
+      $('imgDrop').style.display='none';
+      $('imgInfo').textContent='Imagen actual: assets/'+origName+' · se preserva al guardar · subí otra para reemplazar';
+      $('imgInfo').classList.remove('hidden');
+      $('imgRm').classList.add('hidden');
+    } else {
+      imgName=null;
+      imgB64=null;
+      window._editingOriginalImg=null;
+    }
 
     // Mark as editing: el filename es fijo, autosave en recovery deshabilitado
     window._editingFile=filename;
