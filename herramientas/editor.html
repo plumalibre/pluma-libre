@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Pluma Libre — Editor v9</title>
+<title>Pluma Libre — Editor v10</title>
 <meta name="theme-color" content="#0B2545">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -85,6 +85,32 @@
 .pl-conf-btns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
 .pl-conf-btns .btn{width:auto;flex:0 1 auto;min-width:120px}
 
+/* ===== v10: preview modal + validación + banner de recuperación ===== */
+.preview-modal{position:fixed;inset:0;z-index:500;background:var(--bg);display:flex;flex-direction:column}
+.preview-header{background:var(--brand);color:#fff;padding:10px 14px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:2}
+.preview-header .pv-back{background:rgba(255,255,255,.15);color:#fff;border:none;padding:7px 12px;border-radius:100px;font-size:.72rem;font-weight:600;font-family:var(--font);cursor:pointer}
+.preview-header .pv-title-hdr{font-family:var(--fd);font-size:.9rem;font-weight:600}
+.preview-body{flex:1;overflow-y:auto;padding:18px 14px;max-width:720px;margin:0 auto;width:100%}
+.preview-body .pv-render-box{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.preview-footer{background:var(--card);border-top:1px solid var(--border);padding:14px;box-shadow:0 -2px 10px rgba(0,0,0,.06);max-width:720px;margin:0 auto;width:100%}
+.preview-footer .hint{font-size:.62rem;color:var(--text3);margin-top:3px}
+.preview-footer input[readonly]{background:var(--bg2);color:var(--text2);cursor:not-allowed}
+
+.cb{display:flex;align-items:center;gap:8px;font-size:.78rem;cursor:pointer;padding:4px 0}
+.cb input{width:18px;height:18px;cursor:pointer}
+
+.field-error input,.field-error textarea,.field-error .img-drop{border-color:var(--red)!important;box-shadow:0 0 0 3px rgba(255,59,48,.15)!important}
+.field-error-msg{font-size:.68rem;color:var(--red);margin-top:4px;font-weight:500}
+
+.recovery-banner{background:#FFF8E6;color:#B45309;border-radius:var(--radius);padding:12px 14px;margin-bottom:12px;display:flex;flex-direction:column;gap:8px}
+.dark .recovery-banner{background:#3A2A0E;color:#F0C674}
+.recovery-banner .rb-text{font-size:.78rem;font-weight:500}
+.recovery-banner .rb-btns{display:flex;gap:8px}
+.recovery-banner button{padding:7px 14px;font-size:.72rem;font-weight:600;border:none;border-radius:100px;cursor:pointer;font-family:var(--font);flex:1}
+.recovery-banner .rb-yes{background:var(--accent);color:#fff}
+.recovery-banner .rb-no{background:var(--bg2);color:var(--text)}
+.dark .recovery-banner .rb-no{background:var(--border);color:var(--text)}
+
 .hidden{display:none!important}
 </style>
 </head>
@@ -102,10 +128,11 @@
 </div>
 
 <div class="topbar"><div><h1>✏️ Pluma Libre</h1><div class="sub">Editor de Noticias</div></div><div class="topbar-r"><button class="tbtn" onclick="toggleDark()" id="darkBtn">🌙</button><button class="tbtn" onclick="toggleConfig()">⚙️</button></div></div>
-<div class="tabs"><button class="tab on" onclick="showTab('escribir',this)">📝 Escribir</button><button class="tab" onclick="showTab('preview',this)">👁 Preview</button><button class="tab" onclick="showTab('publicar',this)">🚀 Publicar</button><button class="tab" onclick="showTab('redes',this)">📱 Redes</button><button class="tab" onclick="showTab('historial',this)">📋 Historial</button></div>
+<div class="tabs"><button class="tab on" onclick="showTab('escribir',this)">📝 Escribir</button><button class="tab" onclick="showTab('redes',this)">📱 Redes</button><button class="tab" onclick="showTab('historial',this)">📋 Historial</button></div>
 <div class="content">
 <div id="tab-escribir">
-<div class="stats"><div class="stat">📝 <b id="wc">0</b> palabras</div><div class="stat">⏱ <b id="rt">0</b> min</div><div class="stat" id="draftSt">💾 Sin guardar</div></div>
+<div id="recoveryBanner" class="recovery-banner hidden"><div class="rb-text">⚠️ Hay una sesión anterior sin guardar. ¿Recuperarla?</div><div class="rb-btns"><button type="button" class="rb-yes" onclick="applyRecovery()">↩ Recuperar</button><button type="button" class="rb-no" onclick="dismissRecovery()">Descartar</button></div></div>
+<div class="stats"><div class="stat">📝 <b id="wc">0</b> palabras</div><div class="stat">⏱ <b id="rt">0</b> min</div></div>
 <div class="card"><h2>Nueva Nota</h2>
 <div class="field"><label>Sección</label><select id="seccion" onchange="autoSave();if(typeof _tagsInitialized!=='undefined'&&_tagsInitialized){initTags(true);genPosts();}"><option value="religioso">🙏 Acontecer Religioso</option><option value="politico">🏛 Acontecer Político</option><option value="cultural">🎭 Acontecer Cultural</option><option value="social">👥 Acontecer Social</option><option value="economico">💰 Acontecer Económico</option></select></div>
 <div class="field"><label>Título *</label><input type="text" id="titulo" placeholder="Ej: Sonsonate impulsa plan de desarrollo" oninput="onType()"><div id="decoWarn" class="deco-warn hidden"><span>⚠️ Texto decorativo detectado (ej. 𝗦𝗢𝗡𝗦𝗢𝗡𝗔𝗧𝗘). Puede verse mal en buscadores.</span><button type="button" onclick="applyNormalize()">🔤 Convertir a texto normal</button></div></div>
@@ -114,10 +141,11 @@
 <div class="field"><label>Cuerpo *</label><div class="toolbar"><button onclick="ins('## ')">H2</button><button onclick="ins('### ')">H3</button><button onclick="ins('> ')">Cita</button><button onclick="wrapSel('**')"><b>B</b></button><button onclick="wrapSel('_')"><i>I</i></button><button onclick="insertBodyImg()">🖼 Foto</button><button onclick="showVideoModal()">🎬 Video</button><button onclick="ins('---\n')">— Línea</button><button onclick="insertColumns()">▥ 2 Col</button></div><textarea id="cuerpo" placeholder="Escribí tu nota aquí...&#10;&#10;Separá párrafos con línea en blanco&#10;## para subtítulos&#10;> para citas" oninput="onType()"></textarea></div>
 <div class="field"><label>Autor</label><input type="text" id="autor" value="Pluma Libre" oninput="autoSave()"></div>
 <div class="field"><label>Pie de foto (opcional)</label><input type="text" id="piefoto" placeholder="Ej: Foto: Pluma Libre" oninput="autoSave()"></div>
-<div class="btn-row"><button class="btn btn-s btn-sm" onclick="saveDraft()" style="flex:1">💾 Guardar borrador</button><button class="btn btn-d btn-sm" onclick="clearForm()" style="flex:1">🗑 Limpiar</button></div>
+<div id="stArea"></div>
+<button class="btn btn-g" id="btnPub" onclick="tryPublish()">🚀 Publicar</button>
+<div class="btn-row"><button class="btn btn-s btn-sm" onclick="saveDraft()" style="flex:1">💾 Guardar borrador</button><button class="btn btn-s btn-sm" onclick="clearForm()" style="flex:1">🗑 Nueva nota</button></div>
+<div id="postPub" class="hidden"></div>
 </div></div>
-<div id="tab-preview" class="hidden"><div class="card"><h2>Vista previa</h2><div class="pv-box"><span class="pv-badge" id="pvSec"></span><h3 class="pv-title" id="pvTit">Título</h3><p class="pv-sub" id="pvSub"></p><p class="pv-meta" id="pvMeta"></p><img id="pvImg" class="img-pv hidden" alt="" style="margin-top:10px"><div class="pv-body" id="pvBody"></div></div></div></div>
-<div id="tab-publicar" class="hidden"><div id="stArea"></div><div class="card"><h2>Publicar nota</h2><div id="cfgSt"></div><div class="field"><label>Archivo</label><input type="text" id="filename" oninput="onFilenameEdit()"><p class="hint">URL: plumalibre.github.io/articulos/nombre.html</p></div><label style="display:flex;align-items:center;gap:8px;font-size:.78rem;margin-bottom:14px;cursor:pointer"><input type="checkbox" id="updateIdx" checked style="width:18px;height:18px"> Agregar al inicio automáticamente</label><button class="btn btn-g" onclick="publicar()" id="btnPub">🚀 Publicar</button><div class="btn-row"><button class="btn btn-s btn-sm" onclick="dlHTML()" style="flex:1">📥 Descargar</button><button class="btn btn-s btn-sm" onclick="cpHTML()" style="flex:1">📋 Copiar</button></div></div><div id="postPub" class="hidden"></div></div>
 
 <div id="tab-redes" class="hidden">
   <div class="redes-banner"><b>📱 Posts para redes sociales</b>Se generan automáticamente desde tu nota. Copiá y pegá en Facebook, X, Instagram y Threads.</div>
@@ -140,6 +168,24 @@
 </div>
 <div id="vidOv" class="overlay hidden" onclick="if(event.target===this)closeVideoModal()"><div class="panel"><button class="panel-close" onclick="closeVideoModal()">✕</button><h2>🎬 Insertar Video</h2><p style="font-size:.78rem;color:var(--text2);margin-bottom:14px">Pegá el link del video y se embebe automáticamente.</p><div class="field"><label>URL del video</label><input type="text" id="vidUrl" placeholder="Pegá link de YouTube, Facebook o TikTok" oninput="detectVideo()"><p class="hint" id="vidHint">Soporta: YouTube, Facebook y TikTok</p></div><div id="vidPreview" class="hidden" style="background:var(--bg);border-radius:8px;padding:12px;margin-bottom:12px"><p style="font-size:.72rem;font-weight:600;margin-bottom:6px" id="vidPlatform"></p><div id="vidFrame"></div></div><button class="btn btn-p" onclick="insertVideo()" id="vidInsertBtn" disabled>Insertar en la nota</button></div></div>
 <div id="cfgOv" class="overlay hidden" onclick="if(event.target===this)toggleConfig()"><div class="panel"><button class="panel-close" onclick="toggleConfig()">✕</button><h2>⚙️ Configuración GitHub</h2><p style="font-size:.78rem;color:var(--text2);margin-bottom:14px">Conectá tu repo para publicar automáticamente.</p><div class="step"><div class="step-n">1</div><div class="step-t"><strong>Creá repo</strong> en <a href="https://github.com/new" target="_blank" style="color:var(--accent)">github.com/new</a> → <code>pluma-libre</code></div></div><div class="step"><div class="step-n">2</div><div class="step-t"><strong>Subí archivos</strong> del sitio al repo</div></div><div class="step"><div class="step-n">3</div><div class="step-t"><strong>Activá GitHub Pages</strong> en Settings → Pages → Deploy from main</div></div><div class="step"><div class="step-n">4</div><div class="step-t"><strong>Creá token</strong> en <a href="https://github.com/settings/tokens/new?scopes=repo&description=PlumaLibre" target="_blank" style="color:var(--accent)">GitHub Tokens</a></div></div><div class="field"><label>Usuario</label><input type="text" id="ghU" placeholder="juanperez"></div><div class="field"><label>Repositorio</label><input type="text" id="ghR" value="pluma-libre"></div><div class="field"><label>Token</label><input type="password" id="ghT" placeholder="ghp_xxx"><p class="hint">Solo se guarda en tu navegador</p></div><button class="btn btn-p" onclick="saveCfg()" style="margin-top:6px">Guardar</button><button class="btn btn-s" onclick="testCfg()" style="margin-top:6px">🔍 Probar</button></div></div>
+
+<div id="previewOv" class="preview-modal hidden" role="dialog" aria-modal="true">
+  <div class="preview-header">
+    <button type="button" class="pv-back" onclick="closePreviewModal()">← Volver a editar</button>
+    <span class="pv-title-hdr">Vista previa</span>
+  </div>
+  <div class="preview-body" id="pvRender"></div>
+  <div class="preview-footer">
+    <div id="pvCfgSt"></div>
+    <div class="field" style="margin-bottom:10px">
+      <label>Archivo</label>
+      <input type="text" id="pvFilename" oninput="onFilenameEdit()">
+      <p class="hint" id="pvFilenameHint">URL: plumalibre.github.io/articulos/nombre.html</p>
+    </div>
+    <label class="cb"><input type="checkbox" id="pvDestacar"> 📌 Destacar en portada</label>
+    <button class="btn btn-g" id="pvPublish" onclick="confirmPublicar()" style="margin-top:10px">✅ Publicar ahora</button>
+  </div>
+</div>
 <script>
 
 // ===== PLUMA LIBRE EDITOR =====
@@ -223,7 +269,7 @@ const CK='pl_cfg',HK='pl_hist',DK='pl_drafts';
 let imgB64=null,imgName=null,imgOrig=0,imgNew=0,asTimer=null;
 const $=id=>document.getElementById(id);
 
-function showTab(n,b){document.querySelectorAll('[id^="tab-"]').forEach(t=>t.classList.add('hidden'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));$('tab-'+n).classList.remove('hidden');if(b)b.classList.add('on');if(n==='preview')updPv();if(n==='publicar'){updFn();chkCfg();}if(n==='redes'){initTags();genPosts();}if(n==='historial'){renderH();renderD();}}
+function showTab(n,b){document.querySelectorAll('[id^="tab-"]').forEach(t=>t.classList.add('hidden'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));$('tab-'+n).classList.remove('hidden');if(b)b.classList.add('on');if(n==='redes'){initTags();genPosts();}if(n==='historial'){renderH();renderD();}}
 
 function toggleDark(){document.body.classList.toggle('dark');const d=document.body.classList.contains('dark');localStorage.setItem('pl_dark',d?'1':'0');$('darkBtn').textContent=d?'☀️':'🌙';}
 if(localStorage.getItem('pl_dark')==='1'){document.body.classList.add('dark');$('darkBtn').textContent='☀️';}
@@ -236,27 +282,195 @@ function updStats(){const t=$('cuerpo').value.trim();const w=t?t.split(/\s+/).le
 function ins(before,after=''){const ta=$('cuerpo');const s=ta.selectionStart,e=ta.selectionEnd,sel=ta.value.substring(s,e);ta.value=ta.value.substring(0,s)+before+sel+after+ta.value.substring(e);ta.focus();ta.setSelectionRange(s+before.length,s+before.length+sel.length);onType();}
 function onType(){
   updStats();
-  clearTimeout(asTimer);asTimer=setTimeout(asDraft,2000);
-  $('draftSt').innerHTML='💾 <span style="color:var(--orange)">Sin guardar</span>';
-  // B7: warning de decorativos en el título (siempre lo refrescamos, onType se dispara desde título y cuerpo)
+  // Si acabamos de cargar una nota para editar, el primer onType viene del código (no del usuario): lo ignoramos
+  if(window._loadedForEdit){window._loadedForEdit=false;return;}
+  clearTimeout(asTimer);
+  // Al editar una nota ya publicada no autosavamos: el original está en GitHub y la red de recuperación no aplica
+  if(!isEditingExistingNote())asTimer=setTimeout(asDraft,2000);
+  // B7: warning de decorativos en el título (onType se dispara desde título y cuerpo)
   const dw=$('decoWarn');
   if(dw){if(hasDecorativeChars($('titulo').value))dw.classList.remove('hidden');else dw.classList.add('hidden');}
-  // B2: regenerar filename desde el título si el usuario no lo editó a mano
-  const fEl=$('filename');
-  if(fEl && fEl.dataset.manual!=='1')fEl.value=slugifyTitle($('titulo').value)+'.html';
 }
-function asDraft(){const d=getFD();if(!d.titulo&&!d.cuerpo)return;localStorage.setItem('pl_as',JSON.stringify({...d,ts:Date.now()}));$('draftSt').innerHTML='💾 <span style="color:var(--green)">Guardado ✓</span>';}
-function autoSave(){clearTimeout(asTimer);asTimer=setTimeout(asDraft,1000);}
-function loadAS(){const r=localStorage.getItem('pl_as');if(!r)return;try{const d=JSON.parse(r);if(d.titulo||d.cuerpo){$('seccion').value=d.seccion||'politico';$('titulo').value=d.titulo||'';$('subtitulo').value=d.subtitulo||'';$('cuerpo').value=d.cuerpo||'';$('autor').value=d.autor||'Pluma Libre';$('piefoto').value=d.piefoto||'';updStats();$('draftSt').innerHTML='💾 <span style="color:var(--green)">Recuperado</span>';}}catch{}}
+function asDraft(){if(isEditingExistingNote())return;const d=getFD();if(!d.titulo&&!d.cuerpo)return;localStorage.setItem('pl_recovery',JSON.stringify({...d,ts:Date.now()}));}
+function autoSave(){clearTimeout(asTimer);if(!isEditingExistingNote())asTimer=setTimeout(asDraft,1000);}
+
+// === v10: helpers de estado, validación, modal de Preview y recuperación ===
+
+function isEditingExistingNote(){return !!window._editingFile;}
+
+function refreshPublishButton(){
+  const b=$('btnPub');if(!b)return;
+  b.textContent=isEditingExistingNote()?'🔄 Guardar cambios':'🚀 Publicar';
+}
+
+function setFieldError(id,msg){
+  const el=$(id);if(!el)return;
+  // Envolvemos el input (o img-drop) en su .field padre
+  const field=el.closest('.field')||el.parentElement;
+  if(!field)return;
+  field.classList.add('field-error');
+  let m=field.querySelector('.field-error-msg');
+  if(!m){m=document.createElement('p');m.className='field-error-msg';field.appendChild(m);}
+  m.textContent=msg;
+}
+function clearFieldErrors(){
+  document.querySelectorAll('.field-error').forEach(f=>{
+    f.classList.remove('field-error');
+    const m=f.querySelector('.field-error-msg');if(m)m.remove();
+  });
+}
+
+function validateBeforePublish(){
+  clearFieldErrors();
+  const d=getFD();
+  let firstMissing=null;
+  if(!d.titulo.trim()){setFieldError('titulo','Falta el título');firstMissing=firstMissing||'titulo';}
+  if(!d.cuerpo.trim()){setFieldError('cuerpo','Falta el cuerpo');firstMissing=firstMissing||'cuerpo';}
+  if(!imgB64 && !window._editingFile){
+    // Al editar permitimos no re-subir imagen (usa la que ya tenía)
+    setFieldError('imgIn','Falta la imagen principal');firstMissing=firstMissing||'imgIn';
+  }
+  if(firstMissing){
+    showSt('stArea','⚠️ Faltan datos. Revisá los campos resaltados.','warn');
+    const tgt=$(firstMissing);
+    if(tgt && tgt.scrollIntoView)tgt.scrollIntoView({behavior:'smooth',block:'center'});
+    if(tgt && tgt.focus && firstMissing!=='imgIn')tgt.focus();
+    return false;
+  }
+  return true;
+}
+
+// Handler del botón principal en Escribir
+async function tryPublish(){
+  if(!validateBeforePublish())return;
+  // Si hay decorativos en el título, preguntar antes de abrir el Preview (solo una vez por intento)
+  if(hasDecorativeChars($('titulo').value)){
+    const ok=await showConfirmModal({
+      titulo:'Texto decorativo en el título',
+      texto:'Tu título tiene caracteres decorativos (ej. 𝗔𝗕𝗖). Pueden verse mal en Google y redes sociales. ¿Convertir a texto normal antes de publicar?',
+      okText:'Convertir y continuar',
+      cancelText:'Dejar así'
+    });
+    if(ok){$('titulo').value=normalizeDecorative($('titulo').value);onType();}
+  }
+  openPreviewModal();
+}
+
+function openPreviewModal(){
+  const ov=$('previewOv');if(!ov)return;
+  // Render
+  renderPreviewInto($('pvRender'));
+  // Filename: auto desde título, salvo edición (bloqueado)
+  const pvFn=$('pvFilename'),hint=$('pvFilenameHint');
+  if(isEditingExistingNote()){
+    pvFn.value=window._editingFile;
+    pvFn.readOnly=true;
+    pvFn.dataset.manual='1';
+    hint.textContent='No se puede renombrar al editar una nota existente.';
+  }else{
+    pvFn.readOnly=false;
+    delete pvFn.dataset.manual;
+    pvFn.value=slugifyTitle($('titulo').value)+'.html';
+    hint.textContent='URL: plumalibre.github.io/articulos/nombre.html';
+  }
+  // Destacar: reset a false cada vez que se abre
+  $('pvDestacar').checked=false;
+  // Config GitHub
+  chkCfg();
+  // Botón texto según modo
+  $('pvPublish').textContent=isEditingExistingNote()?'🔄 Guardar cambios':'✅ Publicar ahora';
+  ov.classList.remove('hidden');
+  // Esc para cerrar
+  document.addEventListener('keydown',_pvEsc);
+}
+function _pvEsc(e){if(e.key==='Escape')closePreviewModal();}
+function closePreviewModal(){
+  const ov=$('previewOv');if(!ov)return;
+  ov.classList.add('hidden');
+  document.removeEventListener('keydown',_pvEsc);
+  $('pvCfgSt').innerHTML='';
+}
+
+async function confirmPublicar(){
+  const d=getFD();
+  const fn=$('pvFilename').value.trim();
+  if(!fn||fn==='.html'||!fn.match(/^[a-z0-9-]+\.html$/i)){
+    const sug=slugifyTitle(d.titulo)+'.html';
+    $('pvCfgSt').innerHTML='<div class="st st-warn">⚠️ Nombre no válido. Solo letras minúsculas, números y guiones. Ej: <code>mi-nota.html</code></div>'+
+      '<div class="fn-sug"><span>Sugerencia: <code>'+sug+'</code></span><button type="button" onclick="useSug(\''+sug+'\');$(\'pvFilename\').value=\''+sug+'\';$(\'pvCfgSt\').innerHTML=\'\';">Usar este nombre</button></div>';
+    return;
+  }
+  // Commit 1 de v10: el checkbox está visible pero inerte. Commit 2 (hero zone + CSS) lo activa.
+  const destacar=false;
+  await publicar(fn,destacar);
+}
+
+// === Recuperación silenciosa (reemplaza loadAS) ===
+function showRecoveryBanner(){
+  const r=localStorage.getItem('pl_recovery');if(!r)return;
+  try{
+    const d=JSON.parse(r);
+    if(!d.titulo && !d.cuerpo){localStorage.removeItem('pl_recovery');return;}
+    // Si ya hay contenido cargado en el form, no ofrecer recuperar (sería destructivo)
+    if($('titulo').value.trim() || $('cuerpo').value.trim())return;
+    $('recoveryBanner').classList.remove('hidden');
+  }catch{localStorage.removeItem('pl_recovery');}
+}
+function applyRecovery(){
+  const r=localStorage.getItem('pl_recovery');if(!r){dismissRecovery();return;}
+  try{
+    const d=JSON.parse(r);
+    $('seccion').value=d.seccion||'politico';
+    $('titulo').value=d.titulo||'';
+    $('subtitulo').value=d.subtitulo||'';
+    $('cuerpo').value=d.cuerpo||'';
+    $('autor').value=d.autor||'Pluma Libre';
+    $('piefoto').value=d.piefoto||'';
+    updStats();
+    const dw=$('decoWarn');
+    if(dw){if(hasDecorativeChars($('titulo').value))dw.classList.remove('hidden');else dw.classList.add('hidden');}
+    showSt('stArea','↩ Sesión recuperada','ok');
+  }catch{}
+  $('recoveryBanner').classList.add('hidden');
+}
+function dismissRecovery(){
+  localStorage.removeItem('pl_recovery');
+  $('recoveryBanner').classList.add('hidden');
+}
 
 function getFD(){return{seccion:$('seccion').value,titulo:$('titulo').value,subtitulo:$('subtitulo').value,cuerpo:$('cuerpo').value,autor:$('autor').value,piefoto:$('piefoto').value};}
-function saveDraft(){const d=getFD();if(!d.titulo){showSt('stArea','⚠️ Poné al menos un título','warn');return;}const dr=JSON.parse(localStorage.getItem(DK)||'[]');dr.unshift({...d,id:Date.now(),ts:Date.now()});localStorage.setItem(DK,JSON.stringify(dr.slice(0,20)));showSt('stArea','💾 Borrador guardado','ok');}
+function saveDraft(){const d=getFD();if(!d.titulo){showSt('stArea','⚠️ Poné al menos un título','warn');return;}const dr=JSON.parse(localStorage.getItem(DK)||'[]');dr.unshift({...d,id:Date.now(),ts:Date.now()});localStorage.setItem(DK,JSON.stringify(dr.slice(0,20)));localStorage.removeItem('pl_recovery');showSt('stArea','💾 Borrador guardado','ok');}
 function loadDraft(id){const dr=JSON.parse(localStorage.getItem(DK)||'[]'),d=dr.find(x=>x.id===id);if(!d)return;$('seccion').value=d.seccion||'politico';$('titulo').value=d.titulo||'';$('subtitulo').value=d.subtitulo||'';$('cuerpo').value=d.cuerpo||'';$('autor').value=d.autor||'Pluma Libre';$('piefoto').value=d.piefoto||'';updStats();showTab('escribir',document.querySelectorAll('.tab')[0]);}
 function delDraft(id){let dr=JSON.parse(localStorage.getItem(DK)||'[]');localStorage.setItem(DK,JSON.stringify(dr.filter(x=>x.id!==id)));renderD();}
 function renderD(){const dr=JSON.parse(localStorage.getItem(DK)||'[]'),el=$('draftList');if(!dr.length){el.innerHTML='<p style="font-size:.82rem;color:var(--text2)">No hay borradores.</p>';return;}el.innerHTML=dr.map(d=>'<div class="draft-item" onclick="loadDraft('+d.id+')"><div class="d-title">'+(d.titulo||'Sin título')+'</div><div class="d-meta">'+(SEC[d.seccion]||'')+' · '+tAgo(d.ts)+' <span onclick="event.stopPropagation();delDraft('+d.id+')" style="color:var(--red);cursor:pointer;margin-left:8px">🗑</span></div></div>').join('');}
-function clearForm(){if(!confirm('¿Limpiar todo?'))return;['titulo','subtitulo','cuerpo','piefoto'].forEach(id=>$(id).value='');$('autor').value='Pluma Libre';removeImg();localStorage.removeItem('pl_as');updStats();$('draftSt').innerHTML='💾 Sin guardar';const f=$('filename');if(f){f.value='';delete f.dataset.manual;}window._editingFile=null;const dw=$('decoWarn');if(dw)dw.classList.add('hidden');}
+async function clearForm(){
+  const ok=await showConfirmModal({titulo:'Nueva nota',texto:'Se van a borrar los datos actuales. ¿Continuar?',okText:'Sí, empezar nueva',cancelText:'Cancelar'});
+  if(!ok)return;
+  ['titulo','subtitulo','cuerpo','piefoto'].forEach(id=>$(id).value='');
+  $('autor').value='Pluma Libre';
+  removeImg();
+  localStorage.removeItem('pl_recovery');
+  updStats();
+  window._editingFile=null;
+  window._loadedForEdit=false;
+  const dw=$('decoWarn');if(dw)dw.classList.add('hidden');
+  clearFieldErrors();
+  refreshPublishButton();
+}
 
-function updPv(){const d=getFD(),hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear();$('pvSec').textContent=SEC[d.seccion]||'';$('pvTit').textContent=d.titulo||'Título';$('pvSub').textContent=d.subtitulo||'';$('pvMeta').textContent='Por '+(d.autor||'Pluma Libre')+' · '+f;const pi=$('pvImg');if(imgB64){pi.src='data:image/jpeg;base64,'+imgB64;pi.classList.remove('hidden');}else pi.classList.add('hidden');$('pvBody').innerHTML=parseMD(d.cuerpo);}
+// v10: pinta el render de la nota en cualquier container DOM (reemplaza updPv de v9)
+function renderPreviewInto(container){
+  const d=getFD(),hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear();
+  const imgTag=imgB64?'<img src="data:image/jpeg;base64,'+imgB64+'" class="img-pv" alt="" style="margin-top:10px">':'';
+  container.innerHTML='<div class="pv-render-box">'+
+    '<span class="pv-badge">'+esc(SEC[d.seccion]||'')+'</span>'+
+    '<h3 class="pv-title">'+esc(d.titulo||'Título')+'</h3>'+
+    (d.subtitulo?'<p class="pv-sub">'+esc(d.subtitulo)+'</p>':'')+
+    '<p class="pv-meta">Por '+esc(d.autor||'Pluma Libre')+' · '+f+'</p>'+
+    imgTag+
+    '<div class="pv-body">'+parseMD(d.cuerpo)+'</div>'+
+  '</div>';
+}
 function parseMD(t){if(!t)return'';return t.split('\n\n').map(p=>{p=p.trim();if(!p)return'';if(p.startsWith('## '))return'<h2>'+esc(p.slice(3))+'</h2>';if(p.startsWith('> '))return'<blockquote>'+esc(p.slice(2))+'</blockquote>';
 if(p.startsWith('[VIDEO_YOUTUBE:')){var vid=p.match(/\[VIDEO_YOUTUBE:([^\]]+)\]/);if(vid)return'<div class="vid-embed"><iframe src="https://www.youtube.com/embed/'+vid[1]+'" allowfullscreen></iframe></div>';}
 if(p.startsWith('[VIDEO_FACEBOOK:')){var vfb=p.match(/\[VIDEO_FACEBOOK:([^\]]+)\]/);if(vfb)return'<div class="vid-embed"><iframe src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(vfb[1])+'&show_text=false" allowfullscreen></iframe></div>';}
@@ -332,19 +546,20 @@ function applyNormalize(){
   t.value=normalizeDecorative(t.value);
   onType();
 }
-// Marcar filename como editado a mano (no volver a autogenerarlo)
-function onFilenameEdit(){const f=$('filename');if(f)f.dataset.manual='1';}
-// Usar la sugerencia cuando el filename del usuario es inv\u00e1lido
+// Marcar filename del modal como editado a mano
+function onFilenameEdit(){const f=$('pvFilename');if(f)f.dataset.manual='1';}
+// Usar la sugerencia cuando el filename del modal es inv\u00e1lido
 function useSug(s){
-  const f=$('filename');
+  const f=$('pvFilename');
   f.value=s;
   delete f.dataset.manual;
   $('stArea').innerHTML='';
 }
 
-function updFn(){const f=$('filename');if(!f||f.dataset.manual==='1')return;f.value=slugifyTitle($('titulo').value)+'.html';}
+// Autogenera el filename en el modal desde el t\u00edtulo (salvo que el usuario lo haya editado a mano)
+function updFn(){const f=$('pvFilename');if(!f||f.dataset.manual==='1')return;f.value=slugifyTitle($('titulo').value)+'.html';}
 
-function genHTML(){const d=getFD(),fn=$('filename').value,hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear(),fi=hoy.toISOString().slice(0,10),ip=imgName?'../assets/'+imgName:'https://placehold.co/900x500/0B2545/fff?text=Imagen',sn=SEC[d.seccion];
+function genHTML(fn){const d=getFD(),hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear(),fi=hoy.toISOString().slice(0,10),ip=imgName?'../assets/'+imgName:'https://placehold.co/900x500/0B2545/fff?text=Imagen',sn=SEC[d.seccion];
 const bh=d.cuerpo.split('\n\n').map(p=>{p=p.trim();if(!p)return'';if(p.startsWith('## '))return'<h2>'+p.slice(3)+'</h2>';if(p.startsWith('> '))return'<blockquote>'+p.slice(2)+'</blockquote>';p=p.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/_(.+?)_/g,'<em>$1</em>');return'<p>'+p+'</p>';}).join('\n')
 .replace(/\[VIDEO_YOUTUBE:([^\]]+)\]/g, function(m,id){return '<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:24px 0"><iframe src="https://www.youtube.com/embed/'+id+'" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>';})
 .replace(/\[VIDEO_FACEBOOK:([^\]]+)\]/g, function(m,url){return '<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:24px 0"><iframe src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(url)+'&show_text=false" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>';})
@@ -354,77 +569,73 @@ return'<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="vi
 function getCfg(){try{return JSON.parse(localStorage.getItem(CK)||'{}')}catch{return{}}}
 function saveCfg(){localStorage.setItem(CK,JSON.stringify({user:$('ghU').value.trim(),repo:$('ghR').value.trim(),token:$('ghT').value.trim()}));showSt('stArea','✅ Guardado','ok');toggleConfig();}
 function loadCfg(){const c=getCfg();if(c.user)$('ghU').value=c.user;if(c.repo)$('ghR').value=c.repo;if(c.token)$('ghT').value=c.token;}
-function chkCfg(){const c=getCfg(),el=$('cfgSt');if(c.user&&c.repo&&c.token){el.innerHTML='<div class="st st-ok">✅ Conectado a '+c.user+'/'+c.repo+'</div>';$('btnPub').disabled=false;}else{el.innerHTML='<div class="st st-warn">⚠️ Configurá GitHub (⚙️) para publicar</div>';$('btnPub').disabled=true;}}
+function chkCfg(){const c=getCfg(),el=$('pvCfgSt'),btn=$('pvPublish');if(!el||!btn)return;if(c.user&&c.repo&&c.token){el.innerHTML='<div class="st st-ok">✅ Conectado a '+c.user+'/'+c.repo+'</div>';btn.disabled=false;}else{el.innerHTML='<div class="st st-warn">⚠️ Configurá GitHub (⚙️) para publicar</div>';btn.disabled=true;}}
 async function testCfg(){const c=getCfg();if(!c.user||!c.token){showSt('stArea','⚠️ Guardá primero','warn');return;}try{const r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo,{headers:{'Authorization':'Bearer '+c.token}});showSt('stArea',r.ok?'✅ Conexión exitosa':'❌ '+(r.status===404?'Repo no encontrado':'Token inválido'),r.ok?'ok':'err');}catch(e){showSt('stArea','❌ '+e.message,'err');}}
 async function ghPut(path,content,msg,isB64=false){const c=getCfg(),url='https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+path;let sha=null;try{const ck=await fetch(url,{headers:{'Authorization':'Bearer '+c.token}});if(ck.ok)sha=(await ck.json()).sha;}catch{}const body={message:msg,content:isB64?content:btoa(unescape(encodeURIComponent(content)))};if(sha)body.sha=sha;const r=await fetch(url,{method:'PUT',headers:{'Authorization':'Bearer '+c.token,'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw new Error((await r.json()).message||'Error');return r.json();}
 async function ghGet(path){const c=getCfg(),r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+path,{headers:{'Authorization':'Bearer '+c.token}});if(!r.ok)throw new Error('No encontrado');const data=await r.json();return{content:decodeURIComponent(escape(atob(data.content))),sha:data.sha};}
 
-async function updateIdx(titulo,seccion,fn){try{const{content:html}=await ghGet('index.html');const sn=SEC[seccion],hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear(),is=imgName?'assets/'+imgName:'https://placehold.co/200x200/13315C/fff?text=Foto';
-const nc='\n        <article class="card"><div class="thumb"><img src="'+is+'" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">'+sn+'</span><h3><a href="articulos/'+fn+'">'+titulo+'</a></h3><p class="meta">'+f+'</p></div></article>';
-const mk='<div class="news-grid">',i=html.indexOf(mk);if(i===-1)throw new Error('Rejilla no encontrada');const up=html.slice(0,i+mk.length)+nc+html.slice(i+mk.length);
-await ghPut('index.html',up,'🏠 '+titulo);return true;}catch(e){console.error(e);return false;}}
+async function updateIdx(titulo,seccion,fn,destacar){try{
+  let {content:html}=await ghGet('index.html');
+  const sn=SEC[seccion],hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear(),is=imgName?'assets/'+imgName:'https://placehold.co/200x200/13315C/fff?text=Foto';
+  // Si se pide destacar: degradar cualquier hero-article previo a card normal (solo una nota destacada a la vez)
+  if(destacar){
+    html=html.replace(/<article class="hero-article">/g,'<article class="card">');
+  }
+  const cls=destacar?'hero-article':'card';
+  const nc='\n        <article class="'+cls+'"><div class="thumb"><img src="'+is+'" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">'+sn+'</span><h3><a href="articulos/'+fn+'">'+titulo+'</a></h3><p class="meta">'+f+'</p></div></article>';
+  const mk='<div class="news-grid">',i=html.indexOf(mk);if(i===-1)throw new Error('Rejilla no encontrada');
+  const up=html.slice(0,i+mk.length)+nc+html.slice(i+mk.length);
+  await ghPut('index.html',up,'🏠 '+titulo);
+  return true;
+}catch(e){console.error(e);return false;}}
 
-async function publicar(){
-  let d=getFD();
-  if(!d.titulo||!d.cuerpo){showSt('stArea','⚠️ Completá título y cuerpo','warn');return;}
-  // B7: si quedaron decorativos en el título, preguntar con modal propio antes de publicar
-  if(hasDecorativeChars(d.titulo)){
-    const ok=await showConfirmModal({
-      titulo:'Texto decorativo en el título',
-      texto:'Tu título tiene caracteres decorativos (ej. 𝗔𝗕𝗖). Pueden verse mal en Google y redes sociales. ¿Convertir a texto normal antes de publicar?',
-      okText:'Convertir y publicar',
-      cancelText:'Publicar así'
-    });
-    if(ok){
-      $('titulo').value=normalizeDecorative($('titulo').value);
-      onType();
-      d=getFD();
+async function publicar(fn,destacar){
+  const d=getFD();
+  const c=getCfg();if(!c.user||!c.token){showSt('stArea','⚠️ Configurá GitHub','warn');return false;}
+  const btn=$('pvPublish');const btnLabel=btn?btn.textContent:'';if(btn){btn.disabled=true;btn.textContent='⏳ Publicando...';}
+  try{
+    if(imgB64&&imgName){showSt('stArea','📷 Subiendo imagen principal...','info');await ghPut('assets/'+imgName,imgB64,'📷 '+imgName,true);}
+    if(window._extraImages&&window._extraImages.length>0){
+      for(let i=0;i<window._extraImages.length;i++){
+        const ei=window._extraImages[i];
+        showSt('stArea','🖼 Subiendo imagen '+(i+1)+'/'+window._extraImages.length+'...','info');
+        await ghPut('assets/'+ei.name,ei.data,'🖼 '+ei.name,true);
+      }
     }
-  }
-  // B2/B3: validar filename y ofrecer sugerencia si no sirve
-  const fn=$('filename').value.trim();
-  if(!fn||fn==='.html'||!fn.match(/^[a-z0-9-]+\.html$/i)){
-    const sug=slugifyTitle(d.titulo)+'.html';
-    $('stArea').innerHTML='<div class="st st-warn">⚠️ Nombre no válido. Solo letras minúsculas, números y guiones. Ej: <code>mi-nota.html</code></div>'+
-      '<div class="fn-sug"><span>Sugerencia: <code>'+sug+'</code></span><button type="button" onclick="useSug(\''+sug+'\')">Usar este nombre</button></div>';
-    return;
-  }
-  const c=getCfg();if(!c.user||!c.token){showSt('stArea','⚠️ Configurá GitHub','warn');return;}
-const btn=$('btnPub');btn.disabled=true;btn.textContent='⏳ Publicando...';
-try{if(imgB64&&imgName){showSt('stArea','📷 Subiendo imagen principal...','info');await ghPut('assets/'+imgName,imgB64,'📷 '+imgName,true);}
-// Upload extra body images
-if(window._extraImages&&window._extraImages.length>0){
-  for(let i=0;i<window._extraImages.length;i++){
-    const ei=window._extraImages[i];
-    showSt('stArea','🖼 Subiendo imagen '+(i+1)+'/'+window._extraImages.length+'...','info');
-    await ghPut('assets/'+ei.name,ei.data,'🖼 '+ei.name,true);
+    showSt('stArea','📝 Subiendo artículo...','info');await ghPut('articulos/'+fn,genHTML(fn),'📰 '+d.titulo);
+    showSt('stArea','🏠 Actualizando inicio...','info');await updateIdx(d.titulo,d.seccion,fn,destacar);
+    const hist=JSON.parse(localStorage.getItem(HK)||'[]');hist.unshift({titulo:d.titulo,seccion:d.seccion,filename:fn,ts:Date.now()});localStorage.setItem(HK,JSON.stringify(hist.slice(0,50)));
+    localStorage.removeItem('pl_recovery');
+    window._editingFile=null;
+    window._loadedForEdit=false;
+    const aUrl='https://plumalibre.github.io/articulos/'+fn,su=encodeURIComponent(aUrl),st=encodeURIComponent(d.titulo+' — Pluma Libre');
+    closePreviewModal();
+    showSt('stArea','✅ ¡Nota publicada! Se actualiza en ~30s','ok');
+    $('postPub').classList.remove('hidden');
+    $('postPub').innerHTML='<div class="card"><div class="share-box"><h3>🎉 ¡Nota publicada!</h3><p style="font-size:.78rem;color:var(--text2);margin:8px 0 14px">Los posts para redes ya están listos en la pestaña <b>📱 Redes</b></p><div class="share-btns"><a class="fb" href="https://www.facebook.com/sharer/sharer.php?u='+su+'" target="_blank">📘 Facebook</a><a class="wa" href="https://api.whatsapp.com/send?text='+st+'%20'+su+'" target="_blank">💬 WhatsApp</a><a class="copy" href="#" onclick="event.preventDefault();navigator.clipboard.writeText(\''+aUrl+'\');this.textContent=\'✅ Copiado\'">🔗 Copiar link</a></div><button class="btn btn-p" style="margin-top:14px" onclick="goToRedes()">📱 Ir a Redes Sociales</button><p style="font-size:.7rem;color:var(--text3);margin-top:8px">Link activo en ~30 segundos</p></div></div><div class="card" id="depChk"><h3>⏳ Verificando deploy...</h3><p style="font-size:.78rem;color:var(--text2)" id="depMsg">Esperando GitHub Pages...</p></div>';
+    // Auto-cargar datos en pestaña Redes
+    $('rLink').value=aUrl;
+    const dSub=d.subtitulo||'';
+    let ext=dSub;
+    if(!ext && d.cuerpo){
+      const plano=d.cuerpo.split('\n\n').map(p=>p.trim()).filter(p=>p&&!p.startsWith('## ')&&!p.startsWith('### ')&&!p.startsWith('> ')&&!p.startsWith('[')&&!p.startsWith('---')).join(' ').replace(/\*\*(.+?)\*\*/g,'$1').replace(/_(.+?)_/g,'$1');
+      ext=plano.slice(0,280);if(plano.length>280)ext+='…';
+    }
+    $('rExtracto').value=ext;
+    initTags(true);
+    chkDep(aUrl,0);
+    refreshPublishButton();
+    // Pequeño delay y saltar a Redes (ahora índice 1: Escribir | Redes | Historial)
+    setTimeout(()=>{const redesTab=document.querySelectorAll('.tab')[1];if(redesTab)showTab('redes',redesTab);},1500);
+    return true;
+  }catch(e){
+    showSt('stArea','❌ '+e.message,'err');
+    if(btn){btn.disabled=false;btn.textContent=btnLabel||'✅ Publicar ahora';}
+    return false;
   }
 }
-showSt('stArea','📝 Subiendo artículo...','info');await ghPut('articulos/'+fn,genHTML(),'📰 '+d.titulo);
-if($('updateIdx').checked){showSt('stArea','🏠 Actualizando inicio...','info');await updateIdx(d.titulo,d.seccion,fn);}
-const hist=JSON.parse(localStorage.getItem(HK)||'[]');hist.unshift({titulo:d.titulo,seccion:d.seccion,filename:fn,ts:Date.now()});localStorage.setItem(HK,JSON.stringify(hist.slice(0,50)));
-localStorage.removeItem('pl_as');
-const aUrl='https://plumalibre.github.io/articulos/'+fn,su=encodeURIComponent(aUrl),st=encodeURIComponent(d.titulo+' — Pluma Libre');
-showSt('stArea','✅ ¡Nota publicada! Se actualiza en ~30s','ok');
-$('postPub').classList.remove('hidden');
-$('postPub').innerHTML='<div class="card"><div class="share-box"><h3>🎉 ¡Nota publicada!</h3><p style="font-size:.78rem;color:var(--text2);margin:8px 0 14px">Los posts para redes ya están listos en la pestaña <b>📱 Redes</b></p><div class="share-btns"><a class="fb" href="https://www.facebook.com/sharer/sharer.php?u='+su+'" target="_blank">📘 Facebook</a><a class="wa" href="https://api.whatsapp.com/send?text='+st+'%20'+su+'" target="_blank">💬 WhatsApp</a><a class="copy" href="#" onclick="event.preventDefault();navigator.clipboard.writeText(\''+aUrl+'\');this.textContent=\'✅ Copiado\'">🔗 Copiar link</a></div><button class="btn btn-p" style="margin-top:14px" onclick="goToRedes()">📱 Ir a Redes Sociales</button><p style="font-size:.7rem;color:var(--text3);margin-top:8px">Link activo en ~30 segundos</p></div></div><div class="card" id="depChk"><h3>⏳ Verificando deploy...</h3><p style="font-size:.78rem;color:var(--text2)" id="depMsg">Esperando GitHub Pages...</p></div>';
-// Auto-cargar datos en pestaña Redes
-$('rLink').value=aUrl;
-const dSub=d.subtitulo||'';
-let ext=dSub;
-if(!ext && d.cuerpo){
-  const plano=d.cuerpo.split('\n\n').map(p=>p.trim()).filter(p=>p&&!p.startsWith('## ')&&!p.startsWith('### ')&&!p.startsWith('> ')&&!p.startsWith('[')&&!p.startsWith('---')).join(' ').replace(/\*\*(.+?)\*\*/g,'$1').replace(/_(.+?)_/g,'$1');
-  ext=plano.slice(0,280);if(plano.length>280)ext+='…';
-}
-$('rExtracto').value=ext;
-initTags(true);
-chkDep(aUrl,0);
-// Pequeño delay y saltar a Redes
-setTimeout(()=>{const redesTab=document.querySelectorAll('.tab')[3];if(redesTab)showTab('redes',redesTab);},1500);
-}catch(e){showSt('stArea','❌ '+e.message,'err');}
-btn.disabled=false;btn.textContent='🚀 Publicar';}
 
-function goToRedes(){const redesTab=document.querySelectorAll('.tab')[3];if(redesTab)showTab('redes',redesTab);}
+function goToRedes(){const redesTab=document.querySelectorAll('.tab')[1];if(redesTab)showTab('redes',redesTab);}
 
 function chkDep(url,n){if(n>8)return;setTimeout(async()=>{try{await fetch(url,{method:'HEAD',mode:'no-cors'});const el=$('depChk');if(el){el.innerHTML='<h3>✅ ¡En línea!</h3><p style="font-size:.78rem"><a href="'+url+'" target="_blank" style="color:var(--accent)">Ver nota →</a></p>';if('Notification' in window&&Notification.permission==='granted')new Notification('Pluma Libre',{body:'Nota publicada ✓'});}}catch{chkDep(url,n+1);}},n<3?10000:15000);}
 
@@ -529,16 +740,15 @@ async function editNote(filename){
     $('subtitulo').value=subtitulo;
     $('cuerpo').value=cuerpo;
     $('piefoto').value=piefoto;
-    $('filename').value=filename;
-    // Edición: el filename ya existe, no regenerarlo desde el título
-    $('filename').dataset.manual='1';
 
-    // Mark as editing
+    // Mark as editing: el filename es fijo, autosave en recovery deshabilitado
     window._editingFile=filename;
-    
+    window._loadedForEdit=true;
+
     updStats();
+    refreshPublishButton();
     showTab('escribir',document.querySelectorAll('.tab')[0]);
-    showSt('stArea','✏️ Editando: '+filename+' (al publicar se sobrescribe)','info');
+    showSt('stArea','✏️ Editando: '+filename+' · al guardar, se sobrescribe','info');
   } catch(e){
     showSt('stArea','❌ '+e.message,'err');
   }
@@ -603,8 +813,6 @@ function shareH(fn,t){const u='https://plumalibre.github.io/articulos/'+fn;if(na
 function showSt(id,msg,type){const map={ok:'st-ok',err:'st-err',info:'st-info',warn:'st-warn'};$(id).innerHTML='<div class="st '+(map[type]||'')+'">'+msg+'</div>';if(type!=='info')setTimeout(()=>{const el=$(id);if(el)el.innerHTML='';},8000);}
 function toggleConfig(){$('cfgOv').classList.toggle('hidden')}
 function tAgo(ts){const s=Math.floor((Date.now()-ts)/1000);if(s<60)return'ahora';if(s<3600)return Math.floor(s/60)+' min';if(s<86400)return Math.floor(s/3600)+' h';return Math.floor(s/86400)+' días';}
-function dlHTML(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([genHTML()],{type:'text/html'}));a.download=$('filename').value||'nota.html';a.click();}
-function cpHTML(){navigator.clipboard.writeText(genHTML()).then(()=>showSt('stArea','📋 Copiado','ok'));}
 if('Notification' in window&&Notification.permission==='default')Notification.requestPermission();
 
 // === VIDEO FUNCTIONS ===
@@ -768,9 +976,9 @@ function syncFromForm(){
     if(plano.length>280)extracto+='…';
   }
   $('rExtracto').value=extracto;
-  // Link: desde el filename si está, o construirlo
-  const fn=$('filename').value.trim();
-  if(fn && fn.match(/^[a-z0-9-]+\.html$/i)){
+  // Link: si ya se publicó la nota, rLink ya está poblado; si no, lo deducimos del título actual
+  if(!$('rLink').value.trim()){
+    const fn=window._editingFile||(slugifyTitle(d.titulo)+'.html');
     $('rLink').value='https://plumalibre.github.io/articulos/'+fn;
   }
   // Re-inicializar tags si cambió la sección
@@ -911,6 +1119,8 @@ function toast(msg){
   window._toastT=setTimeout(()=>t.classList.remove('show'),3000);
 }
 
-loadCfg();loadAS();
+loadCfg();
+showRecoveryBanner();
+refreshPublishButton();
 </script>
 </body></html>
