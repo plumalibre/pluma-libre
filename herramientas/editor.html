@@ -328,13 +328,14 @@ function validateBeforePublish(){
   if(!d.cuerpo.trim()){setFieldError('cuerpo','Falta el cuerpo');firstMissing=firstMissing||'cuerpo';}
   if(!imgB64 && !window._editingFile){
     // Al editar permitimos no re-subir imagen (usa la que ya tenía)
-    setFieldError('imgIn','Falta la imagen principal');firstMissing=firstMissing||'imgIn';
+    setFieldError('imgDrop','Falta imagen principal. Subí una foto antes de publicar.');
+    firstMissing=firstMissing||'imgDrop';
   }
   if(firstMissing){
     showSt('stArea','⚠️ Faltan datos. Revisá los campos resaltados.','warn');
     const tgt=$(firstMissing);
     if(tgt && tgt.scrollIntoView)tgt.scrollIntoView({behavior:'smooth',block:'center'});
-    if(tgt && tgt.focus && firstMissing!=='imgIn')tgt.focus();
+    if(tgt && tgt.focus && firstMissing!=='imgDrop')tgt.focus();
     return false;
   }
   return true;
@@ -400,6 +401,17 @@ async function confirmPublicar(){
       '<div class="fn-sug"><span>Sugerencia: <code>'+sug+'</code></span><button type="button" onclick="useSug(\''+sug+'\');$(\'pvFilename\').value=\''+sug+'\';$(\'pvCfgSt\').innerHTML=\'\';">Usar este nombre</button></div>';
     return;
   }
+  // B5: si estamos creando (no editando) y el archivo ya existe en el repo, pedir confirmacion
+  if(!isEditingExistingNote() && await ghExists('articulos/'+fn)){
+    const ok=await showConfirmModal({
+      titulo:'Ya existe una nota con ese nombre',
+      texto:'En articulos/'+fn+' ya hay una nota publicada. ¿Sobrescribirla, o cancelar y renombrar el archivo?',
+      okText:'🔄 Sobrescribir',
+      cancelText:'Cancelar'
+    });
+    if(!ok)return;
+    showSt('stArea','🔄 Actualizando nota existente...','info');
+  }
   const destacar=$('pvDestacar').checked;
   await publicar(fn,destacar);
 }
@@ -442,9 +454,11 @@ function saveDraft(){const d=getFD();if(!d.titulo){showSt('stArea','⚠️ Poné
 function loadDraft(id){const dr=JSON.parse(localStorage.getItem(DK)||'[]'),d=dr.find(x=>x.id===id);if(!d)return;$('seccion').value=d.seccion||'politico';$('titulo').value=d.titulo||'';$('subtitulo').value=d.subtitulo||'';$('cuerpo').value=d.cuerpo||'';$('autor').value=d.autor||'Pluma Libre';$('piefoto').value=d.piefoto||'';updStats();showTab('escribir',document.querySelectorAll('.tab')[0]);}
 function delDraft(id){let dr=JSON.parse(localStorage.getItem(DK)||'[]');localStorage.setItem(DK,JSON.stringify(dr.filter(x=>x.id!==id)));renderD();}
 function renderD(){const dr=JSON.parse(localStorage.getItem(DK)||'[]'),el=$('draftList');if(!dr.length){el.innerHTML='<p style="font-size:.82rem;color:var(--text2)">No hay borradores.</p>';return;}el.innerHTML=dr.map(d=>'<div class="draft-item" onclick="loadDraft('+d.id+')"><div class="d-title">'+(d.titulo||'Sin título')+'</div><div class="d-meta">'+(SEC[d.seccion]||'')+' · '+tAgo(d.ts)+' <span onclick="event.stopPropagation();delDraft('+d.id+')" style="color:var(--red);cursor:pointer;margin-left:8px">🗑</span></div></div>').join('');}
-async function clearForm(){
-  const ok=await showConfirmModal({titulo:'Nueva nota',texto:'Se van a borrar los datos actuales. ¿Continuar?',okText:'Sí, empezar nueva',cancelText:'Cancelar'});
-  if(!ok)return;
+async function clearForm(skipConfirm){
+  if(!skipConfirm){
+    const ok=await showConfirmModal({titulo:'Nueva nota',texto:'Se van a borrar los datos actuales. ¿Continuar?',okText:'Sí, empezar nueva',cancelText:'Cancelar'});
+    if(!ok)return;
+  }
   ['titulo','subtitulo','cuerpo','piefoto'].forEach(id=>$(id).value='');
   $('autor').value='Pluma Libre';
   removeImg();
@@ -572,6 +586,7 @@ function chkCfg(){const c=getCfg(),el=$('pvCfgSt'),btn=$('pvPublish');if(!el||!b
 async function testCfg(){const c=getCfg();if(!c.user||!c.token){showSt('stArea','⚠️ Guardá primero','warn');return;}try{const r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo,{headers:{'Authorization':'Bearer '+c.token}});showSt('stArea',r.ok?'✅ Conexión exitosa':'❌ '+(r.status===404?'Repo no encontrado':'Token inválido'),r.ok?'ok':'err');}catch(e){showSt('stArea','❌ '+e.message,'err');}}
 async function ghPut(path,content,msg,isB64=false){const c=getCfg(),url='https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+path;let sha=null;try{const ck=await fetch(url,{headers:{'Authorization':'Bearer '+c.token}});if(ck.ok)sha=(await ck.json()).sha;}catch{}const body={message:msg,content:isB64?content:btoa(unescape(encodeURIComponent(content)))};if(sha)body.sha=sha;const r=await fetch(url,{method:'PUT',headers:{'Authorization':'Bearer '+c.token,'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw new Error((await r.json()).message||'Error');return r.json();}
 async function ghGet(path){const c=getCfg(),r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+path,{headers:{'Authorization':'Bearer '+c.token}});if(!r.ok)throw new Error('No encontrado');const data=await r.json();return{content:decodeURIComponent(escape(atob(data.content))),sha:data.sha};}
+async function ghExists(path){const c=getCfg();try{const r=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/'+path,{headers:{'Authorization':'Bearer '+c.token}});return r.ok;}catch{return false;}}
 
 async function updateIdx(titulo,seccion,fn,destacar){try{
   let {content:html}=await ghGet('index.html');
@@ -615,7 +630,7 @@ async function publicar(fn,destacar){
     closePreviewModal();
     showSt('stArea','✅ ¡Nota publicada! Se actualiza en ~30s','ok');
     $('postPub').classList.remove('hidden');
-    $('postPub').innerHTML='<div class="card"><div class="share-box"><h3>🎉 ¡Nota publicada!</h3><p style="font-size:.78rem;color:var(--text2);margin:8px 0 14px">Los posts para redes ya están listos en la pestaña <b>📱 Redes</b></p><div class="share-btns"><a class="fb" href="https://www.facebook.com/sharer/sharer.php?u='+su+'" target="_blank">📘 Facebook</a><a class="wa" href="https://api.whatsapp.com/send?text='+st+'%20'+su+'" target="_blank">💬 WhatsApp</a><a class="copy" href="#" onclick="event.preventDefault();navigator.clipboard.writeText(\''+aUrl+'\');this.textContent=\'✅ Copiado\'">🔗 Copiar link</a></div><button class="btn btn-p" style="margin-top:14px" onclick="goToRedes()">📱 Ir a Redes Sociales</button><p style="font-size:.7rem;color:var(--text3);margin-top:8px">Link activo en ~30 segundos</p></div></div><div class="card" id="depChk"><h3>⏳ Verificando deploy...</h3><p style="font-size:.78rem;color:var(--text2)" id="depMsg">Esperando GitHub Pages...</p></div>';
+    $('postPub').innerHTML='<div class="card"><div class="share-box"><h3>🎉 ¡Nota publicada!</h3><p style="font-size:.78rem;color:var(--text2);margin:8px 0 14px">Los posts para redes ya están listos en la pestaña <b>📱 Redes</b></p><button class="btn btn-g" style="margin-bottom:12px" onclick="startNuevaNota()">🆕 Nueva nota</button><div class="share-btns"><a class="fb" href="https://www.facebook.com/sharer/sharer.php?u='+su+'" target="_blank">📘 Facebook</a><a class="wa" href="https://api.whatsapp.com/send?text='+st+'%20'+su+'" target="_blank">💬 WhatsApp</a><a class="copy" href="#" onclick="event.preventDefault();navigator.clipboard.writeText(\''+aUrl+'\');this.textContent=\'✅ Copiado\'">🔗 Copiar link</a></div><button class="btn btn-p" style="margin-top:14px" onclick="goToRedes()">📱 Ir a Redes Sociales</button><p style="font-size:.7rem;color:var(--text3);margin-top:8px">Link activo en ~30 segundos</p></div></div><div class="card" id="depChk"><h3>⏳ Verificando deploy...</h3><p style="font-size:.78rem;color:var(--text2)" id="depMsg">Esperando GitHub Pages...</p></div>';
     // Auto-cargar datos en pestaña Redes
     $('rLink').value=aUrl;
     const dSub=d.subtitulo||'';
@@ -639,6 +654,15 @@ async function publicar(fn,destacar){
 }
 
 function goToRedes(){const redesTab=document.querySelectorAll('.tab')[1];if(redesTab)showTab('redes',redesTab);}
+
+// B5: empezar nota nueva desde la card postPub (post-publicacion) sin re-confirmar
+async function startNuevaNota(){
+  await clearForm(true);
+  $('postPub').classList.add('hidden');
+  $('postPub').innerHTML='';
+  const t=document.querySelectorAll('.tab')[0];
+  if(t)showTab('escribir',t);
+}
 
 function chkDep(url,n){if(n>8)return;setTimeout(async()=>{try{await fetch(url,{method:'HEAD',mode:'no-cors'});const el=$('depChk');if(el){el.innerHTML='<h3>✅ ¡En línea!</h3><p style="font-size:.78rem"><a href="'+url+'" target="_blank" style="color:var(--accent)">Ver nota →</a></p>';if('Notification' in window&&Notification.permission==='granted')new Notification('Pluma Libre',{body:'Nota publicada ✓'});}}catch{chkDep(url,n+1);}},n<3?10000:15000);}
 
