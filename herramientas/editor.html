@@ -1276,7 +1276,17 @@ const bannerState={a:{newB64:null,savedImg:''},b:{newB64:null,savedImg:''}};
 function bannerImgPath(slot){return 'assets/banner-'+slot+'.jpg';}
 function adId(slot,suffix){return 'ad'+slot.toUpperCase()+'-'+suffix;}
 
-function openAdsModal(){$('adsOv').classList.remove('hidden');document.body.style.overflow='hidden';loadBannersForm();}
+async function openAdsModal(){
+  // Cargamos banners.json ANTES de mostrar el modal para evitar race:
+  // si el modal se muestra primero y el fetch tarda, el usuario llena el
+  // form y paintBanner lo sobrescribe al llegar la respuesta → se pierden
+  // los valores de checkbox/link/alt al guardar (imagen se salva porque
+  // savedImg se re-asigna post-ghPut). Ver diagnóstico previo.
+  toast('⏳ Cargando banners...','');
+  await loadBannersForm();
+  $('adsOv').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
 function closeAdsModal(){
   $('adsOv').classList.add('hidden');
   document.body.style.overflow='';
