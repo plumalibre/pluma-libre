@@ -576,6 +576,10 @@ async function ghGet(path){const c=getCfg(),r=await fetch('https://api.github.co
 async function updateIdx(titulo,seccion,fn,destacar){try{
   let {content:html}=await ghGet('index.html');
   const sn=SEC[seccion],hoy=new Date(),f=hoy.getDate()+' de '+MES[hoy.getMonth()]+', '+hoy.getFullYear(),is=imgName?'assets/'+imgName:'https://placehold.co/200x200/13315C/fff?text=Foto';
+  // Dedupe: al re-publicar (edicion), remover cualquier card previa que apunte al mismo archivo para no duplicarla
+  const fnEsc=fn.replace(/\./g,'\\.');
+  const dupRE=new RegExp('\\s*<article class="(?:card|hero-article)">[\\s\\S]*?articulos/'+fnEsc+'[\\s\\S]*?</article>','g');
+  html=html.replace(dupRE,'');
   // Si se pide destacar: degradar cualquier hero-article previo a card normal (solo una nota destacada a la vez)
   if(destacar){
     html=html.replace(/<article class="hero-article">/g,'<article class="card">');
@@ -705,7 +709,8 @@ async function editNote(filename){
     // Parse the HTML to extract fields
     const getMeta=(pattern)=>{const m=html.match(pattern);return m?m[1]:'';};
     
-    const titulo=getMeta(/<h1>([^<]+)<\/h1>/);
+    // Anchored al article-header: si no, matcheaba el <h1>Pluma Libre</h1> del logo
+    const titulo=getMeta(/<div class="article-header">[\s\S]*?<h1>([^<]+)<\/h1>/);
     const subtitulo=getMeta(/<p class="subtitle">([^<]+)<\/p>/);
     const secEl=html.match(/class="badge badge-brand">([^<]+)<\/span>/);
     const piefoto=getMeta(/<figcaption>([^<]+)<\/figcaption>/);
@@ -755,7 +760,13 @@ async function editNote(filename){
 
 // DELETE A PUBLISHED NOTE
 async function delNote(filename){
-  if(!confirm('¿Seguro que querés borrar la nota "'+filename+'"?\n\nEsta acción no se puede deshacer.'))return;
+  const ok=await showConfirmModal({
+    titulo:'Borrar nota',
+    texto:'¿Seguro que querés borrar "'+filename+'"? Esta acción no se puede deshacer.',
+    okText:'🗑 Sí, borrar',
+    cancelText:'Cancelar'
+  });
+  if(!ok)return;
   
   const c=getCfg();
   try {
@@ -789,7 +800,7 @@ async function delNote(filename){
         const idxData=await idxRes.json();
         let idxHtml=decodeURIComponent(escape(atob(idxData.content)));
         // Remove article cards that link to this filename
-        const pattern=new RegExp('\\s*<article class="card">[\\s\\S]*?articulos/'+filename.replace(/\./g,'\\.')+'[\\s\\S]*?</article>','g');
+        const pattern=new RegExp('\\s*<article class="(?:card|hero-article)">[\\s\\S]*?articulos/'+filename.replace(/\./g,'\\.')+'[\\s\\S]*?</article>','g');
         const newHtml=idxHtml.replace(pattern,'');
         if(newHtml!==idxHtml){
           await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/index.html',{
