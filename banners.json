@@ -1,0 +1,14 @@
+{
+  "banner_a_home": {
+    "activo": false,
+    "imagen": "",
+    "link": "",
+    "alt": ""
+  },
+  "banner_b_nota": {
+    "activo": false,
+    "imagen": "",
+    "link": "",
+    "alt": ""
+  }
+}

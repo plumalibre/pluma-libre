@@ -94,6 +94,46 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
 - **plumalibre** (prensaplumalibre@gmail.com) — cuenta del medio, usar para todo
 - **Procesion-Sonsonate-Semana-Santa** (njrmancia@gmail.com) — cuenta personal del dev, NO TOCAR
 
+## Banners publicitarios (banners.json)
+
+El sitio tiene dos slots de banner que se controlan desde `banners.json` en la raíz del repo:
+
+- **Banner A** — aparece en el home (entre hero y grid de noticias)
+- **Banner B** — aparece dentro de las notas (entre el 3er y 4to párrafo)
+
+Ambos slots están en el HTML pero quedan ocultos (`hidden` + CSS guard) hasta que `banners.json` los marque como activos. Un script inline al final del `<body>` lee `banners.json` al cargar, valida link/imagen y remueve el `hidden` si todo es válido.
+
+### Activar un anunciante (sin tocar código)
+
+1. Subir la imagen del banner a `assets/` (ej. `assets/banner-alcaldia.jpg`).
+2. Editar `banners.json` desde GitHub web (Edit this file ✏️). Poner:
+   ```json
+   {
+     "banner_a_home": {
+       "activo": true,
+       "imagen": "assets/banner-alcaldia.jpg",
+       "link": "https://sonsonatecentro.gob.sv",
+       "alt": "Alcaldía de Sonsonate Centro"
+     },
+     "banner_b_nota": { "activo": false, "imagen": "", "link": "", "alt": "" }
+   }
+   ```
+3. Commit en GitHub web. GitHub Pages redespliega en ~30s y el banner queda visible en todas las páginas con ese slot.
+
+### Reglas de validación (anti-XSS)
+
+- `link` debe empezar con `https://`, `mailto:`, `tel:` o `https://wa.me/`. Otros protocolos (incluido `javascript:`) se descartan silenciosamente.
+- `imagen` debe ser una URL `https://` o una ruta relativa simple (solo `A-Za-z0-9._/-`). Si tiene `://` con otro protocolo o caracteres raros, se descarta.
+- Si validación falla o el fetch de `banners.json` se cae, los banners simplemente no aparecen — la página sigue funcionando.
+
+### Desactivar
+
+Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
+
+### Limitación actual
+
+`banners.json` acepta una sola `imagen` por banner. El HTML tiene 3 slots responsive para Banner A (billboard 970×250, leaderboard 728×90, mobile 320×100) y 2 para Banner B (leaderboard + mobile). El script pone la misma imagen en todos los slots: queda legible pero puede verse deformada si el aspect-ratio no calza. Si en el futuro se quiere una imagen distinta por viewport, el JSON tiene que evolucionar a `{ billboard, leaderboard, mobile }` y el script cambiar en consecuencia.
+
 ## Historial reciente importante
 
 - Migración completa de Netlify (suspendido) a GitHub Pages

@@ -183,5 +183,32 @@
     window.addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>400));
     tt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
   </script>
+
+  <script>
+  (function(){
+    async function loadBanners(){
+      try{
+        const r=await fetch("/banners.json?t="+Date.now(),{cache:"no-store"});
+        if(!r.ok)return;
+        const c=await r.json();
+        const isUrl=u=>typeof u==="string"&&(/^https:\/\//i.test(u)||/^(mailto:|tel:)/i.test(u)||/^https:\/\/wa\.me\//i.test(u));
+        const isImg=u=>typeof u==="string"&&(/^https:\/\//i.test(u)||/^[A-Za-z0-9._\/-]+$/.test(u));
+        const apply=(sel,b)=>{
+          if(!b||b.activo!==true||!b.imagen)return;
+          if(!isImg(b.imagen)||!isUrl(b.link))return;
+          document.querySelectorAll(sel+" a").forEach(a=>{a.href=b.link;});
+          document.querySelectorAll(sel+" img").forEach(i=>{i.src=b.imagen;if(b.alt)i.alt=b.alt;});
+          document.querySelectorAll(sel).forEach(ad=>ad.removeAttribute("hidden"));
+        };
+        apply(".pl-ad--banner-a",c.banner_a_home);
+        apply(".pl-ad--banner-b",c.banner_b_nota);
+      }catch(e){}
+    }
+    if(document.querySelector(".pl-ad")){
+      if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadBanners);
+      else loadBanners();
+    }
+  })();
+  </script>
 </body>
 </html>
