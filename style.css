@@ -736,6 +736,76 @@ body:has(.news-grid > article) .hero {
 .social-links svg { flex-shrink: 0; color: inherit; font-size: 1.25em; }
 
 /* ============================================
+   SISTEMA DE BANNERS PUBLICITARIOS
+   Banner A: superior del home (entre hero y grid de noticias).
+   Banner B: interno en notas (entre el 3er y 4to párrafo).
+   Estado sin anunciante → usar atributo `hidden` en el <aside>.
+   Regla defensiva: si algún <img> queda sin src, el banner no aparece.
+   ============================================ */
+.pl-ad {
+  display: block;
+  max-width: 970px;
+  margin: 24px auto;
+  font-family: var(--font-body);
+}
+.pl-ad-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 6px;
+}
+/* Variante A - sobria (borde 1px, recomendada) */
+.pl-ad-sobria .pl-ad-frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+/* Variante B - integrada (líneas divisorias arriba y abajo) */
+.pl-ad-integrada {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0 12px;
+}
+.pl-ad-integrada .pl-ad-frame { overflow: hidden; }
+.pl-ad-frame a,
+.pl-ad-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+/* Banner A - home: 3 tamaños responsive */
+.pl-ad--banner-a { max-width: 970px; }
+.pl-ad--banner-a .pl-ad-img-billboard   { display: block; }
+.pl-ad--banner-a .pl-ad-img-leaderboard { display: none; }
+.pl-ad--banner-a .pl-ad-img-mobile      { display: none; }
+@media (max-width: 1040px) and (min-width: 768px) {
+  .pl-ad--banner-a .pl-ad-img-billboard   { display: none; }
+  .pl-ad--banner-a .pl-ad-img-leaderboard { display: block; }
+}
+@media (max-width: 767px) {
+  .pl-ad--banner-a .pl-ad-img-billboard   { display: none; }
+  .pl-ad--banner-a .pl-ad-img-mobile      { display: block; }
+}
+/* Banner B - nota: 2 tamaños responsive */
+.pl-ad--banner-b { max-width: 728px; margin: 28px auto; }
+.pl-ad--banner-b .pl-ad-img-leaderboard { display: block; }
+.pl-ad--banner-b .pl-ad-img-mobile      { display: none; }
+@media (max-width: 767px) {
+  .pl-ad--banner-b { margin: 20px auto; }
+  .pl-ad--banner-b .pl-ad-img-leaderboard { display: none; }
+  .pl-ad--banner-b .pl-ad-img-mobile      { display: block; }
+}
+/* Colapso defensivo: si quitaron el atributo `hidden` pero todavía no hay
+   imagen con src válida, no mostrar el banner (evita frame roto). */
+.pl-ad:not(:has(img[src]:not([src=""]))) { display: none; }
+
+/* ============================================
    BACK TO TOP
    ============================================ */
 .to-top {
