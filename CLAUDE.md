@@ -54,16 +54,19 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
     └── generar-clave.html      # Utility local - encriptar token con contraseña
 ```
 
-## Editor v9 (herramientas/editor.html)
+## Editor v10 (herramientas/editor.html)
 
-**Archivo único de ~790 líneas, todo inline (HTML+CSS+JS).**
+**Archivo único de ~1400 líneas, todo inline (HTML+CSS+JS).**
 
-5 pestañas:
-1. **📝 Escribir** — formulario con toolbar (H2, H3, cita, negrita, cursiva, foto, video, línea, 2 columnas)
-2. **👁 Preview** — renderizado de la nota
-3. **🚀 Publicar** — publica a GitHub vía API con token encriptado
-4. **📱 Redes** — genera posts automáticos para Facebook, X, Instagram y Threads
-5. **📋 Historial** — lista notas publicadas, permite editar y borrar
+3 pestañas principales:
+1. **📝 Escribir** — formulario con toolbar (H2, H3, cita, negrita, cursiva, foto, video, línea, 2 columnas). Publicar y preview son botones dentro del flujo, no pestañas.
+2. **📱 Redes** — genera posts automáticos para Facebook, X, Instagram y Threads.
+3. **📋 Historial** — lista notas publicadas, permite editar y borrar.
+
+Tres botones en la barra superior:
+- 🌙 Modo oscuro
+- 📢 **Publicidad** — abre modal fullscreen para administrar banners (Banner A home + Banner B nota) sin tocar código: checkbox activo, drag/drop de imagen con compresión adaptativa, link y alt. Cada guardado genera 1-2 commits (imagen si cambió + `banners.json`).
+- ⚙️ Configuración GitHub (usuario, repo, token)
 
 **Publicación:** usa GitHub API directamente desde el navegador con un token encriptado con XOR+base64 (SEGURIDAD DÉBIL - PENDIENTE DE MEJORAR).
 
@@ -103,7 +106,17 @@ El sitio tiene dos slots de banner que se controlan desde `banners.json` en la r
 
 Ambos slots están en el HTML pero quedan ocultos (`hidden` + CSS guard) hasta que `banners.json` los marque como activos. Un script inline al final del `<body>` lee `banners.json` al cargar, valida link/imagen y remueve el `hidden` si todo es válido.
 
-### Activar un anunciante (sin tocar código)
+### Activar un anunciante — opción rápida (editor)
+
+Desde el editor → botón **📢 Publicidad** en la barra superior → modal con formularios para Banner A y Banner B:
+- Checkbox "Activo"
+- Subir imagen (se redimensiona y comprime automáticamente al tamaño del slot)
+- Link y alt
+- Botón "Guardar Banner X" → genera 1-2 commits automáticos (imagen + `banners.json`).
+
+Este es el flujo recomendado día a día. Los nombres de imagen son fijos (`assets/banner-a.jpg`, `assets/banner-b.jpg`) y cada upload sobrescribe.
+
+### Activar un anunciante — opción manual (GitHub web)
 
 1. Subir la imagen del banner a `assets/` (ej. `assets/banner-alcaldia.jpg`).
 2. Editar `banners.json` desde GitHub web (Edit this file ✏️). Poner:
