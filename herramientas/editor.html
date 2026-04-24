@@ -791,56 +791,82 @@ async function delNote(filename){
     cancelText:'Cancelar'
   });
   if(!ok)return;
-  
+
   const c=getCfg();
+  toast('⏳ Borrando nota...');
+
+  // 1) GET del archivo para obtener el SHA
+  let fileData;
   try {
-    showSt('stArea','⏳ Borrando nota...','info');
-    
-    // Get SHA of file to delete
     const getRes=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/articulos/'+filename,{
       headers:{'Authorization':'Bearer '+c.token}
     });
-    if(!getRes.ok)throw new Error('No se encontró el archivo');
-    const fileData=await getRes.json();
-    
-    // Delete file
+    if(!getRes.ok){
+      const body=await getRes.text();
+      throw new Error('GET articulos/'+filename+' → '+getRes.status+' '+body.slice(0,160));
+    }
+    fileData=await getRes.json();
+    if(!fileData.sha)throw new Error('Respuesta sin SHA');
+  } catch(e){
+    console.error('delNote GET archivo:',e);
+    toast('❌ No pude leer el archivo: '+e.message);
+    return;
+  }
+
+  // 2) DELETE del archivo
+  try {
     const delRes=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/articulos/'+filename,{
       method:'DELETE',
       headers:{'Authorization':'Bearer '+c.token,'Content-Type':'application/json'},
       body:JSON.stringify({message:'🗑 Borrar: '+filename,sha:fileData.sha})
     });
-    
     if(!delRes.ok){
-      const err=await delRes.json();
-      throw new Error(err.message||'Error al borrar');
+      const body=await delRes.text();
+      throw new Error('DELETE '+delRes.status+' '+body.slice(0,200));
     }
-    
-    // Also try to remove from index.html
-    try {
-      const idxRes=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/index.html',{
-        headers:{'Authorization':'Bearer '+c.token}
-      });
-      if(idxRes.ok){
-        const idxData=await idxRes.json();
-        let idxHtml=decodeURIComponent(escape(atob(idxData.content)));
-        // Remove article cards that link to this filename
-        const pattern=new RegExp('\\s*<article class="(?:card|hero-article)">[\\s\\S]*?articulos/'+filename.replace(/\./g,'\\.')+'[\\s\\S]*?</article>','g');
-        const newHtml=idxHtml.replace(pattern,'');
-        if(newHtml!==idxHtml){
-          await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/index.html',{
-            method:'PUT',
-            headers:{'Authorization':'Bearer '+c.token,'Content-Type':'application/json'},
-            body:JSON.stringify({message:'🏠 Quitar del inicio: '+filename,content:btoa(unescape(encodeURIComponent(newHtml))),sha:idxData.sha})
-          });
-        }
-      }
-    } catch{}
-    
-    showSt('stArea','✅ Nota borrada. El sitio se actualiza en ~30s','ok');
-    setTimeout(()=>renderH(),1500);
   } catch(e){
-    showSt('stArea','❌ '+e.message,'err');
+    console.error('delNote DELETE archivo:',e);
+    toast('❌ Error al borrar: '+e.message);
+    return;
   }
+
+  // 3) Quitar la card del index.html. Si falla, avisamos pero no abortamos: el archivo YA se borro.
+  let idxOk=true, idxErr='';
+  try {
+    const idxRes=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/index.html',{
+      headers:{'Authorization':'Bearer '+c.token}
+    });
+    if(!idxRes.ok){
+      const body=await idxRes.text();
+      throw new Error('GET index '+idxRes.status+' '+body.slice(0,160));
+    }
+    const idxData=await idxRes.json();
+    const idxHtml=decodeURIComponent(escape(atob(idxData.content)));
+    const pattern=new RegExp('\\s*<article class="(?:card|hero-article)">[\\s\\S]*?articulos/'+filename.replace(/\./g,'\\.')+'[\\s\\S]*?</article>','g');
+    const newHtml=idxHtml.replace(pattern,'');
+    if(newHtml!==idxHtml){
+      const putRes=await fetch('https://api.github.com/repos/'+c.user+'/'+c.repo+'/contents/index.html',{
+        method:'PUT',
+        headers:{'Authorization':'Bearer '+c.token,'Content-Type':'application/json'},
+        body:JSON.stringify({message:'🏠 Quitar del inicio: '+filename,content:btoa(unescape(encodeURIComponent(newHtml))),sha:idxData.sha})
+      });
+      if(!putRes.ok){
+        const body=await putRes.text();
+        throw new Error('PUT index '+putRes.status+' '+body.slice(0,200));
+      }
+    }
+  } catch(e){
+    console.error('delNote update index:',e);
+    idxOk=false;
+    idxErr=e.message;
+  }
+
+  if(idxOk){
+    toast('✅ Nota borrada. El sitio se actualiza en ~30s');
+  } else {
+    toast('⚠️ Archivo borrado, home NO actualizado: '+idxErr);
+  }
+  setTimeout(()=>renderH(),1500);
 }
 function shareH(fn,t){const u='https://plumalibre.github.io/articulos/'+fn;if(navigator.share)navigator.share({title:t,url:u});else{navigator.clipboard.writeText(u);alert('Link copiado');}}
 
