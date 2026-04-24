@@ -716,3 +716,34 @@ ul { list-style: none; }
 .hero-card .hero-body a:not(h2 a),
 .card .info a:not(h3 a),
 .card-lg a:not(h3 a) { position: relative; z-index: 2; }
+
+/* ===== Empty state y hero de bienvenida (pre-lanzamiento) ===== */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.hero-welcome {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 60px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.hero-welcome h2 {
+  font-family: var(--fd);
+  color: var(--brand);
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero-welcome p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
