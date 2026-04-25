@@ -7,7 +7,7 @@
   },
   "banner_b_nota": {
     "activo": false,
-    "imagen": "",
+    "imagen": "assets/banner-b.jpg",
     "link": "",
     "alt": ""
   }
