@@ -15,6 +15,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192x192.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pluma Libre">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head><body>
@@ -89,4 +94,4 @@
     document.getElementById('shareFb').href='https://www.facebook.com/sharer/sharer.php?u='+u;
     document.getElementById('shareWa').href='https://api.whatsapp.com/send?text='+t+'%20'+u;
   </script>
-<script>addEventListener("scroll",function(){var h=document.querySelector(".header");h&&h.classList.toggle("scrolled",scrollY>20)},{passive:true});</script></body></html>
+<script>addEventListener("scroll",function(){var h=document.querySelector(".header");h&&h.classList.toggle("scrolled",scrollY>20)},{passive:true});</script><script>if("serviceWorker" in navigator){addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{});});}</script></body></html>
