@@ -983,17 +983,19 @@ body:has(.news-grid > article) .hero {
   height: 100%;
   max-width: 100%;
 }
+/* La imagen toma su aspect ratio nativo (height: auto). El frame sin alto fijo
+   se adapta — así no quedan bandas blancas si el ratio de la imagen no coincide
+   con un "slot estándar" como 970×250 o 320×100. Cap de altura para que un
+   anunciante no rompa el layout subiendo una imagen cuadrada gigante. */
 .pl-ad-frame img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 100%;
-  object-fit: contain;
-  object-position: center;
+  max-height: 500px;
 }
-/* Banner A - home: 3 tamaños responsive + alto acotado (250 desktop / 150 mobile) */
+/* Banner A - home: 3 tamaños responsive (la imagen real determina el alto) */
 .pl-ad--banner-a { max-width: 970px; }
-.pl-ad--banner-a .pl-ad-frame { height: 250px; max-height: 250px; }
 .pl-ad--banner-a .pl-ad-img-billboard   { display: block; }
 .pl-ad--banner-a .pl-ad-img-leaderboard { display: none; }
 .pl-ad--banner-a .pl-ad-img-mobile      { display: none; }
@@ -1002,18 +1004,15 @@ body:has(.news-grid > article) .hero {
   .pl-ad--banner-a .pl-ad-img-leaderboard { display: block; }
 }
 @media (max-width: 767px) {
-  .pl-ad--banner-a .pl-ad-frame { height: 150px; max-height: 150px; }
   .pl-ad--banner-a .pl-ad-img-billboard   { display: none; }
   .pl-ad--banner-a .pl-ad-img-mobile      { display: block; }
 }
-/* Banner B - nota: 2 tamaños responsive + alto acotado (120 desktop / 100 mobile) */
+/* Banner B - nota: 2 tamaños responsive */
 .pl-ad--banner-b { max-width: 728px; margin: 28px auto; }
-.pl-ad--banner-b .pl-ad-frame { height: 120px; max-height: 120px; }
 .pl-ad--banner-b .pl-ad-img-leaderboard { display: block; }
 .pl-ad--banner-b .pl-ad-img-mobile      { display: none; }
 @media (max-width: 767px) {
   .pl-ad--banner-b { margin: 20px auto; }
-  .pl-ad--banner-b .pl-ad-frame { height: 100px; max-height: 100px; }
   .pl-ad--banner-b .pl-ad-img-leaderboard { display: none; }
   .pl-ad--banner-b .pl-ad-img-mobile      { display: block; }
 }
@@ -1021,7 +1020,7 @@ body:has(.news-grid > article) .hero {
    y vuelve si el scroll vuelve a <10px. La transición es sobre el wrapper. */
 .pl-ad--banner-a {
   transition: max-height .35s cubic-bezier(.25,.1,.25,1), opacity .25s ease, margin .35s ease, padding .35s ease;
-  max-height: 380px;
+  max-height: 600px;
   overflow: hidden;
 }
 .pl-ad--banner-a.pl-ad-hidden {
