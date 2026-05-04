@@ -40,7 +40,8 @@
       "link": "https://api.whatsapp.com/send/?phone=50373650453&text=Hola+Pluma+Libre&type=phone_number&app_absent=0",
       "alt": "",
       "ubicaciones": [
-        "home_grid"
+        "home_grid",
+        "home_top"
       ]
     }
   ]
