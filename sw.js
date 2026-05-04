@@ -3,7 +3,7 @@
 // app igual abra (con la versión cacheada de la última visita) si el usuario está
 // offline. Subir CACHE_VERSION fuerza purga del cache viejo en la siguiente activación.
 
-const CACHE_VERSION = 'pl-v6';
+const CACHE_VERSION = 'pl-v7';
 const SHELL = [
   '/',
   '/index.html',
