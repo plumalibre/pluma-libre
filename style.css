@@ -946,18 +946,28 @@ body:has(.news-grid > article) .hero {
 .pl-ad {
   display: block;
   max-width: 970px;
-  margin: 24px auto;
+  margin: 8px auto;
   font-family: var(--font-body);
+  position: relative;
 }
+/* "Publicidad" como tag flotante en la esquina superior izquierda del banner,
+   encima de la imagen. Sin reservar línea propia: el banner queda compacto
+   contra el contenido de arriba y abajo. */
 .pl-ad-label {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  color: var(--text-tertiary);
-  font-weight: 500;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 9px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 600;
   text-transform: uppercase;
-  text-align: left;
-  margin-bottom: 6px;
+  margin: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 /* Variante A - sobria (borde 1px, recomendada)
    Background gris claro para que las imágenes con ratio distinto al slot
@@ -1008,11 +1018,11 @@ body:has(.news-grid > article) .hero {
   .pl-ad--banner-a .pl-ad-img-mobile      { display: block; }
 }
 /* Banner B - nota: 2 tamaños responsive */
-.pl-ad--banner-b { max-width: 728px; margin: 28px auto; }
+.pl-ad--banner-b { max-width: 728px; margin: 14px auto; }
 .pl-ad--banner-b .pl-ad-img-leaderboard { display: block; }
 .pl-ad--banner-b .pl-ad-img-mobile      { display: none; }
 @media (max-width: 767px) {
-  .pl-ad--banner-b { margin: 20px auto; }
+  .pl-ad--banner-b { margin: 10px auto; }
   .pl-ad--banner-b .pl-ad-img-leaderboard { display: none; }
   .pl-ad--banner-b .pl-ad-img-mobile      { display: block; }
 }
@@ -1042,10 +1052,19 @@ body:has(.news-grid > article) .hero {
   margin: 0;
   max-width: none;
 }
+/* Banner C es una card con label en bloque arriba (no overlay). Anulamos el
+   floating de .pl-ad-label para devolverlo al flujo normal de la card. */
 .pl-ad--banner-c .pl-ad-label {
+  position: static;
+  background: transparent;
+  color: var(--text-tertiary);
   padding: 8px 12px 4px;
   margin: 0;
   font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: auto;
 }
 .pl-ad--banner-c .pl-ad-frame {
   flex: 1;
