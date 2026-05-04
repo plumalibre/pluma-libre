@@ -37,7 +37,7 @@
       "activo": true,
       "tipo": "imagen",
       "imagen": "assets/grid-ind-1.jpg",
-      "link": "https://api.whatsapp.com/send/?phone=50373650453&text=Hola+Pluma+Libre&type=phone_number&app_absent=0",
+      "link": "https://api.whatsapp.com/send/?phone=50373650453&text=Hola+Exifot+&type=phone_number&app_absent=0",
       "alt": "",
       "ubicaciones": [
         "home_grid",
