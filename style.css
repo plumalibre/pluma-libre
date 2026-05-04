@@ -162,35 +162,37 @@ ul { list-style: none; }
 .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
-/* Nav */
+/* Nav — dropdown plegable, azul oscuro con letras claras (mobile + desktop) */
 .nav {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(255,255,255,0.95);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 8px 0;
-  animation: navSlide 0.25s var(--ease);
+  top: calc(100% + 4px);
+  right: 8px;
+  background: var(--brand);
+  border-radius: 10px;
+  padding: 6px 0;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  animation: navSlide 0.18s var(--ease);
+  overflow: hidden;
 }
 @keyframes navSlide {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .nav.open { display: block; }
+.nav ul { display: flex; flex-direction: column; gap: 0; list-style: none; padding: 0; margin: 0; }
 .nav a {
   display: block;
-  padding: 12px 24px;
-  font-size: 0.88rem;
+  padding: 8px 18px;
+  font-size: 0.82rem;
   font-weight: 500;
-  color: var(--text-primary);
-  transition: all 0.2s;
+  color: rgba(255,255,255,0.88);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 }
-.nav a:hover, .nav a.on { color: var(--accent); background: rgba(0,113,227,0.04); }
-.nav a.on { font-weight: 600; }
+.nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.nav a.on { color: #fff; font-weight: 600; background: rgba(255,255,255,0.06); }
 
 /* ============================================
    HERO / FEATURED
@@ -1156,25 +1158,6 @@ body:has(.news-grid > article) .hero {
 }
 @media (min-width: 900px) {
   .wrap { padding: 0 32px; }
-  .menu-btn { display: none; }
-  .nav {
-    display: flex !important;
-    position: static;
-    background: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    border: none;
-    padding: 0;
-    animation: none;
-  }
-  .nav ul { display: flex; flex-direction: row; gap: 2px; }
-  .nav a {
-    padding: 6px 12px;
-    font-size: 0.78rem;
-    border-radius: 100px;
-  }
-  .nav a:hover { background: rgba(0,0,0,0.04); }
-  .nav a.on { background: rgba(0,113,227,0.08); color: var(--accent); }
   .logo-text h1 { font-size: 1.4rem; }
   .logo img { width: 32px; height: 32px; }
   .logo img.logo-wordmark { height: 18px; width: auto; }
