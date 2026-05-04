@@ -88,7 +88,7 @@ Tres botones en la barra superior:
 ## Línea editorial
 
 - **Tono:** Profesional, directo, accesible
-- **Secciones fijas:** #AcontecerReligioso #AcontecerPolítico #AcontecerCultural #AcontecerSocial #AcontecerEconómico #AcontecerDeportivo
+- **Secciones fijas:** Política, Economía, Deportes, Social, Religión, Cultura, Internacional. (Antes se mostraban como `#AcontecerX`; el branding cambió en mayo 2026: ahora son sustantivos sin `#` ni "Acontecer". El editor genera los hashtags de redes con el sustantivo limpio: `#Política`, `#Economía`, etc.)
 - **Hashtags base:** #PlumaLibre #Sonsonate #ElSalvador
 - **Relaciones comerciales:** Pauta con Alcaldía de Sonsonate Centro (Alcalde Roberto Aquino). NO con Sonsonate Este.
 

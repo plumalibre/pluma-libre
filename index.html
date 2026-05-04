@@ -32,6 +32,18 @@
 </head>
 <body>
 
+  <!-- Banner A (home) · arriba de todo; slide-up al scrollear hacia abajo, vuelve al top. -->
+  <aside class="pl-ad pl-ad-sobria pl-ad--banner-a" role="complementary" aria-label="Contenido publicitario" hidden>
+    <span class="pl-ad-label">Publicidad</span>
+    <div class="pl-ad-frame">
+      <a href="" target="_blank" rel="noopener nofollow sponsored" aria-label="Ir al sitio del patrocinador — se abre en una pestaña nueva">
+        <img class="pl-ad-img-billboard"   src="" width="970" height="250" alt="">
+        <img class="pl-ad-img-leaderboard" src="" width="728" height="90"  alt="">
+        <img class="pl-ad-img-mobile"      src="" width="320" height="100" alt="">
+      </a>
+    </div>
+  </aside>
+
   <div class="top-bar">
     <div class="wrap">
       <span id="fecha"></span>
@@ -55,13 +67,13 @@
       <nav class="nav" id="nav">
         <ul>
           <li><a href="index.html" class="on">Inicio</a></li>
-          <li><a href="secciones/politico.html">#Político</a></li>
-          <li><a href="secciones/economico.html">#Económico</a></li>
-          <li><a href="secciones/deportivo.html">#Deportivo</a></li>
-          <li><a href="secciones/social.html">#Social</a></li>
-          <li><a href="secciones/religioso.html">#Religioso</a></li>
-          <li><a href="secciones/cultural.html">#Cultural</a></li>
-          <li><a href="secciones/internacional.html">#Internacional</a></li>
+          <li><a href="secciones/politico.html">Política</a></li>
+          <li><a href="secciones/economico.html">Economía</a></li>
+          <li><a href="secciones/deportivo.html">Deportes</a></li>
+          <li><a href="secciones/social.html">Social</a></li>
+          <li><a href="secciones/religioso.html">Religión</a></li>
+          <li><a href="secciones/cultural.html">Cultura</a></li>
+          <li><a href="secciones/internacional.html">Internacional</a></li>
           <li><a href="sobre-nosotros.html">Nosotros</a></li>
         </ul>
       </nav>
@@ -69,19 +81,6 @@
   </header>
 
   <main>
-    <!-- Banner A (home) · arriba del hero. Activar: quitar `hidden` + poner href + src de las 3 imágenes (970x250, 728x90, 320x100). -->
-    <div class="wrap">
-      <aside class="pl-ad pl-ad-sobria pl-ad--banner-a" role="complementary" aria-label="Contenido publicitario" hidden>
-        <span class="pl-ad-label">Publicidad</span>
-        <div class="pl-ad-frame">
-          <a href="" target="_blank" rel="noopener nofollow sponsored" aria-label="Ir al sitio del patrocinador — se abre en una pestaña nueva">
-            <img class="pl-ad-img-billboard"   src="" width="970" height="250" alt="">
-            <img class="pl-ad-img-leaderboard" src="" width="728" height="90"  alt="">
-            <img class="pl-ad-img-mobile"      src="" width="320" height="100" alt="">
-          </a>
-        </div>
-      </aside>
-    </div>
 
     <!-- HOME HERO: 1 principal + 4 secundarias.
          Las clases son .home-hero-principal y .home-hero-secondary; el editor las maneja con un selector de 3 estados. -->
@@ -91,7 +90,7 @@
           <article class="home-hero-principal">
             <div class="img"><img src="assets/screenshot-2026-05-01-14-27-38-627-com.facebook.katana.jpg" alt="" loading="eager"></div>
             <div class="body">
-              <span class="kicker">#Político</span>
+              <span class="kicker">Política</span>
               <h2><a href="articulos/marcha-del-1-de-mayo.html">MARCHA DEL 1 DE MAYO</a></h2>
               <p class="excerpt">Cobertura de la concentración y los discursos de los principales gremios en San Salvador.</p>
               <p class="meta">Por Pluma Libre · 2 de mayo, 2026</p>
@@ -101,28 +100,28 @@
             <article class="home-hero-secondary">
               <div class="thumb"><img src="https://placehold.co/200x200/16A085/ffffff?text=ECO" alt="" loading="lazy"></div>
               <div class="info">
-                <span class="kicker">#Económico</span>
+                <span class="kicker">Economía</span>
                 <h3><a href="articulos/precio-canasta-basica-sube-4-en-abril.html">Precio de la canasta básica registra alza del 4% en abril</a></h3>
               </div>
             </article>
             <article class="home-hero-secondary">
               <div class="thumb"><img src="assets/69393.jpg" alt="" loading="lazy"></div>
               <div class="info">
-                <span class="kicker">#Religioso</span>
+                <span class="kicker">Religión</span>
                 <h3><a href="articulos/neftali-perez-cumple-anos.html">Neftalí Pérez cumple años</a></h3>
               </div>
             </article>
             <article class="home-hero-secondary">
               <div class="thumb"><img src="https://placehold.co/200x200/C0392B/ffffff?text=DEP" alt="" loading="lazy"></div>
               <div class="info">
-                <span class="kicker">#Deportivo</span>
+                <span class="kicker">Deportes</span>
                 <h3><a href="articulos/la-selecta-empata-con-honduras.html">La Selecta empata 1-1 con Honduras en eliminatorias</a></h3>
               </div>
             </article>
             <article class="home-hero-secondary">
               <div class="thumb"><img src="https://placehold.co/200x200/8E44AD/ffffff?text=CUL" alt="" loading="lazy"></div>
               <div class="info">
-                <span class="kicker">#Cultural</span>
+                <span class="kicker">Cultura</span>
                 <h3><a href="articulos/festival-gastronomico-sonsonate-este-viernes.html">Festival Gastronómico de Sonsonate inicia este viernes</a></h3>
               </div>
             </article>
@@ -148,18 +147,18 @@
         <h2>Últimas Noticias</h2>
       </div>
       <div class="news-grid">
-        <article class="card"><div class="thumb"><img src="assets/686532603-1469036818239460-1941368822462683121-n.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Internacional</span><h3><a href="articulos/tragedia-aerea-en-guatemala.html">TRAGEDIA AÉREA EN GUATEMALA</a></h3><p class="meta">3 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/687870289-1406539064848002-2572333179539159060-n.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Religioso</span><h3><a href="articulos/fe-y-comunidad-los-sonsonatecos-se-unen-para-celeb.html">Fe y comunidad: los sonsonatecos se unen para celebrar el tradicional Día de la Santa Cruz</a></h3><p class="meta">3 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/70443.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Político</span><h3><a href="articulos/hwjajajsjfbbe.html">Hwjajajsjfbbe</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/screenshot-2026-05-01-14-27-38-627-com.facebook.katana.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Político</span><h3><a href="articulos/marcha-del-1-de-mayo.html">MARCHA DEL 1 DE MAYO</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/16A085/ffffff?text=ECO" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Económico</span><h3><a href="articulos/precio-canasta-basica-sube-4-en-abril.html">Precio de la canasta básica registra alza del 4% en abril</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/68000.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Religioso</span><h3><a href="articulos/contribuyentes-tienen-hasta-el-30-de-abril-para-de.html">Contribuyentes tienen hasta el 30 de abril para declarar la renta</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/69393.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Religioso</span><h3><a href="articulos/neftali-perez-cumple-anos.html">Neftalí Pérez cumple años</a></h3><p class="meta">1 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/C0392B/ffffff?text=DEP" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Deportivo</span><h3><a href="articulos/la-selecta-empata-con-honduras.html">La Selecta empata 1-1 con Honduras en eliminatorias</a></h3><p class="meta">1 de mayo, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/8E44AD/ffffff?text=CUL" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Cultural</span><h3><a href="articulos/festival-gastronomico-sonsonate-este-viernes.html">Festival Gastronómico de Sonsonate inicia este viernes</a></h3><p class="meta">30 de abril, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/2980B9/ffffff?text=INT" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Internacional</span><h3><a href="articulos/cumbre-centroamericana-en-guatemala.html">Cumbre Centroamericana se reúne en Guatemala</a></h3><p class="meta">29 de abril, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/F39C12/ffffff?text=SOC" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Social</span><h3><a href="articulos/brigada-medica-atiende-200-personas-zona-rural.html">Brigada médica atiende a 200 personas en zona rural</a></h3><p class="meta">28 de abril, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/66689.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Acontecer Religioso</span><h3><a href="articulos/ultima-hora.html">ULTIMA HORA</a></h3><p class="meta">25 de abril, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/686532603-1469036818239460-1941368822462683121-n.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/tragedia-aerea-en-guatemala.html">TRAGEDIA AÉREA EN GUATEMALA</a></h3><p class="meta">3 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/687870289-1406539064848002-2572333179539159060-n.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/fe-y-comunidad-los-sonsonatecos-se-unen-para-celeb.html">Fe y comunidad: los sonsonatecos se unen para celebrar el tradicional Día de la Santa Cruz</a></h3><p class="meta">3 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/70443.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Política</span><h3><a href="articulos/hwjajajsjfbbe.html">Hwjajajsjfbbe</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/screenshot-2026-05-01-14-27-38-627-com.facebook.katana.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Política</span><h3><a href="articulos/marcha-del-1-de-mayo.html">MARCHA DEL 1 DE MAYO</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/16A085/ffffff?text=ECO" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Economía</span><h3><a href="articulos/precio-canasta-basica-sube-4-en-abril.html">Precio de la canasta básica registra alza del 4% en abril</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/68000.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/contribuyentes-tienen-hasta-el-30-de-abril-para-de.html">Contribuyentes tienen hasta el 30 de abril para declarar la renta</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/69393.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/neftali-perez-cumple-anos.html">Neftalí Pérez cumple años</a></h3><p class="meta">1 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/C0392B/ffffff?text=DEP" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Deportes</span><h3><a href="articulos/la-selecta-empata-con-honduras.html">La Selecta empata 1-1 con Honduras en eliminatorias</a></h3><p class="meta">1 de mayo, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/8E44AD/ffffff?text=CUL" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Cultura</span><h3><a href="articulos/festival-gastronomico-sonsonate-este-viernes.html">Festival Gastronómico de Sonsonate inicia este viernes</a></h3><p class="meta">30 de abril, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/2980B9/ffffff?text=INT" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/cumbre-centroamericana-en-guatemala.html">Cumbre Centroamericana se reúne en Guatemala</a></h3><p class="meta">29 de abril, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/F39C12/ffffff?text=SOC" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/brigada-medica-atiende-200-personas-zona-rural.html">Brigada médica atiende a 200 personas en zona rural</a></h3><p class="meta">28 de abril, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/66689.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/ultima-hora.html">ULTIMA HORA</a></h3><p class="meta">25 de abril, 2026</p></div></article>
       </div>
 
       <section class="follow-us">
@@ -185,13 +184,13 @@
         <div>
           <h4>Secciones</h4>
           <ul>
-            <li><a href="secciones/politico.html">#AcontecerPolítico</a></li>
-            <li><a href="secciones/economico.html">#AcontecerEconómico</a></li>
-            <li><a href="secciones/deportivo.html">#AcontecerDeportivo</a></li>
-            <li><a href="secciones/social.html">#AcontecerSocial</a></li>
-            <li><a href="secciones/religioso.html">#AcontecerReligioso</a></li>
-            <li><a href="secciones/cultural.html">#AcontecerCultural</a></li>
-            <li><a href="secciones/internacional.html">#AcontecerInternacional</a></li>
+            <li><a href="secciones/politico.html">Política</a></li>
+            <li><a href="secciones/economico.html">Economía</a></li>
+            <li><a href="secciones/deportivo.html">Deportes</a></li>
+            <li><a href="secciones/social.html">Social</a></li>
+            <li><a href="secciones/religioso.html">Religión</a></li>
+            <li><a href="secciones/cultural.html">Cultura</a></li>
+            <li><a href="secciones/internacional.html">Internacional</a></li>
           </ul>
         </div>
         <div>
@@ -275,19 +274,9 @@
         const c=await r.json();
         const top=pickBannerFor('home_top',c);
         if(top)document.querySelectorAll(".pl-ad--banner-a").forEach(ad=>renderBannerEn(ad,top));
-        repositionBannerA();
         injectBannerC(c);
-        setupBannerAShrink();
+        setupBannerAHide();
       }catch(e){}
-    }
-    function repositionBannerA(){
-      const ad=document.querySelector(".pl-ad--banner-a");
-      if(!ad||ad.hidden)return;
-      const heroArt=document.querySelector(".news-grid .hero-article");
-      if(!heroArt)return;
-      const wrap=ad.closest(".wrap");
-      heroArt.insertAdjacentElement("afterend",ad);
-      if(wrap&&!wrap.children.length)wrap.remove();
     }
     // Banner C + individuales: clona el template e inserta un banner cada `frecuencia` cards.
     // Asigna los individuales activos en orden a los espacios; los espacios sobrantes los
@@ -317,10 +306,9 @@
         }
       });
     }
-    // Banner A sticky: achica al pasar 200px de scroll, vuelve a tamaño
-    // original cuando el scroll baja de 100px (zona muerta evita flicker
-    // en el borde). rAF garantiza ~60fps sin overhead.
-    function setupBannerAShrink(){
+    // Banner A: vive arriba de todo. Slide-up al pasar 60px de scroll y
+    // vuelve a aparecer si el scroll vuelve a <10px (zona muerta evita flicker).
+    function setupBannerAHide(){
       const ad=document.querySelector(".pl-ad--banner-a");
       if(!ad||ad.hidden)return;
       let ticking=false;
@@ -329,8 +317,8 @@
         ticking=true;
         requestAnimationFrame(()=>{
           const y=window.scrollY;
-          if(y>200)ad.classList.add("pl-ad-shrunk");
-          else if(y<100)ad.classList.remove("pl-ad-shrunk");
+          if(y>60)ad.classList.add("pl-ad-hidden");
+          else if(y<10)ad.classList.remove("pl-ad-hidden");
           ticking=false;
         });
       },{passive:true});

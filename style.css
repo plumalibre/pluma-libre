@@ -994,10 +994,6 @@ body:has(.news-grid > article) .hero {
 /* Banner A - home: 3 tamaños responsive + alto acotado (250 desktop / 150 mobile) */
 .pl-ad--banner-a { max-width: 970px; }
 .pl-ad--banner-a .pl-ad-frame { height: 250px; max-height: 250px; }
-/* Si el JS de repositionBannerA lo movió dentro del grid (después de la
-   nota destacada), tomar toda la fila y cancelar el margen vertical propio
-   (el gap del grid ya da espacio arriba/abajo). */
-.news-grid > .pl-ad--banner-a { grid-column: 1 / -1; margin: 0 auto; }
 .pl-ad--banner-a .pl-ad-img-billboard   { display: block; }
 .pl-ad--banner-a .pl-ad-img-leaderboard { display: none; }
 .pl-ad--banner-a .pl-ad-img-mobile      { display: none; }
@@ -1021,16 +1017,20 @@ body:has(.news-grid > article) .hero {
   .pl-ad--banner-b .pl-ad-img-leaderboard { display: none; }
   .pl-ad--banner-b .pl-ad-img-mobile      { display: block; }
 }
-/* Banner A — sticky shrink al scrollear. La clase .pl-ad-shrunk se agrega
-   por JS cuando scrollY > 200px y se quita cuando vuelve a < 100px (zona
-   muerta para evitar flicker en el borde). */
-.pl-ad--banner-a .pl-ad-frame {
-  transition: height 350ms cubic-bezier(.25,.1,.25,1), max-height 350ms cubic-bezier(.25,.1,.25,1);
+/* Banner A — vive arriba de todo en el home. Slide-up al scrollear (>60px)
+   y vuelve si el scroll vuelve a <10px. La transición es sobre el wrapper. */
+.pl-ad--banner-a {
+  transition: max-height .35s cubic-bezier(.25,.1,.25,1), opacity .25s ease, margin .35s ease, padding .35s ease;
+  max-height: 380px;
+  overflow: hidden;
 }
-.pl-ad--banner-a.pl-ad-shrunk .pl-ad-frame { height: 100px; max-height: 100px; }
-.pl-ad--banner-a.pl-ad-shrunk img { object-fit: cover; }
-@media (max-width: 767px) {
-  .pl-ad--banner-a.pl-ad-shrunk .pl-ad-frame { height: 70px; max-height: 70px; }
+.pl-ad--banner-a.pl-ad-hidden {
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 /* Banner C — intercalado entre cards del grid (estilo card normal). */
 .pl-ad--banner-c {

@@ -32,12 +32,12 @@ pluma-libre/
 │   ├── favicon-192x192.png
 │   └── apple-touch-icon.png    ← 180x180 para iOS
 ├── secciones/
-│   ├── religioso.html          ← #AcontecerReligioso
-│   ├── politico.html           ← #AcontecerPolítico
-│   ├── cultural.html           ← #AcontecerCultural
-│   ├── social.html             ← #AcontecerSocial
-│   ├── economico.html          ← #AcontecerEconómico
-│   └── deportivo.html          ← #AcontecerDeportivo
+│   ├── religioso.html          ← Religión
+│   ├── politico.html           ← Política
+│   ├── cultural.html           ← Cultura
+│   ├── social.html             ← Social
+│   ├── economico.html          ← Economía
+│   └── deportivo.html          ← Deportes
 ├── articulos/
 │   └── plantilla.html          ← Plantilla base (no borrar)
 └── herramientas/
