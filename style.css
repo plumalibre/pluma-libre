@@ -83,6 +83,12 @@ ul { list-style: none; }
   height: 48px;
   transition: height 0.22s ease;
 }
+.header.scrolled {
+  background: var(--brand);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom-color: rgba(255,255,255,0.08);
+}
 .header.scrolled .wrap { height: 38px; }
 .header.scrolled .logo-simbolo,
 .header.scrolled .logo-text { display: none; }
@@ -91,8 +97,9 @@ ul { list-style: none; }
   display: block;
   width: 28px;
   height: 28px;
-  background: url("assets/logo-globo.png") center/contain no-repeat;
+  background: url("assets/icon-512.png") center/contain no-repeat;
 }
+.header.scrolled .menu-btn span { background: #fff; }
 .logo {
   position: absolute;
   left: 50%;
