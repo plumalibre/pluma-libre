@@ -21,7 +21,7 @@ Cobertura local, nacional e internacional. Periodismo cr√≠tico sin ataduras pol√
 ## Paleta de colores
 
 ```css
---brand: #0B2545;   /* azul oscuro, marca */
+--brand: #081A41;   /* azul oscuro, exactamente el fondo del logo PWA */
 --accent: #0071E3;  /* azul Apple, links/CTA */
 --bg: #F5F5F7;      /* gris claro fondo */
 --card: #FFFFFF;    /* blanco tarjetas */
