@@ -276,11 +276,11 @@ body:has(.news-grid > article) .hero {
    Mobile: stack vertical con secundarias compactas.
    Desktop: grilla asimetrica 1.6fr / 1fr.
    ============================================ */
-.home-hero { padding: 20px 0 8px; }
+.home-hero { padding: 12px 0 6px; }
 .home-hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 10px;
 }
 
 .home-hero-principal {
@@ -306,7 +306,7 @@ body:has(.news-grid > article) .hero {
   transition: transform 0.6s var(--ease);
 }
 .home-hero-principal:hover .img img { transform: scale(1.03); }
-.home-hero-principal .body { padding: 18px 18px 22px; }
+.home-hero-principal .body { padding: 12px 16px 14px; }
 .home-hero-principal .kicker,
 .home-hero-secondary .kicker {
   display: inline-block;
@@ -315,7 +315,7 @@ body:has(.news-grid > article) .hero {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--brand);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .home-hero-principal h2 {
   font-family: var(--font-body);
@@ -329,26 +329,26 @@ body:has(.news-grid > article) .hero {
 .home-hero-principal .excerpt {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-top: 8px;
-  line-height: 1.5;
+  margin-top: 6px;
+  line-height: 1.45;
 }
 .home-hero-principal .meta {
   font-size: 0.72rem;
   color: var(--text-tertiary);
-  margin-top: 12px;
+  margin-top: 8px;
   font-weight: 500;
 }
 
 .home-hero-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 .home-hero-secondary {
   position: relative;
   display: flex;
-  gap: 12px;
-  padding: 10px;
+  gap: 10px;
+  padding: 8px;
   background: var(--bg-card);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xs);
@@ -364,8 +364,8 @@ body:has(.news-grid > article) .hero {
 }
 .home-hero-secondary .thumb {
   flex-shrink: 0;
-  width: 92px;
-  height: 92px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg);
@@ -416,12 +416,12 @@ body:has(.news-grid > article) .hero {
     align-items: start;
   }
   .home-hero-principal .img { aspect-ratio: 16/10; }
-  .home-hero-principal .body { padding: 22px 26px 28px; }
+  .home-hero-principal .body { padding: 16px 22px 18px; }
   .home-hero-principal h2 { font-size: 2.1rem; }
   .home-hero-principal .excerpt { font-size: 1.02rem; }
-  .home-hero-sidebar { gap: 12px; }
-  .home-hero-secondary { padding: 12px; }
-  .home-hero-secondary .thumb { width: 100px; height: 100px; }
+  .home-hero-sidebar { gap: 8px; }
+  .home-hero-secondary { padding: 10px; }
+  .home-hero-secondary .thumb { width: 88px; height: 88px; }
   .home-hero-secondary h3 { font-size: 1rem; }
 }
 
@@ -458,13 +458,13 @@ body:has(.news-grid > article) .hero {
 .news-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
-  padding-bottom: 12px;
+  gap: 8px;
+  padding-bottom: 8px;
 }
 .card {
   display: flex;
-  gap: 14px;
-  padding: 14px;
+  gap: 10px;
+  padding: 10px;
   background: var(--bg-card);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xs);
@@ -478,8 +478,8 @@ body:has(.news-grid > article) .hero {
 }
 .card .thumb {
   flex-shrink: 0;
-  width: 88px;
-  height: 88px;
+  width: 72px;
+  height: 72px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--bg);
@@ -502,8 +502,8 @@ body:has(.news-grid > article) .hero {
   font-family: var(--font-body);
   font-size: 1.02rem;
   font-weight: 700;
-  line-height: 1.25;
-  margin-top: 4px;
+  line-height: 1.22;
+  margin-top: 2px;
   color: var(--text-primary);
   letter-spacing: -0.015em;
 }
@@ -511,7 +511,7 @@ body:has(.news-grid > article) .hero {
 .card .meta {
   font-size: 0.65rem;
   color: var(--text-tertiary);
-  margin-top: 6px;
+  margin-top: 4px;
   font-weight: 500;
 }
 
