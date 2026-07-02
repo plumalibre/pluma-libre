@@ -675,9 +675,9 @@ body:has(.news-grid > article) .hero {
   margin: 24px 0;
   border-radius: var(--radius-lg);
   background: var(--bg);
-  max-height: 80vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .article-img img {
   max-width: 100%;
