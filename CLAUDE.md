@@ -71,7 +71,7 @@ Tres botones en la barra superior:
 - 📢 **Publicidad** — abre modal fullscreen para administrar banners (Banner A home + Banner B nota + Banner C grid) sin tocar código: checkbox activo, drag/drop de imagen con compresión adaptativa, link y alt. Cada guardado genera 1-2 commits (imagen si cambió + `banners.json`).
 - ⚙️ Configuración GitHub (usuario, repo, token)
 
-**Publicación:** usa GitHub API directamente desde el navegador con un token encriptado con XOR+base64 (SEGURIDAD DÉBIL - PENDIENTE DE MEJORAR).
+**Publicación:** usa GitHub API directamente desde el navegador. **El token NO se guarda en el archivo** (un repo público no puede contener un secreto). Se pega en la pantalla de conexión al abrir el editor, se valida contra la API y vive solo en el `localStorage` de ese navegador. Para cambiarlo/borrarlo: ⚙️ Configuración GitHub. Recomendado: PAT **fine-grained** con permiso *Contents: Read and write* limitado a `plumalibre.github.io`, así un token filtrado solo afecta ese repo. (Antes: token XOR-encriptado + base64 embebido en el archivo — seguridad falsa, eliminado.)
 
 **Markup especial:**
 - `## texto` → H2
@@ -83,10 +83,6 @@ Tres botones en la barra superior:
 - `[VIDEO_YOUTUBE:id]`, `[VIDEO_FACEBOOK:url]`, `[VIDEO_TIKTOK:url]`
 - `[COL2]...[/COL]...[/COL2]` → 2 columnas
 - `---` → separador
-
-**Token actual encriptado en el archivo:**
-- `data: 'FxoVMTVQRAlJcyImHz0CMgJYXwQxGVE0HBgCIEFAQAcnA0AZIRRJag=='`
-- `check: 'hsme43b'`
 
 ## Línea editorial
 
@@ -164,7 +160,7 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 1. ~~**Google Analytics 4** — placeholder hardcoded en TODAS las páginas, pendiente de reemplazar.~~ ✅ **Resuelto 2026-04-23**: GA4 activo con ID `G-TZRTJLP5KT` (cuenta `prensaplumalibre@gmail.com`). Integrado en homepage, 5 secciones, sobre-nosotros, plantilla de artículos y en el template `genHTML()` del editor v9 (así cada nota nueva nace ya trackeada).
 2. **Contenido placeholder** — sobre-nosotros genérico, notas de ejemplo con fotos azules
-3. **Seguridad del token** — XOR+base64 no es encriptación real; cualquiera puede extraerlo del repo público
+3. ~~**Seguridad del token** — XOR+base64 no es encriptación real; cualquiera puede extraerlo del repo público~~ ✅ **Resuelto 2026-07-02** (en repo `plumalibre/editor`): se eliminó el token embebido y todo el esquema XOR/simpleHash. El token ahora se pega en tiempo de ejecución, se valida contra la API y vive solo en `localStorage`. **Acción pendiente del operador:** revocar en GitHub el token que estuvo en el historial público (sigue comprometido) y crear uno fine-grained (Contents: Read and write, solo `plumalibre.github.io`). Futuro: para no depender de un PAT en el navegador, migrar a OAuth vía proxy serverless (Cloudflare Worker).
 4. ~~**Formulario de contacto roto** — sobre-nosotros.html usa Netlify Forms (suspendido), hay que migrar a Formspree~~ ✅ **Resuelto 2026-04-23**: migrado a Formspree Ajax con endpoint `https://formspree.io/f/xdayypog` (formId `xdayypog`). Incluye honeypot `_gotcha` anti-spam y manejo declarativo con `data-fs-*`.
 
 ## Convenciones de código
