@@ -160,7 +160,7 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 ## Pendientes críticos (Tier 1)
 
 1. ~~**Google Analytics 4** — placeholder hardcoded en TODAS las páginas, pendiente de reemplazar.~~ ✅ **Resuelto 2026-04-23**: GA4 activo con ID `G-TZRTJLP5KT` (cuenta `prensaplumalibre@gmail.com`). Integrado en homepage, 5 secciones, sobre-nosotros, plantilla de artículos y en el template `genHTML()` del editor v9 (así cada nota nueva nace ya trackeada).
-2. **Contenido placeholder** — sobre-nosotros genérico, notas de ejemplo con fotos azules
+2. **Contenido placeholder** — ~~sobre-nosotros genérico~~ ✅ sobre-nosotros ya tiene contenido real (historia, equipo, redes; revisado 2026-07-02: se agregó Internacional a la lista de secciones, JSON-LD AboutPage, "cofundador"→"codirector" y se unificó Facebook a `facebook.com/plumalibre.press` en todo el sitio y en el editor). Pendiente: notas de ejemplo con fotos azules
 3. **Seguridad del token** — XOR+base64 no es encriptación real; cualquiera puede extraerlo del repo público
 4. ~~**Formulario de contacto roto** — sobre-nosotros.html usa Netlify Forms (suspendido), hay que migrar a Formspree~~ ✅ **Resuelto 2026-04-23**: migrado a Formspree Ajax con endpoint `https://formspree.io/f/xdayypog` (formId `xdayypog`). Incluye honeypot `_gotcha` anti-spam y manejo declarativo con `data-fs-*`.
 
