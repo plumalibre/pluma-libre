@@ -49,23 +49,26 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
 ├── articulos/
 │   ├── plantilla.html          # NO BORRAR - base para notas
 │   └── [notas].html
-└── herramientas/
-    ├── editor.html             # Editor v9 - publicación y generación de posts integrada
-    └── generar-clave.html      # Utility local - encriptar token con contraseña
+└── banners.json                # Config de banners publicitarios (A/B/C)
 ```
 
-## Editor v10 (herramientas/editor.html)
+> **Nota:** El editor ya NO vive en este repo. Se movió a su propio repositorio
+> **`plumalibre/editor`** (archivo único `editor.html`). Publica notas a este
+> sitio vía GitHub API. Ver la sección "Editor" abajo.
 
-**Archivo único de ~1400 líneas, todo inline (HTML+CSS+JS).**
+## Editor v10 (repo `plumalibre/editor` → `editor.html`)
 
-3 pestañas principales:
+**Vive en su propio repo `plumalibre/editor`. Archivo único `editor.html` (~2700 líneas), todo inline (HTML+CSS+JS).** Publica notas a `plumalibre.github.io` vía GitHub API.
+
+Pestañas principales:
 1. **📝 Escribir** — formulario con toolbar (H2, H3, cita, negrita, cursiva, foto, video, línea, 2 columnas). Publicar y preview son botones dentro del flujo, no pestañas.
 2. **📱 Redes** — genera posts automáticos para Facebook, X, Instagram y Threads.
-3. **📋 Historial** — lista notas publicadas, permite editar y borrar.
+3. **📋 Historial** — lista notas publicadas con buscador en vivo; permite editar, borrar, despublicar/republicar (toggle online/offline) y deshacer últimas publicaciones.
+4. **📊 Stats** — dashboard GA4 (tiempo real, resumen, top notas, fuentes, dispositivos, países).
 
 Tres botones en la barra superior:
 - 🌙 Modo oscuro
-- 📢 **Publicidad** — abre modal fullscreen para administrar banners (Banner A home + Banner B nota) sin tocar código: checkbox activo, drag/drop de imagen con compresión adaptativa, link y alt. Cada guardado genera 1-2 commits (imagen si cambió + `banners.json`).
+- 📢 **Publicidad** — abre modal fullscreen para administrar banners (Banner A home + Banner B nota + Banner C grid) sin tocar código: checkbox activo, drag/drop de imagen con compresión adaptativa, link y alt. Cada guardado genera 1-2 commits (imagen si cambió + `banners.json`).
 - ⚙️ Configuración GitHub (usuario, repo, token)
 
 **Publicación:** usa GitHub API directamente desde el navegador con un token encriptado con XOR+base64 (SEGURIDAD DÉBIL - PENDIENTE DE MEJORAR).
