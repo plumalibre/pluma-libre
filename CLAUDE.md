@@ -54,14 +54,15 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
     └── generar-clave.html      # Utility local - encriptar token con contraseña
 ```
 
-## Editor v10 (herramientas/editor.html)
+## Editor (repo propio: plumalibre/editor)
 
-**Archivo único de ~1400 líneas, todo inline (HTML+CSS+JS).**
+**Ya NO vive en `herramientas/` de este repo.** Es un repo aparte desplegado en Cloudflare Pages: https://editor-5gq.pages.dev — archivo único `editor.html` (~2700 líneas, todo inline), PWA instalable con service worker (`sw.js`, bumpear `CACHE_VERSION` en cada cambio del editor) y login con contraseña.
 
-3 pestañas principales:
-1. **📝 Escribir** — formulario con toolbar (H2, H3, cita, negrita, cursiva, foto, video, línea, 2 columnas). Publicar y preview son botones dentro del flujo, no pestañas.
+4 pestañas:
+1. **📝 Escribir** — editor rico con toolbar (H2, H3, cita, negrita, cursiva, foto, video, línea). Publicar/preview son botones del flujo. Al publicar también actualiza la página de sección (`secciones/*.html`) y `sitemap.xml` (desde 2026-07-02).
 2. **📱 Redes** — genera posts automáticos para Facebook, X, Instagram y Threads.
-3. **📋 Historial** — lista notas publicadas, permite editar y borrar.
+3. **📋 Historial** — lista notas publicadas (online y borradores en `articulos-borrador/`), permite editar y borrar (borrar también limpia sección y sitemap).
+4. **📊 Stats** — dashboard GA4. Requiere el Worker de Cloudflare de `worker/` (ver `worker/GUIA-STATS.md` en el repo del editor).
 
 Tres botones en la barra superior:
 - 🌙 Modo oscuro
