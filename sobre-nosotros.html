@@ -14,8 +14,6 @@
   {"@context":"https://schema.org","@type":"AboutPage","url":"https://plumalibre.github.io/sobre-nosotros.html","name":"Sobre Nosotros — Pluma Libre","mainEntity":{"@type":"NewsMediaOrganization","name":"Pluma Libre","url":"https://plumalibre.github.io","logo":"https://plumalibre.github.io/assets/logo-simbolo.png","description":"Medio Informativo de Interés Local, Nacional e Internacional","foundingDate":"2002-02","founder":{"@type":"Person","name":"Rolando Ramírez Pérez"},"foundingLocation":{"@type":"Place","name":"Sonsonate, El Salvador"},"email":"contacto@plumalibre.press","sameAs":["https://www.facebook.com/plumalibre.press/","https://www.instagram.com/plumalibrepress/","https://x.com/PlumaLibrePress","https://www.youtube.com/@PlumaLibre-k5z"]}}
   </script>
   <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-TZRTJLP5KT"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-TZRTJLP5KT");</script>
-  <!-- Formspree Ajax (formId: xdayypog) -->
-  <script src="https://cdn.jsdelivr.net/npm/@formspree/ajax@1" defer></script>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
@@ -93,8 +91,11 @@
     <h2>Envianos un mensaje</h2>
     <p>¿Tenés una noticia, denuncia o sugerencia? Escribinos.</p>
     <div class="form-box">
-      <form id="contactoForm" action="https://formspree.io/f/xdayypog" method="POST">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <form id="contactoForm" action="https://formsubmit.co/ajax/contacto@plumalibre.press" method="POST">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde plumalibre.press">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <div class="field"><label for="nombre">Nombre (opcional)</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" data-fs-field><span class="form-error" data-fs-error="nombre" style="color:#D32F2F;font-size:.8rem;display:block;margin-top:4px" aria-live="polite"></span></div>
         <div class="field"><label for="correo">Correo (opcional)</label><input type="email" id="correo" name="correo" placeholder="Para responderte" data-fs-field><span class="form-error" data-fs-error="correo" style="color:#D32F2F;font-size:.8rem;display:block;margin-top:4px" aria-live="polite"></span></div>
         <div class="field"><label for="tipo">Tipo de mensaje</label><select id="tipo" name="tipo" data-fs-field><option value="noticia">Tengo una noticia</option><option value="denuncia">Denuncia</option><option value="publicidad">Quiero anunciarme / Publicidad</option><option value="sugerencia">Sugerencia</option><option value="otro">Otro</option></select><span class="form-error" data-fs-error="tipo" style="color:#D32F2F;font-size:.8rem;display:block;margin-top:4px" aria-live="polite"></span></div>
@@ -126,7 +127,7 @@
     document.querySelectorAll('.nav a').forEach(l=>l.addEventListener('click',()=>{nv.classList.remove('open');mb.classList.remove('open');}));
     const tt=document.getElementById('toTop');window.addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>400));
     tt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
-    // Handler Formspree Ajax — formId: xdayypog
+    // Handler FormSubmit Ajax — envía a contacto@plumalibre.press
     (function(){
       const form=document.getElementById('contactoForm');if(!form)return;
       const success=form.querySelector('[data-fs-success]');
@@ -138,13 +139,9 @@
         e.preventDefault();clearErr();btn.disabled=true;btn.textContent='Enviando...';
         try{
           const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-          if(r.ok){form.querySelectorAll('.field').forEach(f=>f.style.display='none');btn.style.display='none';success.hidden=false;form.reset();}
-          else{
-            const j=await r.json().catch(()=>({}));
-            if(j.errors&&j.errors.length)j.errors.forEach(er=>showErr(er.field||'mensaje',er.message||'Campo inválido'));
-            else showErr('mensaje','❌ No se pudo enviar. Intentá de nuevo.');
-            btn.disabled=false;btn.innerHTML=btnHTML;
-          }
+          const j=await r.json().catch(()=>({}));
+          if(r.ok&&(j.success==='true'||j.success===true)){form.querySelectorAll('.field').forEach(f=>f.style.display='none');btn.style.display='none';success.hidden=false;form.reset();}
+          else{showErr('mensaje','❌ No se pudo enviar. Intentá de nuevo.');btn.disabled=false;btn.innerHTML=btnHTML;}
         }catch(err){showErr('mensaje','❌ Error de red. Revisá tu conexión.');btn.disabled=false;btn.innerHTML=btnHTML;}
       });
     })();
