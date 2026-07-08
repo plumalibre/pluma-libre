@@ -43,6 +43,16 @@
   </url>
   <!-- ✏️ AGREGAR: Cada vez que publiques una nota nueva, agregá un bloque como este:
   <url>
+    <loc>https://plumalibre.github.io/articulos/milagro-en-venezuela-rescatan-a-un-hombre-tras-ocho-dias-bajo-los-escombros.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://plumalibre.github.io/articulos/el-papa-leon-xiv-pide-perdon-por-el-papel-de-la-iglesia-en-la-esclavitud.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://plumalibre.github.io/articulos/manuel-gil-en-hablemos-la-mayoria-legislativa-es-el-soporte-de-la-dictadura.html</loc>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
