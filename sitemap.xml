@@ -204,4 +204,9 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/caso-saqueo-publico-vanda-pignato-es-absuelta-por.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
