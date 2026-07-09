@@ -32,7 +32,7 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
 ```
 /
 ├── index.html                  # Homepage
-├── sobre-nosotros.html         # Sobre + contacto (form Formspree, endpoint xdayypog)
+├── sobre-nosotros.html         # Sobre + contacto (form FormSubmit → redaccion@plumalibre.press)
 ├── style.css                   # Estilos globales v3
 ├── robots.txt
 ├── sitemap.xml
@@ -165,7 +165,13 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 1. ~~**Google Analytics 4** — placeholder hardcoded en TODAS las páginas, pendiente de reemplazar.~~ ✅ **Resuelto 2026-04-23**: GA4 activo con ID `G-TZRTJLP5KT` (cuenta `prensaplumalibre@gmail.com`). Integrado en homepage, 5 secciones, sobre-nosotros, plantilla de artículos y en el template `genHTML()` del editor v9 (así cada nota nueva nace ya trackeada).
 2. **Contenido placeholder** — ~~sobre-nosotros genérico~~ ✅ sobre-nosotros ya tiene contenido real (historia, equipo, redes; revisado 2026-07-02: se agregó Internacional a la lista de secciones, JSON-LD AboutPage, "cofundador"→"codirector" y se unificó Facebook a `facebook.com/plumalibre.press` en todo el sitio y en el editor). ~~Cards de ejemplo con fotos azules en secciones~~ ✅ **Resuelto 2026-07-02**: se publicó 1 nota real por sección (7 notas, fotos de Wikimedia Commons con crédito CC en el pie de foto) y las cards placeholder de `secciones/*.html` se reemplazaron por cards reales. Restante: `articulos/brigada-medica-atiende-200-personas-zona-rural.html` aún usa foto placeholder naranja (nota real, falta foto), y la card "Contribuyentes... declarar la renta" tiene badge **Religión** aunque es tema económico (revisar si se reclasifica).
 3. **Seguridad del token** — ✅ **Mayormente resuelto 2026-07-05**: el proxy `/gh/` del Worker `plumalibre-analytics` quedó activo con un token fine-grained de la cuenta `plumalibre` (solo repo del sitio, Contents R/W) cargado como secreto de Cloudflare (`GITHUB_TOKEN`). El editor enruta automáticamente todas las llamadas a GitHub por el proxy cuando la config del Worker (URL + API Key en 📊 Stats) está completa; el token ya no necesita vivir en el navegador. **Restante:** quitar el token XOR+base64 embebido en `editor.html` (campos `data`/`check`) y revocar ese token viejo en GitHub; borrar el token del campo ⚙️ Configuración GitHub del editor en los dispositivos donde esté guardado. Ojo: el token del proxy quedó sin fecha de expiración — rotarlo a futuro por uno con vencimiento.
-4. ~~**Formulario de contacto roto** — sobre-nosotros.html usa Netlify Forms (suspendido), hay que migrar a Formspree~~ ✅ **Resuelto 2026-04-23**: migrado a Formspree Ajax con endpoint `https://formspree.io/f/xdayypog` (formId `xdayypog`). Incluye honeypot `_gotcha` anti-spam y manejo declarativo con `data-fs-*`.
+4. ~~**Formulario de contacto roto** — sobre-nosotros.html usa Netlify Forms (suspendido), hay que migrar a Formspree~~ ✅ **Migrado 2×**: primero a Formspree (2026-04-23), y el 2026-07-08 a **FormSubmit** (`https://formsubmit.co/ajax/redaccion@plumalibre.press`, activado y probado) porque Formspree free no permitía cambiar el destinatario del Gmail al correo profesional. Honeypot `_honey` anti-spam, `_captcha=false`, `_template=table`.
+
+## Correo profesional (Zoho Mail free, desde 2026-07-08)
+
+- **redaccion@plumalibre.press** = buzón real y superadmin (webmail: mail.zoho.com; admin: mailadmin.zoho.com).
+- **contacto@** y **publicidad@** = **alias** de redaccion@ (todo cae en la misma bandeja; se puede enviar "como" cualquiera). `direccion@` = usuario aparte sin usar.
+- DNS en Namecheap: MX (Custom MX) + SPF + DKIM, todos verificados ✅. Opción "Quiero anunciarme / Publicidad" agregada al form; correos visibles en la web: contacto@ y publicidad@.
 
 ## Convenciones de código
 
