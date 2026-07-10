@@ -254,4 +254,9 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/espana-vence-2-1-a-belgica-y-jugara-su-segunda-semifinal-mundialista.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
