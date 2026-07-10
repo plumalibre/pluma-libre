@@ -1,7 +1,7 @@
 # 📰 Pluma Libre — Sitio Web
 
 Medio informativo de interés nacional e internacional con sede en Sonsonate, El Salvador.
-Sitio en producción: **https://plumalibre.github.io**
+Sitio en producción: **https://plumalibre.press**
 
 ---
 
@@ -51,7 +51,7 @@ pluma-libre/
 
 ### Flujo recomendado — editor v9 (desde el celular o la compu)
 
-1. Abrí **https://plumalibre.github.io/herramientas/editor.html**
+1. Abrí **https://plumalibre.press/herramientas/editor.html**
 2. Ingresá tu clave (desbloquea el token de GitHub encriptado).
 3. Usá las pestañas:
    - **📝 Escribir** — título, subtítulo, sección, cuerpo (con toolbar: H2, H3, cita, negrita, cursiva, imagen, video, línea, 2 columnas).

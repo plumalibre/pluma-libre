@@ -2,245 +2,245 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://plumalibre.github.io/</loc>
+    <loc>https://plumalibre.press/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/sobre-nosotros.html</loc>
+    <loc>https://plumalibre.press/sobre-nosotros.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/religioso.html</loc>
+    <loc>https://plumalibre.press/secciones/religioso.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/politico.html</loc>
+    <loc>https://plumalibre.press/secciones/politico.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/cultural.html</loc>
+    <loc>https://plumalibre.press/secciones/cultural.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/social.html</loc>
+    <loc>https://plumalibre.press/secciones/social.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/economico.html</loc>
+    <loc>https://plumalibre.press/secciones/economico.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/secciones/deportivo.html</loc>
+    <loc>https://plumalibre.press/secciones/deportivo.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- ✏️ AGREGAR: Cada vez que publiques una nota nueva, agregá un bloque como este:
   <url>
-    <loc>https://plumalibre.github.io/articulos/nombre-de-tu-nota.html</loc>
+    <loc>https://plumalibre.press/articulos/nombre-de-tu-nota.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   -->
   <url>
-    <loc>https://plumalibre.github.io/articulos/marcelo-arevalo-hace-historia-y-conquista-wimbledon-en-dobles-mixto.html</loc>
+    <loc>https://plumalibre.press/articulos/marcelo-arevalo-hace-historia-y-conquista-wimbledon-en-dobles-mixto.html</loc>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/francia-vence-2-0-a-marruecos-y-es-el-primer-semifinalista-del-mundial-2026.html</loc>
+    <loc>https://plumalibre.press/articulos/francia-vence-2-0-a-marruecos-y-es-el-primer-semifinalista-del-mundial-2026.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-turismo-impulsa-el-crecimiento-de-la-economia-salvadorena.html</loc>
+    <loc>https://plumalibre.press/articulos/el-turismo-impulsa-el-crecimiento-de-la-economia-salvadorena.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-salvador-registra-489-nuevos-casos-de-vih-en-la-primera-mitad-de-2026.html</loc>
+    <loc>https://plumalibre.press/articulos/el-salvador-registra-489-nuevos-casos-de-vih-en-la-primera-mitad-de-2026.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/francia-y-marruecos-abren-los-cuartos-de-final-del-mundial-2026.html</loc>
+    <loc>https://plumalibre.press/articulos/francia-y-marruecos-abren-los-cuartos-de-final-del-mundial-2026.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/rafael-marquez-es-el-nuevo-director-tecnico-de-mexico.html</loc>
+    <loc>https://plumalibre.press/articulos/rafael-marquez-es-el-nuevo-director-tecnico-de-mexico.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/trump-da-por-terminado-el-alto-al-fuego-con-iran.html</loc>
+    <loc>https://plumalibre.press/articulos/trump-da-por-terminado-el-alto-al-fuego-con-iran.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/sonsonate-suma-598-accidentes-de-transito-en-el-primer-semestre-de-2026.html</loc>
+    <loc>https://plumalibre.press/articulos/sonsonate-suma-598-accidentes-de-transito-en-el-primer-semestre-de-2026.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/milagro-en-venezuela-rescatan-a-un-hombre-tras-ocho-dias-bajo-los-escombros.html</loc>
+    <loc>https://plumalibre.press/articulos/milagro-en-venezuela-rescatan-a-un-hombre-tras-ocho-dias-bajo-los-escombros.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-papa-leon-xiv-pide-perdon-por-el-papel-de-la-iglesia-en-la-esclavitud.html</loc>
+    <loc>https://plumalibre.press/articulos/el-papa-leon-xiv-pide-perdon-por-el-papel-de-la-iglesia-en-la-esclavitud.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/manuel-gil-en-hablemos-la-mayoria-legislativa-es-el-soporte-de-la-dictadura.html</loc>
+    <loc>https://plumalibre.press/articulos/manuel-gil-en-hablemos-la-mayoria-legislativa-es-el-soporte-de-la-dictadura.html</loc>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/espana-elimina-a-portugal-con-gol-agonico-de-merino.html</loc>
+    <loc>https://plumalibre.press/articulos/espana-elimina-a-portugal-con-gol-agonico-de-merino.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/noruega-elimina-a-brasil-con-doblete-de-haaland-y-neymar-se-retira.html</loc>
+    <loc>https://plumalibre.press/articulos/noruega-elimina-a-brasil-con-doblete-de-haaland-y-neymar-se-retira.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/inglaterra-apaga-la-fiesta-del-azteca-y-elimina-3-2-a-mexico.html</loc>
+    <loc>https://plumalibre.press/articulos/inglaterra-apaga-la-fiesta-del-azteca-y-elimina-3-2-a-mexico.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/iran-despide-a-jamenei-entre-consignas-de-venganza-y-dudas-por-la-sucesion.html</loc>
+    <loc>https://plumalibre.press/articulos/iran-despide-a-jamenei-entre-consignas-de-venganza-y-dudas-por-la-sucesion.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-salvador-tendra-vuelos-directos-a-madrid-y-barcelona-desde-septiembre.html</loc>
+    <loc>https://plumalibre.press/articulos/el-salvador-tendra-vuelos-directos-a-madrid-y-barcelona-desde-septiembre.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/panchimalco-saborea-su-tradicion-festival-del-cerdo-reune-50-emprendedores.html</loc>
+    <loc>https://plumalibre.press/articulos/panchimalco-saborea-su-tradicion-festival-del-cerdo-reune-50-emprendedores.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/ivan-barton-dirigira-el-suiza-colombia-de-octavos-tras-la-polemica.html</loc>
-    <loc>https://plumalibre.github.io/articulos/corte-de-cuentas-inicia-examenes-especiales-en-sonsonate-centro-y-oeste.html</loc>
+    <loc>https://plumalibre.press/articulos/ivan-barton-dirigira-el-suiza-colombia-de-octavos-tras-la-polemica.html</loc>
+    <loc>https://plumalibre.press/articulos/corte-de-cuentas-inicia-examenes-especiales-en-sonsonate-centro-y-oeste.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-salvador-envia-septimo-avion-con-relevo-de-120-especialistas-a-venezuela.html</loc>
+    <loc>https://plumalibre.press/articulos/el-salvador-envia-septimo-avion-con-relevo-de-120-especialistas-a-venezuela.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/onda-tropical-dejara-lluvias-y-posible-granizo-este-domingo.html</loc>
+    <loc>https://plumalibre.press/articulos/onda-tropical-dejara-lluvias-y-posible-granizo-este-domingo.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/corte-de-energia-este-martes-en-tres-distritos-de-sonsonate.html</loc>
+    <loc>https://plumalibre.press/articulos/corte-de-energia-este-martes-en-tres-distritos-de-sonsonate.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/ivan-barton-dirigira-el-suiza-colombia-de-octavos-del-mundial.html</loc>
+    <loc>https://plumalibre.press/articulos/ivan-barton-dirigira-el-suiza-colombia-de-octavos-del-mundial.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/salvadorenos-en-el-exterior-podran-votar-desde-el-celular-en-2027.html</loc>
+    <loc>https://plumalibre.press/articulos/salvadorenos-en-el-exterior-podran-votar-desde-el-celular-en-2027.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/hablemos-manuel-gil-precandidato-fmln-sonsonate.html</loc>
+    <loc>https://plumalibre.press/articulos/hablemos-manuel-gil-precandidato-fmln-sonsonate.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/alcaldia-de-sonsonate-mejorara-la-casa-comunal-del-canton-el-almendro.html</loc>
+    <loc>https://plumalibre.press/articulos/alcaldia-de-sonsonate-mejorara-la-casa-comunal-del-canton-el-almendro.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/cabo-verde-cae-3-2-ante-argentina-en-la-prorroga.html</loc>
+    <loc>https://plumalibre.press/articulos/cabo-verde-cae-3-2-ante-argentina-en-la-prorroga.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/reforma-constitucional-habilita-reeleccion-presidencial-indefinida.html</loc>
+    <loc>https://plumalibre.press/articulos/reforma-constitucional-habilita-reeleccion-presidencial-indefinida.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/fmi-proyecta-crecimiento-cercano-al-4-para-el-salvador.html</loc>
+    <loc>https://plumalibre.press/articulos/fmi-proyecta-crecimiento-cercano-al-4-para-el-salvador.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/rusia-lanza-su-mayor-ofensiva-con-drones-y-misiles-sobre-kiev.html</loc>
+    <loc>https://plumalibre.press/articulos/rusia-lanza-su-mayor-ofensiva-con-drones-y-misiles-sobre-kiev.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/keiko-fujimori-es-confirmada-como-presidenta-electa-de-peru.html</loc>
+    <loc>https://plumalibre.press/articulos/keiko-fujimori-es-confirmada-como-presidenta-electa-de-peru.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/el-vaticano-excomulga-a-la-sociedad-de-san-pio-x.html</loc>
+    <loc>https://plumalibre.press/articulos/el-vaticano-excomulga-a-la-sociedad-de-san-pio-x.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/fiestas-julias-2026-santa-ana-se-alista-para-su-celebracion-mayor.html</loc>
+    <loc>https://plumalibre.press/articulos/fiestas-julias-2026-santa-ana-se-alista-para-su-celebracion-mayor.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/asamblea-aprueba-prorroga-52-del-regimen-de-excep.html</loc>
+    <loc>https://plumalibre.press/articulos/asamblea-aprueba-prorroga-52-del-regimen-de-excep.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/remesas-mantienen-ritmo-record-923-millones-en-ma.html</loc>
+    <loc>https://plumalibre.press/articulos/remesas-mantienen-ritmo-record-923-millones-en-ma.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/mundial-2026-asi-se-jugaran-los-octavos-de-final.html</loc>
+    <loc>https://plumalibre.press/articulos/mundial-2026-asi-se-jugaran-los-octavos-de-final.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/mined-instruye-no-enviar-a-clases-a-estudiantes-c.html</loc>
+    <loc>https://plumalibre.press/articulos/mined-instruye-no-enviar-a-clases-a-estudiantes-c.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/lefebvristas-consagran-cuatro-obispos-sin-permiso.html</loc>
+    <loc>https://plumalibre.press/articulos/lefebvristas-consagran-cuatro-obispos-sin-permiso.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/santa-ana-elige-a-su-reina-y-se-alista-para-las-f.html</loc>
+    <loc>https://plumalibre.press/articulos/santa-ana-elige-a-su-reina-y-se-alista-para-las-f.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://plumalibre.github.io/articulos/venezuela-enfrenta-emergencia-tras-terremotos-que.html</loc>
+    <loc>https://plumalibre.press/articulos/venezuela-enfrenta-emergencia-tras-terremotos-que.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>

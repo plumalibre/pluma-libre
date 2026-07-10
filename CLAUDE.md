@@ -7,7 +7,7 @@
 Medio de comunicación digital independiente de Sonsonate, El Salvador. Equipo de 2 personas.
 Cobertura local, nacional e internacional. Periodismo crítico sin ataduras políticas ni institucionales.
 
-**Sitio:** https://plumalibre.github.io
+**Sitio:** https://plumalibre.press
 **Repo:** https://github.com/plumalibre/plumalibre.github.io
 **Hosting:** GitHub Pages (solo HTML/CSS/JS, sin backend, sin CMS)
 
