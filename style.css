@@ -722,7 +722,8 @@ body:has(.news-grid > article) .hero {
   line-height: 1.7;
   margin-bottom: 22px;
   color: var(--text-primary);
-  text-align: left;
+  text-align: justify;
+  text-align-last: left;
   hyphens: auto;
   -webkit-hyphens: auto;
   overflow-wrap: anywhere;
