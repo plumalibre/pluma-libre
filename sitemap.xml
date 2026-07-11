@@ -259,4 +259,9 @@
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/cinco-muertos-tras-ser-embestidos-por-una-rastra-en-la-autopista-a-comalapa.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
