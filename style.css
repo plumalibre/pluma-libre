@@ -1267,3 +1267,19 @@ body:has(.news-grid > article) .hero {
   max-width: 520px;
   margin: 0 auto;
 }
+
+/* ============================================
+   CONTACTO — bloque al final de cada nota
+   ============================================ */
+.contact-cta {
+  margin: 0 0 28px;
+  padding: 18px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+.contact-cta p { font-size: 0.88rem; color: var(--text-secondary); margin: 0 0 6px; font-weight: 500; }
+.contact-cta p:last-child { margin-bottom: 0; }
+.contact-cta a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.contact-cta a:hover { text-decoration: underline; }
