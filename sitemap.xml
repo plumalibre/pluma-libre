@@ -299,4 +299,9 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/pluma-libre-despide-a-mariano-galan-cronista-incan.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
