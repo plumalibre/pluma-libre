@@ -18,6 +18,10 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"Pluma Libre","url":"https://plumalibre.press","logo":"https://plumalibre.press/assets/logo-simbolo.png","description":"Medio Informativo de Interés Local, Nacional e Internacional","foundingLocation":{"@type":"Place","name":"Sonsonate, El Salvador"},"sameAs":["https://www.facebook.com/plumalibre.press/","https://www.instagram.com/plumalibrepress/","https://x.com/PlumaLibrePress","https://www.youtube.com/@PlumaLibre-k5z"]}
   </script>
+  <!-- Exclusión de tracking para editores. Se activa visitando /?pl_no_track=1
+       (queda en localStorage de ese dispositivo + navegador). Se revierte con /?pl_track=1.
+       Debe ejecutarse ANTES de cargar gtag para que setear ga-disable surta efecto. -->
+  <script>(function(){try{var p=new URLSearchParams(location.search);if(p.get('pl_no_track')==='1'){localStorage.setItem('pl_no_track','1');history.replaceState({},'',location.pathname+location.hash);}if(p.get('pl_track')==='1'){localStorage.removeItem('pl_no_track');history.replaceState({},'',location.pathname+location.hash);}if(localStorage.getItem('pl_no_track')==='1'){window['ga-disable-G-TZRTJLP5KT']=true;}}catch(e){}})();</script>
   <!-- Google Analytics 4 (G-TZRTJLP5KT) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZRTJLP5KT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TZRTJLP5KT');</script>
