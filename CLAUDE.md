@@ -151,6 +151,7 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-07-18: publicadas 2 notas de Social: condena de 26 años por abuso de menor en Sonsonate Centro (portada/hero, imagen = arte oficial FGR recortado, `assets/nota-condena-fgr-sonsonate.jpg`) y desarticulación de red de narcotráfico en Sonsonate (2 fotos oficiales de la FGR: `assets/nota-narco-operativo-sonsonate.jpg` principal + `nota-narco-droga-incautada.jpg` inline). Cards en home + Social + sitemap. Fuentes: FGR (Facebook oficial), La Noticia SV, Infobae. El sismo de Chiapas salió del hero pero sigue en grid y sección.
 - Migración completa de Netlify (suspendido) a GitHub Pages
 - Editor pasó de v8 a v9: integración del generador de posts como 5ta pestaña
 - Eliminación de `herramientas/redes.html` (redundante tras integración)
