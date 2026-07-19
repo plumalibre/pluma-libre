@@ -151,6 +151,7 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-07-18 (tarde): publicadas 4 notas nacionales: deuda pública $34,630M (Economía, foto BCR Wikimedia CC BY-SA 4.0), sequía en el oriente (Social, foto USDA Wikimedia CC BY-SA 2.0), Asamblea aprueba $1.35M para estadios con contraste Colonia Izalco (Política, foto Salón Azul CC0) y Claudia Ortiz vs. Vamos (Política, foto LPG/Wikimedia CC BY 3.0). Cards en home + sección + sitemap. Fuentes: BCR/elsalvador.com, MARN/Infobae, EDH/Asamblea, Diario El Mundo.
 - 2026-07-18: publicadas 2 notas de Social: condena de 26 años por abuso de menor en Sonsonate Centro (portada/hero, imagen = arte oficial FGR recortado, `assets/nota-condena-fgr-sonsonate.jpg`) y desarticulación de red de narcotráfico en Sonsonate (2 fotos oficiales de la FGR: `assets/nota-narco-operativo-sonsonate.jpg` principal + `nota-narco-droga-incautada.jpg` inline). Cards en home + Social + sitemap. Fuentes: FGR (Facebook oficial), La Noticia SV, Infobae. El sismo de Chiapas salió del hero pero sigue en grid y sección.
 - Migración completa de Netlify (suspendido) a GitHub Pages
 - Editor pasó de v8 a v9: integración del generador de posts como 5ta pestaña
