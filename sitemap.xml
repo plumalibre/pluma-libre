@@ -135,6 +135,10 @@
   </url>
   <url>
     <loc>https://plumalibre.press/articulos/ivan-barton-dirigira-el-suiza-colombia-de-octavos-tras-la-polemica.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://plumalibre.press/articulos/corte-de-cuentas-inicia-examenes-especiales-en-sonsonate-centro-y-oeste.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
@@ -380,7 +384,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://plumalibre.press/articulos/espana-vence-a-argentina-y-es-campeona-del-mundial-2026.html</loc>
+    <loc>https://plumalibre.press/articulos/asi-comenzo-la-pelea-que-mancho-la-final-del-mundial-2026.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
