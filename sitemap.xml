@@ -49,6 +49,28 @@
   </url>
   -->
   <url>
+    <loc>https://plumalibre.press/secciones/tecnologico.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://plumalibre.press/secciones/entrevistas.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/china-sol-artificial-iman-fusion-nuclear.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/proyecto-panama-anthropic-escaneo-libros.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://plumalibre.press/secciones/opinion.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>

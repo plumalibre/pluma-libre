@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Fri, 31 Jul 2026 14:19:16 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 14:39:32 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA</title>
+    <link>https://plumalibre.press/articulos/proyecto-panama-anthropic-escaneo-libros.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/proyecto-panama-anthropic-escaneo-libros.html</guid>
+    <description>Documentos judiciales revelaron el plan interno para «escanear destructivamente todos los libros del mundo». Un juez lo declaró legal; lo que le costó 1,500 millones de dólares fueron otros 7 millones de libros pirateados.</description>
+    <category>Tecnología</category>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-proyecto-panama-anthropic.jpg" type="image/jpeg"/>
+  </item>
   <item>
     <title>Día del Periodista: a 202 años del primer periódico, informar en El Salvador sigue siendo un acto de riesgo</title>
     <link>https://plumalibre.press/articulos/editorial-dia-del-periodista-salvadoreno-2026.html</link>
@@ -15,6 +24,15 @@
     <category>Opinión</category>
     <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-dia-del-periodista-2026.jpg" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>China terminó el imán más grande del mundo para su «sol artificial»: 582 toneladas para sostener fuego a 100 millones de grados</title>
+    <link>https://plumalibre.press/articulos/china-sol-artificial-iman-fusion-nuclear.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/china-sol-artificial-iman-fusion-nuclear.html</guid>
+    <description>El Instituto de Física del Plasma de la Academia China de Ciencias completó la pieza clave de su reactor de fusión. El aparato estará listo en 2027 y esperan generar electricidad hacia 2030.</description>
+    <category>Tecnología</category>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-sol-artificial-china.jpg" type="image/jpeg"/>
   </item>
   <item>
     <title>La UES conmemora 51 años de la masacre del 30 de julio entre reclamos de memoria y justicia</title>
@@ -258,24 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-asamblea-estadio.jpg" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Trump culpa a Canadá por el humo de los incendios y amenaza con sumar el costo a los aranceles</title>
-    <link>https://plumalibre.press/articulos/trump-culpa-a-canada-por-el-humo-de-los-incendios-y-amenaza-con-sumar-el-costo-a-los-aranceles.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/trump-culpa-a-canada-por-el-humo-de-los-incendios-y-amenaza-con-sumar-el-costo-a-los-aranceles.html</guid>
-    <description>El presidente estadounidense acusó a Ottawa de “negligencia deliberada” en el manejo de sus bosques, mientras más de 100 millones de personas en 18 estados permanecen bajo alertas por la calidad del aire.</description>
-    <category>Internacional</category>
-    <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-internacional-trump-humo-og.jpg" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Sismo de magnitud 7.4 frente a la costa de Chiapas se sintió en El Salvador</title>
-    <link>https://plumalibre.press/articulos/sismo-74-chiapas-se-sintio-en-el-salvador.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/sismo-74-chiapas-se-sintio-en-el-salvador.html</guid>
-    <description>El movimiento se registró a las 8:48 a.m. de este viernes y se percibió en varios departamentos del país. Protección Civil no reporta víctimas ni daños y las autoridades descartaron amenaza de tsunami para Centroamérica.</description>
-    <category>Social</category>
-    <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/sismo-74-chiapas-og.jpg" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
