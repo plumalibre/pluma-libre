@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://plumalibre.press/sitemap.xml
+Sitemap: https://plumalibre.press/rss.xml

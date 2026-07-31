@@ -1,0 +1,67 @@
+# Pluma Libre
+
+> Medio de comunicación digital independiente de Sonsonate, El Salvador. Periodismo local, nacional e internacional, sin ataduras políticas ni institucionales.
+
+Sitio: https://plumalibre.press
+Contacto: redaccion@plumalibre.press
+Feed RSS: https://plumalibre.press/rss.xml
+Mapa del sitio: https://plumalibre.press/sitemap.xml
+
+El contenido puede citarse indicando la fuente y enlazando a la nota original.
+
+## Secciones
+
+- [Política](https://plumalibre.press/secciones/politico.html)
+- [Economía](https://plumalibre.press/secciones/economico.html)
+- [Deportes](https://plumalibre.press/secciones/deportivo.html)
+- [Social](https://plumalibre.press/secciones/social.html)
+- [Religión](https://plumalibre.press/secciones/religioso.html)
+- [Cultura](https://plumalibre.press/secciones/cultural.html)
+- [Internacional](https://plumalibre.press/secciones/internacional.html)
+
+## Notas recientes
+
+- [La UES conmemora 51 años de la masacre del 30 de julio entre reclamos de memoria y justicia](https://plumalibre.press/articulos/ues-conmemora-51-anos-masacre-30-julio-1975.html) — Social, 2026-07-30
+- [ Partido VAMOS presenta candidaturas de la diáspora para las elecciones legislativas](https://plumalibre.press/articulos/partido-vamos-presenta-candidaturas-de-la-diaspora.html) — Política, 2026-07-30
+- [Alcalde de Sonsonate Centro detalla el costo del parque Rafael Campo: $57,368.19](https://plumalibre.press/articulos/parque-rafael-campo-costo-alcaldia-sonsonate-centro.html) — Política, 2026-07-30
+- [El peor incendio de Francia desde 1949 cede: 84,000 evacuados volvieron a casa este jueves](https://plumalibre.press/articulos/incendios-europa-francia-espana-30-julio-2026.html) — Internacional, 2026-07-30
+- [Ángel Madrid, candidato a diputado por Sonsonate, estará en HABLEMOS este viernes](https://plumalibre.press/articulos/angel-madrid-hablemos-entrevista-31-julio.html) — Política, 2026-07-30
+- [La Parroquia La Resurrección invita al Seminario de Vida en el Espíritu Santo este fin de semana en Sonsonate](https://plumalibre.press/articulos/seminario-vida-espiritu-santo-sonsonate-31-julio.html) — Religión, 2026-07-29
+- [Claudia Ortiz acusa a la Asamblea de usar a sus fotógrafos para espiar su celular en plena sesión](https://plumalibre.press/articulos/claudia-ortiz-acusa-fotografos-asamblea-espiar-celular.html) — Política, 2026-07-29
+- [Ángel Madrid oficializa su candidatura a diputado por Sonsonate: irá en la casilla 2 de ARENA](https://plumalibre.press/articulos/angel-madrid-candidato-diputado-arena-casilla-2.html) — Política, 2026-07-29
+- [Muere Krisma Mancía, la poeta que denunció haber sido despedida de Cultura tras enfermar del corazón](https://plumalibre.press/articulos/muere-krisma-mancia-poeta-salvadorena.html) — Cultura, 2026-07-28
+- [Vacaciones agostinas 2026: los días de asueto y el plan vial, en un año con 820 muertes en carretera](https://plumalibre.press/articulos/vacaciones-agostinas-2026-asuetos-seguridad-vial.html) — Social, 2026-07-25
+- [El FMLN lleva de fórmula presidencial a una enfermera despedida del Hospital Rosales](https://plumalibre.press/articulos/rafael-aguirre-vota-internas-fmln-2026.html) — Política, 2026-07-25
+- [Mayteé Iraheta anuncia una campaña austera: «Las mujeres sabemos hacer de un dólar, maravillas»](https://plumalibre.press/articulos/maytee-iraheta-campana-austera-arena-2027.html) — Política, 2026-07-25
+- [«El Kompagil» busca una diputación por Sonsonate: FMLN vota este domingo](https://plumalibre.press/articulos/kompagil-precandidato-diputado-fmln-sonsonate.html) — Política, 2026-07-25
+- [Kompagil da declaraciones a la prensa en medio de la jornada de internas del FMLN](https://plumalibre.press/articulos/kompagil-declaraciones-jornada-internas-fmln.html) — Política, 2026-07-25
+- [Seis partidos definen hoy sus candidatos rumbo a 2027; el plazo vence el miércoles](https://plumalibre.press/articulos/internas-partidos-26-julio-2026-rumbo-2027.html) — Política, 2026-07-25
+- [Ángel Madrid busca una diputación por Sonsonate: ARENA vota este domingo](https://plumalibre.press/articulos/angel-madrid-precandidato-diputado-arena-sonsonate.html) — Política, 2026-07-25
+- [Aguirre y Madaí Santos, la fórmula del FMLN, votan en las elecciones internas](https://plumalibre.press/articulos/aguirre-madai-santos-formula-fmln-votan-internas.html) — Política, 2026-07-25
+- [Maritza Esmeralda cierra operaciones en la ruta 205 y sus buses pasan a SETCS, según su propietario](https://plumalibre.press/articulos/ruta-205-cambio-de-operador-maritza-esmeralda-setcs.html) — Social, 2026-07-24
+- [Proveedores de uniformes convocan a una concentración pacífica el 29 de julio en San Salvador](https://plumalibre.press/articulos/convocatoria-proveedores-uniformes-concentracion-29-julio.html) — Política, 2026-07-24
+- [Proveedores de uniformes siguen sin recibir la tela y el Ministerio les suspende la reunión sin explicación](https://plumalibre.press/articulos/proveedores-uniformes-reunion-suspendida-sin-respuesta.html) — Política, 2026-07-23
+- [Así comenzó la pelea que manchó la final del Mundial: esto es lo que se sabe](https://plumalibre.press/articulos/asi-comenzo-la-pelea-que-mancho-la-final-del-mundial-2026.html) — Deportes, 2026-07-20
+- [La sequía golpea el oriente: La Unión y Usulután entran en sequía meteorológica y el maíz ya muestra daños](https://plumalibre.press/articulos/sequia-golpea-el-oriente-la-union-y-usulutan-entran-en-sequia-meteorologica.html) — Social, 2026-07-18
+- [La deuda pública de El Salvador llega a $34,630 millones: creció $823 millones en solo cinco meses](https://plumalibre.press/articulos/deuda-publica-de-el-salvador-alcanza-los-34630-millones-a-mayo-de-2026.html) — Economía, 2026-07-18
+- [FGR y PNC desarticulan una red de narcotráfico que operaba en Sonsonate](https://plumalibre.press/articulos/desarticulan-red-de-narcotrafico-que-operaba-en-sonsonate.html) — Social, 2026-07-18
+- [Condenan a 26 años de cárcel a hombre que abusó de una menor en Sonsonate Centro](https://plumalibre.press/articulos/condenan-a-26-anos-a-hombre-que-abuso-de-una-menor-en-sonsonate-centro.html) — Social, 2026-07-18
+- [Claudia Ortiz pide renovar las autoridades de Vamos y el partido la desmiente](https://plumalibre.press/articulos/claudia-ortiz-pide-renovar-autoridades-de-vamos-y-el-partido-la-desmiente.html) — Política, 2026-07-18
+- [Asamblea aprueba $1.35 millones más para estadios mientras comunidades siguen esperando agua](https://plumalibre.press/articulos/asamblea-aprueba-1-35-millones-para-estadios-mientras-comunidades-reclaman-agua.html) — Política, 2026-07-18
+- [Trump culpa a Canadá por el humo de los incendios y amenaza con sumar el costo a los aranceles](https://plumalibre.press/articulos/trump-culpa-a-canada-por-el-humo-de-los-incendios-y-amenaza-con-sumar-el-costo-a-los-aranceles.html) — Internacional, 2026-07-17
+- [Sismo de magnitud 7.4 frente a la costa de Chiapas se sintió en El Salvador](https://plumalibre.press/articulos/sismo-74-chiapas-se-sintio-en-el-salvador.html) — Social, 2026-07-17
+- [Ever Castillo en HABLEMOS: “Entregar todo el poder político a una sola fuerza fue errado”](https://plumalibre.press/articulos/ever-castillo-en-hablemos-entregar-todo-el-poder-a-una-sola-fuerza-politica-fue-errado.html) — Política, 2026-07-17
+- [«Hablemos» recibe a Ever Castillo, precandidato a diputado de ARENA por Sonsonate](https://plumalibre.press/articulos/hablemos-ever-castillo-arena-entrevista-en-vivo.html) — Política, 2026-07-16
+- [Amnistía Internacional: el régimen de excepción podría constituir crímenes de lesa humanidad](https://plumalibre.press/articulos/amnistia-regimen-de-excepcion-crimenes-lesa-humanidad.html) — Política, 2026-07-16
+- [Pluma Libre despide a Mariano Galán, cronista incansable y defensor de la libertad de prensa](https://plumalibre.press/articulos/pluma-libre-despide-a-mariano-galan-cronista-incan.html) — Social, 2026-07-15
+- [Messi y Lamine Yamal: el duelo de generaciones que definirá la final del Mundial 2026](https://plumalibre.press/articulos/messi-y-lamine-yamal-el-duelo-de-generaciones-que.html) — Política, 2026-07-15
+- [España es finalista del Mundial 2026](https://plumalibre.press/articulos/espana-es-finalista-del-mundial-2026.html) — Deportes, 2026-07-15
+- [Investigaciones revelan el surgimiento de un &quot;nuevo club de millonarios&quot; bajo el Gobierno de Bukele](https://plumalibre.press/articulos/investigaciones-revelan-el-surgimiento-de-un-nuevo.html) — Política, 2026-07-14
+- [Semifinales de campeones: por tercera vez en la historia, los cuatro clasificados ya levantaron la Copa](https://plumalibre.press/articulos/semifinales-de-campeones-los-cuatro-clasificados-del-mundial-2026-ya-levantaron-la-copa.html) — Deportes, 2026-07-12
+- [El médico Rafael Aguirre se inscribe como precandidato presidencial del FMLN: “No llego como afiliado, llego como ciudadano”](https://plumalibre.press/articulos/rafael-aguirre-se-inscribe-como-precandidato-presidencial-del-fmln.html) — Política, 2026-07-12
+- [Histórico: Iván Barton será el primer salvadoreño en dirigir una semifinal de un Mundial](https://plumalibre.press/articulos/historico-ivan-barton-sera-el-primer-salvadoreno-en-dirigir-una-semifinal-de-un-mundial.html) — Deportes, 2026-07-12
+- [Nuevas Ideas paralizó el centro de Sonsonate para ratificar planillas que ya estaban decididas](https://plumalibre.press/articulos/el-desorden-de-las-internas-de-nuevas-ideas-paralizo-el-centro-de-sonsonate.html) — Política, 2026-07-12
+
+## Sobre el medio
+
+- [Quiénes somos](https://plumalibre.press/sobre-nosotros.html)
