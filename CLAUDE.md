@@ -36,6 +36,9 @@ Cobertura local, nacional e internacional. Periodismo crítico sin ataduras pol�
 ├── style.css                   # Estilos globales v3
 ├── robots.txt
 ├── sitemap.xml
+├── rss.xml                     # Feed RSS (30 notas) — lo actualiza el editor al publicar
+├── llms.txt                    # Descripción del medio para modelos de lenguaje
+├── herramientas-generar-feed.py # Regenera rss.xml y llms.txt desde articulos/
 ├── assets/
 │   ├── logo.jpg                # Logo (globo azul con pluma)
 │   └── [imágenes de notas]
@@ -151,6 +154,10 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-07-28/30: sesión larga de publicación. **6 notas nuevas**: Krisma Mancía (Cultura, obituario con el ángulo del despido del Ministerio de Cultura), Claudia Ortiz vs. fotógrafos de la Asamblea (Política, primicia — ningún medio lo levantó), Seminario de Vida en el Espíritu Santo de la Parroquia La Resurrección (Religión), Ángel Madrid candidato de ARENA casilla 2 (Política, seguimiento de la del 25-jul donde pedía casilla 3), 51 años de la masacre del 30 de julio de 1975 en la UES (Social) e incendios en Europa/Gironda (Internacional).
+- 2026-07-30: **SEO e indexación**. Auditoría del sitio: 7 notas no estaban en `sitemap.xml` (ya agregadas) y solo 11 de 96 URLs tenían `<lastmod>` (ahora 91). Se creó **`rss.xml`** (30 notas, validado), **`llms.txt`** (para que Gemini/ChatGPT citen con crédito) y `herramientas-generar-feed.py` que regenera ambos desde `articulos/`. `<link rel="alternate">` en las 102 páginas y `robots.txt` declara sitemap + RSS. **Confirmado que Google indexa el sitio** (aparece en resultados). **Pendiente crítico: dar de alta Google Search Console** — sin eso no se puede medir posicionamiento.
+- 2026-07-30: ojo con la marca. Compiten en buscadores `plumalibrenews.com` (Westchester, NY), `plumalibre.com` y "Pluma Libre Newspaper". Además existe una página `facebook.com/plumalibre.net` asociada a Sonsonate que conviene cerrar o redirigir para no dividir la señal con `plumalibre.press`.
+- 2026-07-30: **conflicto de merge** con notas publicadas desde el editor (VAMOS diáspora, Madrid en HABLEMOS, parque Rafael Campo). Se resolvió conservando todas las cards. **Hacer `git pull` antes de tocar `index.html`** si alguien más está publicando.
 - 2026-07-18 (tarde): publicadas 4 notas nacionales: deuda pública $34,630M (Economía, foto BCR Wikimedia CC BY-SA 4.0), sequía en el oriente (Social, foto USDA Wikimedia CC BY-SA 2.0), Asamblea aprueba $1.35M para estadios con contraste Colonia Izalco (Política, foto aérea de estadio de la nota oficial de la Asamblea — la primera versión usó una foto del Salón Azul de 2015 con Sánchez Cerén y se reemplazó el mismo día) y Claudia Ortiz vs. Vamos (Política, foto LPG/Wikimedia CC BY 3.0). Cards en home + sección + sitemap. Fuentes: BCR/elsalvador.com, MARN/Infobae, EDH/Asamblea, Diario El Mundo.
 - 2026-07-18: publicadas 2 notas de Social: condena de 26 años por abuso de menor en Sonsonate Centro (portada/hero, imagen = arte oficial FGR recortado, `assets/nota-condena-fgr-sonsonate.jpg`) y desarticulación de red de narcotráfico en Sonsonate (2 fotos oficiales de la FGR: `assets/nota-narco-operativo-sonsonate.jpg` principal + `nota-narco-droga-incautada.jpg` inline). Cards en home + Social + sitemap. Fuentes: FGR (Facebook oficial), La Noticia SV, Infobae. El sismo de Chiapas salió del hero pero sigue en grid y sección.
 - Migración completa de Netlify (suspendido) a GitHub Pages
@@ -161,6 +168,20 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 - 2026-04-23: formulario de contacto migrado de Netlify Forms a Formspree (endpoint `xdayypog`)
 - 2026-07-03: publicada nota de Deportes "Cabo Verde cae 3-2 ante Argentina en la prórroga" (Mundial 2026) con 2 fotos propias (`assets/nota-caboverde-argentina.jpg` y `nota-caboverde-celebracion.jpg`); card agregada a home + sección Deportes + sitemap. **Ojo:** el crédito de foto quedó como "Selección de Cabo Verde (FCF)" — verificar/ajustar la fuente real de las imágenes.
 - 2026-07-03: agregadas 6 notas para nivelar secciones (mezcla local/nacional/internacional), todas con fotos de Wikimedia Commons con crédito CC/CC0: Política (reforma reelección indefinida), Economía (FMI ~4% + Bitcoin 7,600 BTC), Internacional (ofensiva rusa sobre Kiev; Keiko Fujimori presidenta de Perú), Religión (excomunión Sociedad San Pío X, seguimiento de la nota lefebvrista), Cultura (Fiestas Julias 2026). Cards en home + su sección + sitemap. Quitado el "Próximamente" de `internacional.html`. Generadas con script que reutiliza la estructura de la nota de Cabo Verde. Todas las secciones quedaron en 2-3 notas.
+
+## Pendientes abiertos de la sesión del 30-jul-2026
+
+1. **Google Search Console** — sin dar de alta. Es lo más importante para medir posicionamiento y para reenviar el sitemap.
+2. **Nota de Krisma Mancía** — el titular todavía empieza con "Muere", que en un obituario de días atrás sugiere que pasó hoy. Se propuso cambiarlo a formato `Krisma Mancía (1980-2026)` y quedó sin decidir.
+3. **Nota de la UES (30 de julio)** — la portada compone 3 fotos de marchas conmemorativas aportadas por la redacción. **Faltan dos datos**: si son de la jornada de 2026 o de archivo (la gente lleva mascarilla, lo que sugiere 2021-2022) y **de quién son, para acreditarlas**. El pie de foto actual no atribuye fecha a propósito.
+4. **Nota del Seminario del Espíritu Santo** — el video decía "FALTA 1 DÍA" cuando faltaban dos. Verificar con el hno. Adelso Torres (7852-7509) si hubo actividad el jueves 30.
+5. **Nota de Japón/Kumamoto** — nunca se hizo. El sismo de 7.1 del 28-jul dejó el Aeon Mall de Kashima colapsado con 20-30 atrapados. El sitio no tiene ni una línea sobre esto.
+6. **Editor** — la rama `claude/kumamoto-earthquake-july-cd59ip` tiene la actualización automática del RSS. **Falta mergear a `main`** para que Cloudflare Pages la despliegue.
+7. **Equilibrio electoral** — ya van 2 notas de Ángel Madrid (ARENA) y 1 de Kompagil (FMLN) rumbo a 2027. Conviene balancear la cobertura de candidaturas de Sonsonate.
+
+## Imágenes: cómo llegan a Claude
+
+Pegar una imagen con Ctrl+V **no genera archivo** — Claude la ve pero no puede guardarla en el repo. Hay que mandarla **con el clip de adjuntar** (desde el celular funciona bien) o subirla a Google Drive, que Claude sí puede leer. También sirve subirla directo a `assets/` desde GitHub web con el nombre exacto que espera la nota.
 
 ## Pendientes críticos (Tier 1)
 
