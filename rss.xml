@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Fri, 31 Jul 2026 04:59:50 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 14:19:16 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Día del Periodista: a 202 años del primer periódico, informar en El Salvador sigue siendo un acto de riesgo</title>
+    <link>https://plumalibre.press/articulos/editorial-dia-del-periodista-salvadoreno-2026.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/editorial-dia-del-periodista-salvadoreno-2026.html</guid>
+    <description>La fecha no pide felicitaciones. Pide garantías: acceso a la información pública, fin del acoso digital y condiciones para que nadie más tenga que ejercer el oficio desde el exilio.</description>
+    <category>Opinión</category>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-dia-del-periodista-2026.jpg" type="image/jpeg"/>
+  </item>
   <item>
     <title>La UES conmemora 51 años de la masacre del 30 de julio entre reclamos de memoria y justicia</title>
     <link>https://plumalibre.press/articulos/ues-conmemora-51-anos-masacre-30-julio-1975.html</link>
@@ -267,15 +276,6 @@
     <category>Social</category>
     <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/sismo-74-chiapas-og.jpg" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Ever Castillo en HABLEMOS: “Entregar todo el poder político a una sola fuerza fue errado”</title>
-    <link>https://plumalibre.press/articulos/ever-castillo-en-hablemos-entregar-todo-el-poder-a-una-sola-fuerza-politica-fue-errado.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/ever-castillo-en-hablemos-entregar-todo-el-poder-a-una-sola-fuerza-politica-fue-errado.html</guid>
-    <description>El precandidato a diputado de ARENA por Sonsonate habló de “inseguridad jurídica”, despidos de maestros sin debido proceso y una cultura del miedo, y llamó a construir una “oposición real” de cara a las internas de su partido del 26 de julio.</description>
-    <category>Política</category>
-    <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-cobertura-castillo-og.jpg" type="image/jpeg"/>
   </item>
 </channel>
 </rss>

@@ -49,6 +49,17 @@
   </url>
   -->
   <url>
+    <loc>https://plumalibre.press/secciones/opinion.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/editorial-dia-del-periodista-salvadoreno-2026.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://plumalibre.press/articulos/incendios-europa-francia-espana-30-julio-2026.html</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>never</changefreq>
