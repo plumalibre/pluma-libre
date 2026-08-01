@@ -92,7 +92,7 @@ Tres botones en la barra superior:
 ## Línea editorial
 
 - **Tono:** Profesional, directo, accesible
-- **Secciones fijas:** Política, Economía, Deportes, Social, Religión, Cultura, Internacional. (Antes se mostraban como `#AcontecerX`; el branding cambió en mayo 2026: ahora son sustantivos sin `#` ni "Acontecer". El editor genera los hashtags de redes con el sustantivo limpio: `#Política`, `#Economía`, etc.)
+- **Secciones fijas (10 desde el 31-jul-2026):** Política, Economía, Deportes, Social, Religión, Cultura, Internacional, **Opinión**, **Tecnología** y **Entrevistas**. (Antes se mostraban como `#AcontecerX`; el branding cambió en mayo 2026: ahora son sustantivos sin `#` ni "Acontecer". El editor genera los hashtags de redes con el sustantivo limpio: `#Política`, `#Economía`, etc.)
 - **Hashtags base:** #PlumaLibre #Sonsonate #ElSalvador
 - **Relaciones comerciales:** Pauta con Alcaldía de Sonsonate Centro (Alcalde Roberto Aquino). NO con Sonsonate Este.
 
@@ -154,6 +154,8 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-07-31 (Día del Periodista): se crearon **3 secciones nuevas**, todas con contenido desde el día uno: **Opinión** (abre con el editorial del Día del Periodista, sin firma — badge propio, byline "Editorial · Pluma Libre", JSON-LD `OpinionNewsArticle`), **Tecnología** (imán de fusión de China + Proyecto Panamá de Anthropic) y **Entrevistas** (sembrada con las 2 entrevistas reales de HABLEMOS: Ever Castillo y Manuel Gil; los anuncios de "estará en HABLEMOS" quedaron fuera por ser avisos, no entrevistas). El sitio pasó de 7 a 10 secciones.
+- 2026-07-31: **la portada del home llevaba 5 días congelada** en la nota del FMLN del 26-jul, porque nada sube solo al hero. Se promovió el editorial a principal y se refrescaron las secundarias. **Recordar marcar el estado (portada/secundaria/grid) al publicar desde el editor**, o el home se envejece solo.
 - 2026-07-28/30: sesión larga de publicación. **6 notas nuevas**: Krisma Mancía (Cultura, obituario con el ángulo del despido del Ministerio de Cultura), Claudia Ortiz vs. fotógrafos de la Asamblea (Política, primicia — ningún medio lo levantó), Seminario de Vida en el Espíritu Santo de la Parroquia La Resurrección (Religión), Ángel Madrid candidato de ARENA casilla 2 (Política, seguimiento de la del 25-jul donde pedía casilla 3), 51 años de la masacre del 30 de julio de 1975 en la UES (Social) e incendios en Europa/Gironda (Internacional).
 - 2026-07-30: **SEO e indexación**. Auditoría del sitio: 7 notas no estaban en `sitemap.xml` (ya agregadas) y solo 11 de 96 URLs tenían `<lastmod>` (ahora 91). Se creó **`rss.xml`** (30 notas, validado), **`llms.txt`** (para que Gemini/ChatGPT citen con crédito) y `herramientas-generar-feed.py` que regenera ambos desde `articulos/`. `<link rel="alternate">` en las 102 páginas y `robots.txt` declara sitemap + RSS. **Confirmado que Google indexa el sitio** (aparece en resultados). **Pendiente crítico: dar de alta Google Search Console** — sin eso no se puede medir posicionamiento.
 - 2026-07-30: ojo con la marca. Compiten en buscadores `plumalibrenews.com` (Westchester, NY), `plumalibre.com` y "Pluma Libre Newspaper". Además existe una página `facebook.com/plumalibre.net` asociada a Sonsonate que conviene cerrar o redirigir para no dividir la señal con `plumalibre.press`.
@@ -168,6 +170,31 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 - 2026-04-23: formulario de contacto migrado de Netlify Forms a Formspree (endpoint `xdayypog`)
 - 2026-07-03: publicada nota de Deportes "Cabo Verde cae 3-2 ante Argentina en la prórroga" (Mundial 2026) con 2 fotos propias (`assets/nota-caboverde-argentina.jpg` y `nota-caboverde-celebracion.jpg`); card agregada a home + sección Deportes + sitemap. **Ojo:** el crédito de foto quedó como "Selección de Cabo Verde (FCF)" — verificar/ajustar la fuente real de las imágenes.
 - 2026-07-03: agregadas 6 notas para nivelar secciones (mezcla local/nacional/internacional), todas con fotos de Wikimedia Commons con crédito CC/CC0: Política (reforma reelección indefinida), Economía (FMI ~4% + Bitcoin 7,600 BTC), Internacional (ofensiva rusa sobre Kiev; Keiko Fujimori presidenta de Perú), Religión (excomunión Sociedad San Pío X, seguimiento de la nota lefebvrista), Cultura (Fiestas Julias 2026). Cards en home + su sección + sitemap. Quitado el "Próximamente" de `internacional.html`. Generadas con script que reutiliza la estructura de la nota de Cabo Verde. Todas las secciones quedaron en 2-3 notas.
+
+## Nota pendiente: entrevista a Ángel Madrid en HABLEMOS (31-jul-2026)
+
+La entrevista se grabó el viernes 31. Falta escribir la **nota derivada** (nota de declaraciones)
+a partir de la transcripción. Decisiones ya tomadas en la sesión:
+
+- **Formato:** nota de declaraciones, no transcripción. Titular entrecomillado con una frase
+  **textual** — si se cambia una palabra, se van las comillas.
+- **NO usar el conteo de seguidores** (53 mil en su página verificada de Facebook). Decisión del
+  director: contar seguidores ajenos desde un medio que también los tiene se lee como comparación
+  y no le aporta nada al lector.
+- **Sí sirve como contexto**, y sale de su propia biografía pública: es abogado de la República,
+  **periodista y columnista de El Diario de Hoy**, y tiene el podcast *#PupusasPolíticayCafé*.
+  Ojo: siendo colega, la nota debe sostenerse sola por lo que diga, sin apoyarse en su condición
+  de periodista.
+- **No repetir** lo ya publicado: pidió la casilla 3 en las internas y quedó ratificado en la
+  casilla 2; anunció gira territorial; dijo que "Sonsonate merece diputados que no solo lleguen a
+  presionar un botón".
+- **Balance electoral:** sería la tercera nota de Madrid en una semana contra una de Kompagil
+  (FMLN). El director explicó que a Manuel Gil se le dio el mismo trato en su momento, así que el
+  criterio es parejo. Aun así, conviene que la próxima sea de otro candidato.
+
+Flujo acordado: la transcripción se hace en la PC (subtítulos automáticos de YouTube o Whisper
+local) y se pega en crudo — sin limpiar — para que Claude ordene, identifique hablantes y saque
+el titular.
 
 ## Pendientes abiertos de la sesión del 30-jul-2026
 
