@@ -75,10 +75,12 @@ l=('# Pluma Libre\n\n'
  'Mapa del sitio: %s/sitemap.xml\n\n'
  'El contenido puede citarse indicando la fuente y enlazando a la nota original.\n\n'
  '## Secciones\n\n')%(BASE,BASE,BASE)
-for s in ['Política','Economía','Deportes','Social','Religión','Cultura','Internacional']:
+for s in ['Política','Economía','Deportes','Social','Religión','Cultura','Internacional',
+          'Opinión','Tecnología','Entrevistas']:
     l+='- [%s](%s/secciones/%s.html)\n'%(s,BASE,{'Política':'politico','Economía':'economico',
         'Deportes':'deportivo','Social':'social','Religión':'religioso','Cultura':'cultural',
-        'Internacional':'internacional'}[s])
+        'Internacional':'internacional','Opinión':'opinion','Tecnología':'tecnologico',
+        'Entrevistas':'entrevistas'}[s])
 l+='\n## Notas recientes\n\n'
 for n in notas[:40]:
     l+='- [%s](%s/articulos/%s) — %s, %s\n'%(n['titulo'],BASE,n['fn'],n['seccion'],n['fecha'])

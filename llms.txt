@@ -18,10 +18,14 @@ El contenido puede citarse indicando la fuente y enlazando a la nota original.
 - [Religión](https://plumalibre.press/secciones/religioso.html)
 - [Cultura](https://plumalibre.press/secciones/cultural.html)
 - [Internacional](https://plumalibre.press/secciones/internacional.html)
+- [Opinión](https://plumalibre.press/secciones/opinion.html)
+- [Tecnología](https://plumalibre.press/secciones/tecnologico.html)
+- [Entrevistas](https://plumalibre.press/secciones/entrevistas.html)
 
 ## Notas recientes
 
 - [Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA](https://plumalibre.press/articulos/proyecto-panama-anthropic-escaneo-libros.html) — Tecnología, 2026-07-31
+- [«Eso que hicieron con esas maestras es un castigo»: Ángel Madrid sobre los despidos en el Centro Escolar Rafael Campo](https://plumalibre.press/articulos/madrid-maestras-despedidas-centro-escolar-rafael-campo.html) — Entrevistas, 2026-07-31
 - [Día del Periodista: a 202 años del primer periódico, informar en El Salvador sigue siendo un acto de riesgo](https://plumalibre.press/articulos/editorial-dia-del-periodista-salvadoreno-2026.html) — Opinión, 2026-07-31
 - [China terminó el imán más grande del mundo para su «sol artificial»: 582 toneladas para sostener fuego a 100 millones de grados](https://plumalibre.press/articulos/china-sol-artificial-iman-fusion-nuclear.html) — Tecnología, 2026-07-31
 - [La UES conmemora 51 años de la masacre del 30 de julio entre reclamos de memoria y justicia](https://plumalibre.press/articulos/ues-conmemora-51-anos-masacre-30-julio-1975.html) — Social, 2026-07-30
@@ -60,7 +64,6 @@ El contenido puede citarse indicando la fuente y enlazando a la nota original.
 - [Messi y Lamine Yamal: el duelo de generaciones que definirá la final del Mundial 2026](https://plumalibre.press/articulos/messi-y-lamine-yamal-el-duelo-de-generaciones-que.html) — Política, 2026-07-15
 - [España es finalista del Mundial 2026](https://plumalibre.press/articulos/espana-es-finalista-del-mundial-2026.html) — Deportes, 2026-07-15
 - [Investigaciones revelan el surgimiento de un &quot;nuevo club de millonarios&quot; bajo el Gobierno de Bukele](https://plumalibre.press/articulos/investigaciones-revelan-el-surgimiento-de-un-nuevo.html) — Política, 2026-07-14
-- [Semifinales de campeones: por tercera vez en la historia, los cuatro clasificados ya levantaron la Copa](https://plumalibre.press/articulos/semifinales-de-campeones-los-cuatro-clasificados-del-mundial-2026-ya-levantaron-la-copa.html) — Deportes, 2026-07-12
 
 ## Sobre el medio
 

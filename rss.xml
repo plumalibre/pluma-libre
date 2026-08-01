@@ -5,7 +5,7 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Fri, 31 Jul 2026 14:39:32 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 01 Aug 2026 02:13:01 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA</title>
@@ -15,6 +15,15 @@
     <category>Tecnología</category>
     <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-proyecto-panama-anthropic.jpg" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>«Eso que hicieron con esas maestras es un castigo»: Ángel Madrid sobre los despidos en el Centro Escolar Rafael Campo</title>
+    <link>https://plumalibre.press/articulos/madrid-maestras-despedidas-centro-escolar-rafael-campo.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/madrid-maestras-despedidas-centro-escolar-rafael-campo.html</guid>
+    <description>El candidato a diputado de ARENA por Sonsonate dijo en HABLEMOS que las docentes fueron cesadas «sin base legal» después de invitarlo a un almuerzo por el Día del Maestro.</description>
+    <category>Entrevistas</category>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-madrid-hablemos-maestras.jpg" type="image/jpeg"/>
   </item>
   <item>
     <title>Día del Periodista: a 202 años del primer periódico, informar en El Salvador sigue siendo un acto de riesgo</title>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-claudia-ortiz.jpg" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Asamblea aprueba $1.35 millones más para estadios mientras comunidades siguen esperando agua</title>
-    <link>https://plumalibre.press/articulos/asamblea-aprueba-1-35-millones-para-estadios-mientras-comunidades-reclaman-agua.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/asamblea-aprueba-1-35-millones-para-estadios-mientras-comunidades-reclaman-agua.html</guid>
-    <description>Con 57 y 59 votos, los diputados avalaron incorporar $1,348,959 al presupuesto para infraestructura deportiva y obras en San Miguel, financiados con un préstamo del BCIE. El gasto se aprueba mientras comunidades como la Colonia Izalco, en Sonsonate, reciben agua una vez por semana.</description>
-    <category>Política</category>
-    <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-asamblea-estadio.jpg" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
