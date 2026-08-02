@@ -198,7 +198,7 @@ el titular.
 
 ## Pendientes abiertos de la sesión del 30-jul-2026
 
-1. **Google Search Console** — sin dar de alta. Es lo más importante para medir posicionamiento y para reenviar el sitemap.
+1. ~~**Google Search Console** — sin dar de alta.~~ ✅ **Resuelto 2026-08-01**: propiedad de dominio `plumalibre.press` verificada por TXT en Cloudflare DNS, en la cuenta `prensaplumalibre@gmail.com` (la misma del GA4). Sitemap y `rss.xml` enviados. El «1 error» del sitemap era una URL con el dominio viejo `plumalibre.github.io` (nota de Ever Castillo), corregida en commit `55633a2`. Los datos de posicionamiento empiezan a aparecer en 2-3 días.
 2. **Nota de Krisma Mancía** — el titular todavía empieza con "Muere", que en un obituario de días atrás sugiere que pasó hoy. Se propuso cambiarlo a formato `Krisma Mancía (1980-2026)` y quedó sin decidir.
 3. **Nota de la UES (30 de julio)** — la portada compone 3 fotos de marchas conmemorativas aportadas por la redacción. **Faltan dos datos**: si son de la jornada de 2026 o de archivo (la gente lleva mascarilla, lo que sugiere 2021-2022) y **de quién son, para acreditarlas**. El pie de foto actual no atribuye fecha a propósito.
 4. **Nota del Seminario del Espíritu Santo** — el video decía "FALTA 1 DÍA" cuando faltaban dos. Verificar con el hno. Adelso Torres (7852-7509) si hubo actividad el jueves 30.

@@ -49,7 +49,7 @@ for n in notas[:MAX_ITEMS]:
          '%s'
          '  </item>\n')%(esc(n['titulo']),BASE,n['fn'],BASE,n['fn'],esc(n['desc']),
                           esc(n['seccion']),format_datetime(d),
-                          ('    <enclosure url="%s" type="image/jpeg"/>\n'%esc(n['img'])) if n['img'] else '')
+                          ('    <enclosure url="%s" length="0" type="image/jpeg"/>\n'%esc(n['img'])) if n['img'] else '')
 
 rss=('<?xml version="1.0" encoding="UTF-8"?>\n'
  '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
