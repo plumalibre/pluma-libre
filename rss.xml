@@ -5,7 +5,7 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sun, 02 Aug 2026 04:01:58 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 02 Aug 2026 05:26:14 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA</title>
@@ -15,6 +15,15 @@
     <category>Tecnología</category>
     <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-proyecto-panama-anthropic.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Socorristas reportan entre 25 y 30 quemados por pólvora en las fiestas patronales de Chinameca</title>
+    <link>https://plumalibre.press/articulos/polvora-fiestas-chinameca-lesionados.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/polvora-fiestas-chinameca-lesionados.html</guid>
+    <description>Los cohetes no tomaron altura y se desviaron hacia los espectadores, frente a la iglesia y el parque central. Entre los lesionados hay un periodista de Canal 22 de Oriente.</description>
+    <category>Social</category>
+    <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-polvora-chinameca.jpg" length="0" type="image/jpeg"/>
   </item>
   <item>
     <title>«Claro que hay una cultura de miedo»: para Ángel Madrid, el despido de unas maestras en Sonsonate es «un mensaje para los maestros»</title>
@@ -267,15 +276,6 @@
     <category>Social</category>
     <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-condena-fgr-sonsonate.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Claudia Ortiz pide renovar las autoridades de Vamos y el partido la desmiente</title>
-    <link>https://plumalibre.press/articulos/claudia-ortiz-pide-renovar-autoridades-de-vamos-y-el-partido-la-desmiente.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/claudia-ortiz-pide-renovar-autoridades-de-vamos-y-el-partido-la-desmiente.html</guid>
-    <description>La diputada solicitó a la Comisión Electoral Permanente convocar a elecciones internas porque, afirma, el período de la dirigencia venció el 16 de julio. El partido rechazó lo que llama «desinformación» y presentó un documento del TSE que respalda a su secretaria nacional.</description>
-    <category>Política</category>
-    <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-claudia-ortiz.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
