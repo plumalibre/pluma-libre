@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sun, 02 Aug 2026 05:26:14 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 02 Aug 2026 23:58:47 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Educación deja sin efecto las reglas para los desfiles del 15 de septiembre tras días de rechazo</title>
+    <link>https://plumalibre.press/articulos/mined-deja-sin-efecto-disposiciones-desfiles-civicos-2026.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/mined-deja-sin-efecto-disposiciones-desfiles-civicos-2026.html</guid>
+    <description>El memorándum 10-2026 anula los lineamientos sobre música, vestimenta y puntos artísticos. En Sonsonate, docentes denuncian que antes se despidió a más de 24 instructores de cachiporristas por su orientación sexual.</description>
+    <category>Social</category>
+    <pubDate>Sun, 02 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-desfiles-civicos-sin-efecto.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA</title>
     <link>https://plumalibre.press/articulos/proyecto-panama-anthropic-escaneo-libros.html</link>
@@ -267,15 +276,6 @@
     <category>Social</category>
     <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-narco-operativo-sonsonate.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Condenan a 26 años de cárcel a hombre que abusó de una menor en Sonsonate Centro</title>
-    <link>https://plumalibre.press/articulos/condenan-a-26-anos-a-hombre-que-abuso-de-una-menor-en-sonsonate-centro.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/condenan-a-26-anos-a-hombre-que-abuso-de-una-menor-en-sonsonate-centro.html</guid>
-    <description>El Tribunal Primero de Sentencia de Sonsonate declaró culpable a Jenderson Rodrigo Ramírez García del delito de violación en menor e incapaz en modalidad continuada. Según la Fiscalía, contactó a la víctima a través de redes sociales.</description>
-    <category>Social</category>
-    <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-condena-fgr-sonsonate.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
