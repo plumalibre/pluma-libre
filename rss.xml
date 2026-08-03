@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Mon, 03 Aug 2026 21:07:04 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 23:39:58 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Encuesta de la UES: los alcaldes de occidente promedian 5.48 de 10</title>
+    <link>https://plumalibre.press/articulos/encuesta-ues-califica-alcaldes-occidente-junio-2026.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/encuesta-ues-califica-alcaldes-occidente-junio-2026.html</guid>
+    <description>El estudio del Laboratorio de Opinión Pública de la Facultad Multidisciplinaria de Occidente califica a los 11 distritos de Santa Ana, Ahuachapán y Sonsonate. Sonsonate Centro queda segundo con 6.31; los otros tres distritos sonsonatecos, debajo del promedio.</description>
+    <category>Política</category>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-encuesta-ues-alcaldes-occidente.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>«La impunidad no dura para siempre»: habla la exabogada de Bukele</title>
     <link>https://plumalibre.press/articulos/bertha-deleon-reacciona-documental-bukele-univision.html</link>
@@ -267,15 +276,6 @@
     <category>Deportes</category>
     <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-final-mundial-pelea.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>La sequía golpea el oriente: La Unión y Usulután entran en sequía meteorológica y el maíz ya muestra daños</title>
-    <link>https://plumalibre.press/articulos/sequia-golpea-el-oriente-la-union-y-usulutan-entran-en-sequia-meteorologica.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/sequia-golpea-el-oriente-la-union-y-usulutan-entran-en-sequia-meteorologica.html</guid>
-    <description>El país atraviesa su segundo evento de sequía del año. Estaciones del MARN registran cinco días consecutivos sin lluvia en el oriente, se esperan temperaturas de hasta 40 °C y el polvo sahariano limitará aún más las lluvias este fin de semana.</description>
-    <category>Social</category>
-    <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-sequia-maiz.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
