@@ -5,7 +5,7 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Mon, 03 Aug 2026 00:14:02 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 04:01:11 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>Educación deja sin efecto las reglas para los desfiles del 15 de septiembre tras días de rechazo</title>
@@ -15,6 +15,15 @@
     <category>Social</category>
     <pubDate>Sun, 02 Aug 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-desfiles-civicos-sin-efecto.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Univision y El Faro estrenan «Las dos caras de Bukele»: dos exlíderes de pandillas describen los pactos detrás de la seguridad</title>
+    <link>https://plumalibre.press/articulos/las-dos-caras-de-bukele-documental-univision-el-faro.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/las-dos-caras-de-bukele-documental-univision-el-faro.html</guid>
+    <description>Seis meses de reportería, documentos oficiales y el caso del cabecilla «Crook»: el especial de N+ Univision Investiga con El Faro ya se puede ver gratis en YouTube y ViX.</description>
+    <category>Política</category>
+    <pubDate>Sun, 02 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-documental-dos-caras-bukele-og.jpg" length="0" type="image/jpeg"/>
   </item>
   <item>
     <title>Proyecto Panamá: la operación secreta con la que Anthropic compró, cortó y escaneó millones de libros para entrenar su IA</title>
@@ -267,15 +276,6 @@
     <category>Economía</category>
     <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-deuda-bcr.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>FGR y PNC desarticulan una red de narcotráfico que operaba en Sonsonate</title>
-    <link>https://plumalibre.press/articulos/desarticulan-red-de-narcotrafico-que-operaba-en-sonsonate.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/desarticulan-red-de-narcotrafico-que-operaba-en-sonsonate.html</guid>
-    <description>Cinco presuntos integrantes de la estructura fueron capturados en 13 allanamientos simultáneos la madrugada del jueves. Según la Fiscalía, compraban droga en San Salvador y la distribuían en San Antonio del Monte, Sonzacate e Izalco.</description>
-    <category>Social</category>
-    <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-narco-operativo-sonsonate.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
