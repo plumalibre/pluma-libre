@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Mon, 03 Aug 2026 23:46:01 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 04:10:08 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>El código de seis dígitos que no debés compartir con nadie</title>
+    <link>https://plumalibre.press/articulos/estafa-codigo-verificacion-whatsapp-robo-de-cuenta.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/estafa-codigo-verificacion-whatsapp-robo-de-cuenta.html</guid>
+    <description>Una lectora escribió a Pluma Libre para advertir sobre una llamada en la que le pidieron el código de verificación de su cuenta. No es una modalidad nueva, pero sigue funcionando por lo mismo de siempre: el susto y la prisa.</description>
+    <category>Social</category>
+    <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-estafa-codigo-verificacion.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>6 de cada 10 en Sonsonate Centro reelegirían a Aquino, según la UES</title>
     <link>https://plumalibre.press/articulos/encuesta-ues-califica-alcaldes-occidente-junio-2026.html</link>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-proveedores-departamental.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Así comenzó la pelea que manchó la final del Mundial: esto es lo que se sabe</title>
-    <link>https://plumalibre.press/articulos/asi-comenzo-la-pelea-que-mancho-la-final-del-mundial-2026.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/asi-comenzo-la-pelea-que-mancho-la-final-del-mundial-2026.html</guid>
-    <description>España venció 1-0 a Argentina y es campeona del mundo, pero el festejo terminó en trifulca. Videos señalan un golpe de Nahuel Molina a Rodri como el detonante, Leandro Paredes recibió roja directa y la FIFA ya abrió proceso disciplinario.</description>
-    <category>Deportes</category>
-    <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-final-mundial-pelea.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
