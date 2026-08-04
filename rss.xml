@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Tue, 04 Aug 2026 04:10:08 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 15:57:48 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Guatemala evacúa a 659 personas por la erupción del volcán de Fuego</title>
+    <link>https://plumalibre.press/articulos/guatemala-erupcion-volcan-de-fuego-alerta-naranja.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/guatemala-erupcion-volcan-de-fuego-alerta-naranja.html</guid>
+    <description>La CONRED declaró alerta anaranjada. La columna de ceniza alcanza los 7,000 metros y los flujos piroclásticos bajan por cinco barrancas. Es el mismo coloso que en 2018 sepultó San Miguel Los Lotes.</description>
+    <category>Internacional</category>
+    <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-volcan-fuego-guatemala.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>El código de seis dígitos que no debés compartir con nadie</title>
     <link>https://plumalibre.press/articulos/estafa-codigo-verificacion-whatsapp-robo-de-cuenta.html</link>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-convocatoria-proveedores.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Proveedores de uniformes siguen sin recibir la tela y el Ministerio les suspende la reunión sin explicación</title>
-    <link>https://plumalibre.press/articulos/proveedores-uniformes-reunion-suspendida-sin-respuesta.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/proveedores-uniformes-reunion-suspendida-sin-respuesta.html</guid>
-    <description>La reunión con el Ministerio de Educación, programada desde el mes pasado, fue cancelada a las 8:15 sin explicación. Los proveedores siguen sin recibir la tela ni las tallas para iniciar la confección.</description>
-    <category>Política</category>
-    <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-proveedores-departamental.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
