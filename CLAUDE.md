@@ -154,6 +154,24 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-08-04: **tres notas nuevas y una tanda de herramientas**. Se publicó la **encuesta de la UES
+  sobre los 11 alcaldes de occidente** (Política) — reescrita dos veces: la primera versón lideraba
+  con el promedio regional 5.48 y el director la bajó por no tener pegue, así que el titular pasó a
+  «Sonsonate Centro reelegiría a Aquino» con el dato local al frente. Sale del estudio del
+  **Laboratorio de Opinión Pública de la Facultad Multidisciplinaria de Occidente** (junio 2026, no
+  del CIMU como se creía al inicio) y compara contra la edición de 2025 del mismo instrumento:
+  Sonsonate Centro subió de 5.47 a 6.31. Es cobertura de un dato público que la alcaldía —que pauta—
+  pidió ventilar; **no se publicó el texto que ellos pasaron**.
+  También salió la **nota de servicio sobre la estafa del código de verificación de WhatsApp**
+  (Social), a partir del aviso de una lectora — sin su nombre, sin capturas y sin el número, porque
+  esas líneas suelen estar suplantadas. Y la **erupción del volcán de Fuego** (Internacional), con
+  659 evacuados y alerta anaranjada, foto de archivo de 2017 marcada como tal en la propia imagen.
+- 2026-08-04: **el arte ilustrado se hace con Gemini, las caras no.** Se probó recortar con Gemini una
+  foto real del alcalde Aquino y **le inventó los ojos, las cejas y el pelo**: quedó descartado. La
+  regla que sirvió: Gemini para ilustración conceptual (la de la estafa salió perfecta a la primera,
+  etiquetada como generada con IA en el pie de foto), y para fotos de personas reales solo revelado
+  normal — contraste, brillo, enfoque— sin generar píxeles.
+
 - 2026-08-02/03: **más secciones y notas nuevas**. Se publicaron: el editorial del Día del Periodista (Opinión), el imán de fusión de China y el Proyecto Panamá de Anthropic (Tecnología), la pólvora en las fiestas de Chinameca —25 a 30 quemados, corregido a tiempo porque la primera fuente decía cinco— y el memorándum 10-2026 que dejó sin efecto las reglas de los desfiles cívicos. Desde la PC se publicó además **«Las dos caras de Bukele»**, el documental de Univision y El Faro (Política, con arte ilustrado propio).
 - 2026-08-03: **auditoría editorial de las 99 notas**. Hallazgos: 89 titulares pasan de 70 caracteres (promedio 87, Google los corta); 71 notas no tienen ningún subtítulo H2; 91 no tienen cita textual destacada; 21 sin bajada y 10 sin pie de foto; promedio de 311 palabras. Se quitó del sitemap la URL `internas-de-nuevas-ideas-colapsan-el-centro-de-sonsonate.html`, que es un stub de redirección por cambio de slug y no una nota.
 - 2026-08-03: **decisión editorial** — no dar cobertura al retroceso de los desfiles cívicos por considerarlo cortina de humo. Se priorizan tres temas pendientes: los despidos de docentes e instructores, la exclusión de proveedores del paquete escolar y los préstamos aprobados. Ver la sección de temas pendientes.
@@ -214,7 +232,7 @@ el titular.
 3. **Nota de la UES (30 de julio)** — la portada compone 3 fotos de marchas conmemorativas aportadas por la redacción. **Faltan dos datos**: si son de la jornada de 2026 o de archivo (la gente lleva mascarilla, lo que sugiere 2021-2022) y **de quién son, para acreditarlas**. El pie de foto actual no atribuye fecha a propósito.
 4. **Nota del Seminario del Espíritu Santo** — el video decía "FALTA 1 DÍA" cuando faltaban dos. Verificar con el hno. Adelso Torres (7852-7509) si hubo actividad el jueves 30.
 5. **Nota de Japón/Kumamoto** — nunca se hizo. El sismo de 7.1 del 28-jul dejó el Aeon Mall de Kashima colapsado con 20-30 atrapados. El sitio no tiene ni una línea sobre esto.
-6. **Editor** — la rama `claude/kumamoto-earthquake-july-cd59ip` tiene la actualización automática del RSS. **Falta mergear a `main`** para que Cloudflare Pages la despliegue.
+6. ~~**Editor** — falta mergear la rama del RSS automático a `main`.~~ ✅ **Resuelto 2026-08-04**: la rama `claude/kumamoto-earthquake-july-cd59ip` quedó fusionada en `main` (editor) y en `master` (sitio y pluma-video). No hay nada pendiente de mergear.
 7. **Equilibrio electoral** — ya van 2 notas de Ángel Madrid (ARENA) y 1 de Kompagil (FMLN) rumbo a 2027. Conviene balancear la cobertura de candidaturas de Sonsonate.
 
 ## Imágenes: cómo llegan a Claude
