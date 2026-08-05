@@ -154,6 +154,25 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-08-05: **ya se puede medir redes.** El Worker tiene el endpoint `/fb/insights` y el editor
+  una tarjeta «Rendimiento en Facebook» en Stats. **Lo que dicen los primeros datos confirma la
+  tesis del director: lo que jala es Bukele.** En TikTok, tres videos sobre Bukele/pandillas hacen
+  **36.5 K, 23.5 K y 7.4 K** vistas mientras todo lo demás se queda entre 200 y 900. En Facebook,
+  el video del CECOT tuvo **8,552 de alcance y 28.3 segundos de reproducción promedio** — el triple
+  que el resto de los videos, que rondan 7 a 10 segundos. La nota de Bertha Deleón (formato foto)
+  hizo **1,500 reacciones y 5,909 clics**, el post más fuerte del mes. **Ojo con la conclusión
+  fácil:** el alcance grande no se traduce en visitas al sitio, y las notas internacionales de
+  relleno (volcán, camiseta de España) rinden 99-921 de alcance. Ver el CLAUDE.md del editor para
+  el detalle técnico.
+- 2026-08-05: **nota de Kumamoto publicada** (Internacional), la que estaba pendiente desde el
+  30-jul. Se escribió con el ángulo acordado —«una nota de El Salvador contada desde Japón»—:
+  el sismo del 28-jul dejó 38 muertos y tumbó un Aeon Mall con 3,000 personas adentro en el país
+  con el código de construcción más estricto del mundo, mientras **la Norma Técnica para Diseño
+  por Sismo salvadoreña es de 1994 y el propio MARN admite que "presenta deficiencias en la
+  estimación de la amenaza sísmica del país"**. El cierre es el detalle de las dos empleadas a las
+  que su patrón mandó de vuelta al edificio dañado a guardar el efectivo. **El arte se hizo con
+  Pillow, no con Gemini** (que sigue sin crédito): gráfico de datos comparando las dos normas.
+
 - 2026-08-04: **tres notas nuevas y una tanda de herramientas**. Se publicó la **encuesta de la UES
   sobre los 11 alcaldes de occidente** (Política) — reescrita dos veces: la primera versón lideraba
   con el promedio regional 5.48 y el director la bajó por no tener pegue, así que el titular pasó a
