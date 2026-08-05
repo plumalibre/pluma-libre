@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Wed, 05 Aug 2026 17:09:39 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 20:46:35 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Cayó un mall en Japón; El Salvador construye con una norma de 1994</title>
+    <link>https://plumalibre.press/articulos/terremoto-kumamoto-japon-norma-sismica-el-salvador.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/terremoto-kumamoto-japon-norma-sismica-el-salvador.html</guid>
+    <description>El sismo de Kumamoto dejó 38 muertos en el país con el código de construcción más estricto del mundo. La norma sísmica salvadoreña no se actualiza desde 1994 y el propio MARN admite que tiene deficiencias.</description>
+    <category>Internacional</category>
+    <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-kumamoto-norma-sismica.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>Guatemala evacúa a 659 personas por la erupción del volcán de Fuego</title>
     <link>https://plumalibre.press/articulos/guatemala-erupcion-volcan-de-fuego-alerta-naranja.html</link>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-formula-fmln-cover.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Maritza Esmeralda cierra operaciones en la ruta 205 y sus buses pasan a SETCS, según su propietario</title>
-    <link>https://plumalibre.press/articulos/ruta-205-cambio-de-operador-maritza-esmeralda-setcs.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/ruta-205-cambio-de-operador-maritza-esmeralda-setcs.html</guid>
-    <description>Según declaraciones de su propietario recogidas por medios locales, Maritza Esmeralda cerrará operaciones en la ruta 205 (Sonsonate–San Salvador) y sus buses pasarán a la sociedad SETCS esta semana.</description>
-    <category>Social</category>
-    <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-ruta205-cover.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
