@@ -166,6 +166,22 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
   (Social), a partir del aviso de una lectora — sin su nombre, sin capturas y sin el número, porque
   esas líneas suelen estar suplantadas. Y la **erupción del volcán de Fuego** (Internacional), con
   659 evacuados y alerta anaranjada, foto de archivo de 2017 marcada como tal en la propia imagen.
+- 2026-08-04 (noche): **cuarta nota del día** — casi 400,000 evacuados en China por las lluvias
+  torrenciales (Internacional), a partir de un video que circulaba en X. La nota corrige y amplía el
+  post original: da las cifras del Ministerio de Recursos Hídricos (270,000 en Sichuan desde el 29-jul
+  y 115,756 en Shaanxi), y **aclara que buena parte del material que circula es de Harbin y del 4 de
+  julio**, a 2,000 km de las evacuaciones. Portada: gráfico propio, porque no había foto del episodio
+  con licencia usable.
+- 2026-08-04: **qué se lee de verdad (GA4, 90 días).** Top del sitio: proveedores de uniformes **290**
+  —casi 3× el segundo—, Bertha Deleón 79 en un día, Manuel Gil en HABLEMOS 70, el corte de energía de
+  AES CLESA en Nahuizalco 44. **Ninguna nota internacional en el top 10**, de once publicadas. La nota
+  más leída del sitio es uno de los tres temas priorizados: ahí está el trabajo de mayor valor.
+  **Ojo:** esto mide el sitio, NO redes — un video puede hacer miles de vistas en Facebook sin mandar
+  una visita. Falta construir la medición de redes (ver el CLAUDE.md del editor).
+- 2026-08-04: **regla para notas internacionales.** Rinden cuando tienen puente con El Salvador: se
+  sintió acá, hay salvadoreños adentro, toca el bolsillo, sirve de vara para medir, o hay un personaje
+  conocido. Sin puente no se leen. Ejemplo de vara: los 385,756 evacuados de China contra los 470,455
+  habitantes del departamento de Sonsonate (censo 2024).
 - 2026-08-04: **el arte ilustrado se hace con Gemini, las caras no.** Se probó recortar con Gemini una
   foto real del alcalde Aquino y **le inventó los ojos, las cejas y el pelo**: quedó descartado. La
   regla que sirvió: Gemini para ilustración conceptual (la de la estafa salió perfecta a la primera,
@@ -249,7 +265,7 @@ el titular.
 2. **Nota de Krisma Mancía** — el titular todavía empieza con "Muere", que en un obituario de días atrás sugiere que pasó hoy. Se propuso cambiarlo a formato `Krisma Mancía (1980-2026)` y quedó sin decidir.
 3. **Nota de la UES (30 de julio)** — la portada compone 3 fotos de marchas conmemorativas aportadas por la redacción. **Faltan dos datos**: si son de la jornada de 2026 o de archivo (la gente lleva mascarilla, lo que sugiere 2021-2022) y **de quién son, para acreditarlas**. El pie de foto actual no atribuye fecha a propósito.
 4. **Nota del Seminario del Espíritu Santo** — el video decía "FALTA 1 DÍA" cuando faltaban dos. Verificar con el hno. Adelso Torres (7852-7509) si hubo actividad el jueves 30.
-5. **Nota de Japón/Kumamoto** — nunca se hizo. El sismo de 7.1 del 28-jul dejó el Aeon Mall de Kashima colapsado con 20-30 atrapados. El sitio no tiene ni una línea sobre esto.
+5. **Nota de Japón/Kumamoto** — nunca se hizo. El sismo de 7.1 del 28-jul dejó el Aeon Mall de Kashima colapsado con 20-30 atrapados. El sitio no tiene ni una línea sobre esto. **Ángulo acordado el 4-ago:** no contarla como noticia de Japón sino como «nota de El Salvador contada desde Japón» — un 7.1 tumbó un centro comercial en el país con el código de construcción más estricto del mundo; El Salvador es de los más sísmicos del continente. Ese es el puente.
 6. ~~**Editor** — falta mergear la rama del RSS automático a `main`.~~ ✅ **Resuelto 2026-08-04**: la rama `claude/kumamoto-earthquake-july-cd59ip` quedó fusionada en `main` (editor) y en `master` (sitio y pluma-video). No hay nada pendiente de mergear.
 7. **Equilibrio electoral** — ya van 2 notas de Ángel Madrid (ARENA) y 1 de Kompagil (FMLN) rumbo a 2027. Conviene balancear la cobertura de candidaturas de Sonsonate.
 
