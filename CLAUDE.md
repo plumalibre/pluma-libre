@@ -192,6 +192,24 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 - 2026-07-03: publicada nota de Deportes "Cabo Verde cae 3-2 ante Argentina en la prórroga" (Mundial 2026) con 2 fotos propias (`assets/nota-caboverde-argentina.jpg` y `nota-caboverde-celebracion.jpg`); card agregada a home + sección Deportes + sitemap. **Ojo:** el crédito de foto quedó como "Selección de Cabo Verde (FCF)" — verificar/ajustar la fuente real de las imágenes.
 - 2026-07-03: agregadas 6 notas para nivelar secciones (mezcla local/nacional/internacional), todas con fotos de Wikimedia Commons con crédito CC/CC0: Política (reforma reelección indefinida), Economía (FMI ~4% + Bitcoin 7,600 BTC), Internacional (ofensiva rusa sobre Kiev; Keiko Fujimori presidenta de Perú), Religión (excomunión Sociedad San Pío X, seguimiento de la nota lefebvrista), Cultura (Fiestas Julias 2026). Cards en home + su sección + sitemap. Quitado el "Próximamente" de `internacional.html`. Generadas con script que reutiliza la estructura de la nota de Cabo Verde. Todas las secciones quedaron en 2-3 notas.
 
+## Pendiente de trabajar: estrategia de contenido para redes (pedido 4-ago-2026)
+
+El director pidió una sesión dedicada a **ideas de contenido y formatos que usan los medios grandes**
+para publicar notas —propias, recicladas o a partir de videos que circulan— con el objetivo de
+rendir en el algoritmo. Puntos a cubrir cuando se haga:
+
+- Formatos recurrentes baratos (el dato del día, el antes y después, «nos escribieron preguntando»).
+- Cómo se recicla archivo propio sin que se lea como repetido (efeméride, cuando el tema vuelve al
+  noticiero, seguimiento de una nota vieja).
+- Qué hacer con **videos ajenos que circulan**: el límite legal y el que conviene — pedir permiso por
+  mensaje, usar fragmento corto con crédito visible, y siempre agregar valor (verificar, contextualizar)
+  en vez de re-subir el video pelado, que es lo que hace que bajen la cuenta.
+- Qué medir para saber si un formato sirve, con lo que ya hay: GA4 en el sitio y el rendimiento de
+  cada pieza en Facebook y TikTok.
+
+Contexto: TikTok arrancó — 67 seguidores con un clip de Bukele. Se probó el formato placa con
+narración de IA (nota de Bertha Deleón); falta medir cómo rinde contra el clip de video real.
+
 ## Temas priorizados (decisión del 3-ago-2026)
 
 1. **Despidos** — Bases Magisteriales denunció que entre el 27 y 28 de julio se despidió a **más de 24 instructores de cachiporristas en Sonsonate** por pertenecer a la comunidad LGBTIQ+, con instrucción a los directores. Solo en Sonsonate. El MINED no se ha pronunciado y el memorándum 10-2026 no los menciona. Vocero: David Rodríguez. Aparte, el caso de las maestras del Centro Escolar Rafael Campo, ya tocado en HABLEMOS con Ángel Madrid. **Nadie ha buscado a los despedidos.**
