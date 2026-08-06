@@ -287,6 +287,7 @@ el titular.
 5. **Nota de Japón/Kumamoto** — nunca se hizo. El sismo de 7.1 del 28-jul dejó el Aeon Mall de Kashima colapsado con 20-30 atrapados. El sitio no tiene ni una línea sobre esto. **Ángulo acordado el 4-ago:** no contarla como noticia de Japón sino como «nota de El Salvador contada desde Japón» — un 7.1 tumbó un centro comercial en el país con el código de construcción más estricto del mundo; El Salvador es de los más sísmicos del continente. Ese es el puente.
 6. ~~**Editor** — falta mergear la rama del RSS automático a `main`.~~ ✅ **Resuelto 2026-08-04**: la rama `claude/kumamoto-earthquake-july-cd59ip` quedó fusionada en `main` (editor) y en `master` (sitio y pluma-video). No hay nada pendiente de mergear.
 7. **Equilibrio electoral** — ya van 2 notas de Ángel Madrid (ARENA) y 1 de Kompagil (FMLN) rumbo a 2027. Conviene balancear la cobertura de candidaturas de Sonsonate.
+8. **Fiestas Agostinas — clips de la transmisión de Catedral** (quedó a medias el 5-ago). Video de origen: `https://www.facebook.com/share/v/18udCrncNy/`, unas 3 horas. Marcas ubicadas por muestreo: **La Bajada ≈ 2:18:20** y **La Transfiguración ≈ 4:14:20** — el clip que salió de esa segunda marca **no dio lo esperado**, así que hay que reconfirmarla antes de volver a bajar. Falta además el timestamp de la llegada nocturna a Catedral. Crédito obligatorio en el clip: **«Catedral Metropolitana de San Salvador»**. **Bloqueado**: la VM que corre `pluma-video` está caída — ver el punto 1 del handoff en el CLAUDE.md del repo `editor`.
 
 ## Imágenes: cómo llegan a Claude
 
