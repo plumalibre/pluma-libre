@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Wed, 05 Aug 2026 20:46:35 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 23:36:17 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Lo que Trump firmó hoy no le quita la ciudadanía a los hijos del TPS</title>
+    <link>https://plumalibre.press/articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html</guid>
+    <description>Firmó dos órdenes ejecutivas cinco semanas después de que la Corte Suprema le tumbara la anterior. Apuntan al «turismo de maternidad», a hijos de diplomáticos y de personas clasificadas como enemigos extranjeros — no al estatus migratorio de los padres.</description>
+    <category>Internacional</category>
+    <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-trump-ciudadania-tps-salvadorenos.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>Cayó un mall en Japón; El Salvador construye con una norma de 1994</title>
     <link>https://plumalibre.press/articulos/terremoto-kumamoto-japon-norma-sismica-el-salvador.html</link>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-madrid-cover.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Aguirre y Madaí Santos, la fórmula del FMLN, votan en las elecciones internas</title>
-    <link>https://plumalibre.press/articulos/aguirre-madai-santos-formula-fmln-votan-internas.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/aguirre-madai-santos-formula-fmln-votan-internas.html</guid>
-    <description>Rafael Aguirre y Madaí Santos, fórmula presidencial del FMLN, votaron este domingo en las elecciones internas del partido.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-formula-fmln-cover.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
