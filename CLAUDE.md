@@ -154,6 +154,17 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ## Historial reciente importante
 
+- 2026-08-06/07: **la nota de las órdenes de Trump, y dos reglas que salieron de ella.** Herbert
+  publicó desde el editor un texto que le llegó ya redactado con una placa de «Última hora». Traía
+  dos errores graves: que las órdenes «contemplan retirar la ciudadanía automática en territorios
+  como Puerto Rico» —**falso**, la categoría real son los territorios donde la ciudadanía no la
+  confiere ley federal, o sea **Samoa Americana**; los puertorriqueños son ciudadanos por ley desde
+  1917— y la portada, que era **la placa de otro medio** con su banner rojo y su titular quemados.
+  Se corrigió, y después se **reescribió entera** porque la corrección quedó en «no pasa nada».
+  El ángulo que la salvó: el TPS vence el **9 de septiembre** y **dos de las organizaciones que la
+  orden llama «enemigos extranjeros» son salvadoreñas** —MS-13 (designada 20-feb-2025) y Barrio 18
+  (24-sep-2025)—, con el caso de **Kilmar Abrego García** como respuesta a quién decide la
+  pertenencia. Ese cruce no lo hizo nadie más.
 - 2026-08-05: **ya se puede medir redes.** El Worker tiene el endpoint `/fb/insights` y el editor
   una tarjeta «Rendimiento en Facebook» en Stats. **Lo que dicen los primeros datos confirma la
   tesis del director: lo que jala es Bukele.** En TikTok, tres videos sobre Bukele/pandillas hacen
@@ -197,6 +208,16 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
   más leída del sitio es uno de los tres temas priorizados: ahí está el trabajo de mayor valor.
   **Ojo:** esto mide el sitio, NO redes — un video puede hacer miles de vistas en Facebook sin mandar
   una visita. Falta construir la medición de redes (ver el CLAUDE.md del editor).
+- 2026-08-07: **regla del qué está en juego.** Una nota que concluye que **no pasa nada no es una
+  nota**. Si al terminarla el resumen honesto es «todo sigue igual», falta el conflicto: hay que
+  buscar qué está en juego, para quién y con qué fecha. Pasó dos veces en la misma semana — la de
+  la UES lideraba con el promedio regional en vez del dato local, y la de Trump quedó titulada «no
+  le quita la ciudadanía a los hijos del TPS», factualmente impecable y editorialmente muerta.
+- 2026-08-07: **regla de los textos que llegan armados.** Un texto que llega ya redactado —de un
+  contacto, de un grupo, de una placa que circula— es un **borrador, no una nota**. Tres preguntas
+  antes de subirlo: **¿lo dice la fuente primaria o solo el que me lo mandó? ¿tenemos derecho a
+  usar esta imagen? ¿dónde está el puente con El Salvador?** Si alguna falla, no sube. En el caso
+  de las órdenes de Trump los dos errores graves venían dentro del paquete, no de la redacción.
 - 2026-08-04: **regla para notas internacionales.** Rinden cuando tienen puente con El Salvador: se
   sintió acá, hay salvadoreños adentro, toca el bolsillo, sirve de vara para medir, o hay un personaje
   conocido. Sin puente no se leen. Ejemplo de vara: los 385,756 evacuados de China contra los 470,455
@@ -290,6 +311,12 @@ el titular.
 8. **Fiestas Agostinas — clips de la transmisión de Catedral** (quedó a medias el 5-ago). Video de origen: `https://www.facebook.com/share/v/18udCrncNy/`, unas 3 horas. Marcas ubicadas por muestreo: **La Bajada ≈ 2:18:20** y **La Transfiguración ≈ 4:14:20** — el clip que salió de esa segunda marca **no dio lo esperado**, así que hay que reconfirmarla antes de volver a bajar. Falta además el timestamp de la llegada nocturna a Catedral. Crédito obligatorio en el clip: **«Catedral Metropolitana de San Salvador»**. **Bloqueado**: la VM que corre `pluma-video` está caída — ver el punto 1 del handoff en el CLAUDE.md del repo `editor`.
 
 ## Imágenes: cómo llegan a Claude
+
+**Fotos de funcionarios de Estados Unidos: hay salida legal y gratis.** Las fotos oficiales de la
+Casa Blanca y de las agencias del gobierno federal estadounidense son **de dominio público** y se
+pueden usar acreditando al autor. Se bajan de Wikimedia Commons. Sirve cada vez que se necesite una
+foto de un funcionario gringo, en lugar de tomar la de una agencia o —peor— la placa de otro medio.
+La que se usó el 7-ago: retrato presidencial oficial de 2025, **Daniel Torok / Casa Blanca**.
 
 Pegar una imagen con Ctrl+V **no genera archivo** — Claude la ve pero no puede guardarla en el repo. Hay que mandarla **con el clip de adjuntar** (desde el celular funciona bien) o subirla a Google Drive, que Claude sí puede leer. También sirve subirla directo a `assets/` desde GitHub web con el nombre exacto que espera la nota.
 
