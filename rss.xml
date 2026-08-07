@@ -5,7 +5,7 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Fri, 07 Aug 2026 14:40:10 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 14:51:54 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>Trump prohíbe el turismo de partos: visa negada y expulsión</title>
@@ -15,6 +15,24 @@
     <category>Internacional</category>
     <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-turismo-partos-trump.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</title>
+    <link>https://plumalibre.press/articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html</guid>
+    <description>El juez Nathaniel Gorton se negó el 5 de agosto a seguir bloqueando la regla que recorta los permisos laborales. Alcanza a los beneficiarios de El Salvador, Ucrania y Sudán cuyo documento vencía el 22 de julio. El TPS no se cancela.</description>
+    <category>Internacional</category>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-tps-permiso-trabajo-fallo.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>A los hijos no les quitan la ciudadanía. A los papás les quedan 33 días</title>
+    <link>https://plumalibre.press/articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html</guid>
+    <description>La Corte Suprema blindó en junio la ciudadanía de los 150,000 hijos de salvadoreños con TPS. Lo que Trump firmó esta semana abre otra puerta: dos de las organizaciones que su orden llama «enemigos extranjeros» son salvadoreñas.</description>
+    <category>Internacional</category>
+    <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-trump-tps-33-dias.jpg" length="0" type="image/jpeg"/>
   </item>
   <item>
     <title>Cayó un mall en Japón; El Salvador construye con una norma de 1994</title>
@@ -258,24 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-kompagil-declaraciones.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Seis partidos definen hoy sus candidatos rumbo a 2027; el plazo vence el miércoles</title>
-    <link>https://plumalibre.press/articulos/internas-partidos-26-julio-2026-rumbo-2027.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/internas-partidos-26-julio-2026-rumbo-2027.html</guid>
-    <description>ARENA, FMLN, PDC, PCN, Vamos y FPS votan este domingo. El plazo para definir candidaturas vence el miércoles 29 de julio.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-internas-generales-cover.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Ángel Madrid busca una diputación por Sonsonate: ARENA vota este domingo</title>
-    <link>https://plumalibre.press/articulos/angel-madrid-precandidato-diputado-arena-sonsonate.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/angel-madrid-precandidato-diputado-arena-sonsonate.html</guid>
-    <description>Ángel Madrid, precandidato a diputado por ARENA en Sonsonate, pide el voto para la casilla 3 en las internas de este domingo 26 de julio.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-madrid-cover.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
