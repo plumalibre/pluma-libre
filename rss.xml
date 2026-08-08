@@ -5,8 +5,26 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sat, 08 Aug 2026 03:17:27 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 23:26:17 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>CEO de Nvidia asegura que la IA hará que electricistas, plomeros y albañiles sean algunos de los empleos mejor pagados porque el mundo necesitará construir la infraestructura que hará posible su expansión</title>
+    <link>https://plumalibre.press/articulos/ceo-de-nvidia-asegura-que-la-ia-hara-que-electrici.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/ceo-de-nvidia-asegura-que-la-ia-hara-que-electrici.html</guid>
+    <description>El auge de la inteligencia artificial (IA) no solo transformará el sector tecnológico, sino que convertirá a electricistas, plomeros, albañiles y siderúrgicos…</description>
+    <category>Tecnología</category>
+    <pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/1000018486.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Capturan al conductor del accidente mortal en el bulevar El Hipódromo</title>
+    <link>https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</guid>
+    <description>La PNC identificó a Francisco Javier García Hernández, que huyó en otro vehículo tras el impacto y luego se presentó en una delegación. Será remitido por homicidio culposo. En redes, la versión viral le atribuía el carro al hijo del presidente de la Asamblea.</description>
+    <category>Social</category>
+    <pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-captura-hipodromo-pnc.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>Trump prohíbe el turismo de partos: visa negada y expulsión</title>
     <link>https://plumalibre.press/articulos/trump-prohibe-turismo-de-partos-orden-ejecutiva.html</link>
@@ -258,24 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-aguirre-cover.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Mayteé Iraheta anuncia una campaña austera: «Las mujeres sabemos hacer de un dólar, maravillas»</title>
-    <link>https://plumalibre.press/articulos/maytee-iraheta-campana-austera-arena-2027.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/maytee-iraheta-campana-austera-arena-2027.html</guid>
-    <description>Mayteé Iraheta, candidata presidencial de ARENA, anuncia una campaña austera. Fue diputada por Sonsonate en 2015, a los 26 años.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-iraheta-campana-austera.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>«El Kompagil» busca una diputación por Sonsonate: FMLN vota este domingo</title>
-    <link>https://plumalibre.press/articulos/kompagil-precandidato-diputado-fmln-sonsonate.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/kompagil-precandidato-diputado-fmln-sonsonate.html</guid>
-    <description>Manuel Gil «El Kompagil» compite como precandidato a diputado propietario por Sonsonate en las internas del FMLN de este domingo 26 de julio, en fórmula con Regina Cruz.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-internas-cover.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>

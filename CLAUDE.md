@@ -312,6 +312,14 @@ el titular.
 
 ## Imágenes: cómo llegan a Claude
 
+**Fotos de agencia GRATIS para las notas del sitio: el embed de Getty (verificado 8-ago-2026).**
+Getty Images tiene un programa de embed activo con más de 70 millones de fotos editoriales que se
+pueden incrustar legalmente en páginas web: en gettyimages.com se filtra por «embeddable», se copia
+el código del botón Embed y se pega dentro del cuerpo de la nota. Tres límites: **solo funciona en
+el sitio** (Facebook no acepta embeds), **no sirve de portada ni de og:image** (la portada sigue
+siendo arte propio), y es solo para uso editorial. Ideal para internacionales: la foto de agencia
+que todos tienen, legal y gratis, dentro de la nota.
+
 **Fotos de funcionarios de Estados Unidos: hay salida legal y gratis.** Las fotos oficiales de la
 Casa Blanca y de las agencias del gobierno federal estadounidense son **de dominio público** y se
 pueden usar acreditando al autor. Se bajan de Wikimedia Commons. Sirve cada vez que se necesite una
