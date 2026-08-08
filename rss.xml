@@ -5,7 +5,7 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Fri, 07 Aug 2026 14:51:54 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 03:17:27 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>Trump prohíbe el turismo de partos: visa negada y expulsión</title>
@@ -15,6 +15,15 @@
     <category>Internacional</category>
     <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-turismo-partos-trump.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Muere un hombre al caer a un pozo de más de 20 metros en Izalco</title>
+    <link>https://plumalibre.press/articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html</guid>
+    <description>Comandos de Salvamento Sonsonate y el Cuerpo de Bomberos finalizaron las labores de recuperación del cuerpo. La escena quedó en manos de las autoridades, que deben establecer las causas.</description>
+    <category>Social</category>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-pozo-izalco-comandos.jpg" length="0" type="image/jpeg"/>
   </item>
   <item>
     <title>Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</title>
@@ -267,15 +276,6 @@
     <category>Política</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-internas-cover.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Kompagil da declaraciones a la prensa en medio de la jornada de internas del FMLN</title>
-    <link>https://plumalibre.press/articulos/kompagil-declaraciones-jornada-internas-fmln.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/kompagil-declaraciones-jornada-internas-fmln.html</guid>
-    <description>Manuel Gil, precandidato a diputado del FMLN por Sonsonate, dio declaraciones durante la jornada de internas: </description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-kompagil-declaraciones.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
