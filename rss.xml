@@ -5,8 +5,26 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sat, 08 Aug 2026 23:56:36 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 09 Aug 2026 19:02:53 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</title>
+    <link>https://plumalibre.press/articulos/dia-del-salvadoreno-los-angeles-festival-2026.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/dia-del-salvadoreno-los-angeles-festival-2026.html</guid>
+    <description>El festival se celebra este fin de semana en Venice Boulevard, después de que la edición anterior se cancelara por temor a los operativos migratorios. Cierra hoy domingo, a un mes de que venza el TPS.</description>
+    <category>Cultura</category>
+    <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-dia-del-salvadoreno-los-angeles.jpg" length="0" type="image/jpeg"/>
+  </item>
+  <item>
+    <title>Se entregó el conductor del accidente mortal del bulevar El Hipódromo</title>
+    <link>https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</guid>
+    <description>Francisco Javier García Hernández se presentó voluntariamente en una delegación, según la PNC, un día después de huir del lugar en otro vehículo. Será remitido por homicidio culposo. La versión viral </description>
+    <category>Social</category>
+    <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-captura-hipodromo-pnc.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>CEO de Nvidia asegura que la IA hará que electricistas, plomeros y albañiles sean algunos de los empleos mejor pagados porque el mundo necesitará construir la infraestructura que hará posible su expansión</title>
     <link>https://plumalibre.press/articulos/ceo-de-nvidia-asegura-que-la-ia-hara-que-electrici.html</link>
@@ -15,15 +33,6 @@
     <category>Tecnología</category>
     <pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/1000018486.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Se entregó el conductor del accidente mortal del bulevar El Hipódromo</title>
-    <link>https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html</guid>
-    <description>Francisco Javier García Hernández se presentó voluntariamente en una delegación, según la PNC, un día después de huir del lugar en otro vehículo. Será remitido por homicidio culposo. La versión viral le atribuía el carro al hijo del presidente de la Asamblea.</description>
-    <category>Social</category>
-    <pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-captura-hipodromo-pnc.jpg" length="0" type="image/jpeg"/>
   </item>
   <item>
     <title>Trump prohíbe el turismo de partos: visa negada y expulsión</title>
@@ -267,15 +276,6 @@
     <category>Social</category>
     <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-agostinas-carretera.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>El FMLN lleva de fórmula presidencial a una enfermera despedida del Hospital Rosales</title>
-    <link>https://plumalibre.press/articulos/rafael-aguirre-vota-internas-fmln-2026.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/rafael-aguirre-vota-internas-fmln-2026.html</guid>
-    <description>Madaí Santos, enfermera despedida del Hospital Rosales, acompaña como fórmula al candidato presidencial del FMLN, Rafael Aguirre. Ambos votaron este domingo en las internas.</description>
-    <category>Política</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-aguirre-cover.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
