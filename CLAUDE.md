@@ -89,6 +89,29 @@ Tres botones en la barra superior:
 - `data: 'FxoVMTVQRAlJcyImHz0CMgJYXwQxGVE0HBgCIEFAQAcnA0AZIRRJag=='`
 - `check: 'hsme43b'`
 
+## Regla permanente: cada vez que se pide copy o arte (9-ago-2026)
+
+Siempre que el director pida **copy o arte**, entregar el paquete completo en el mismo mensaje,
+sin que lo tenga que pedir por partes:
+
+1. **Copy para el post**, en negrita Unicode (`scratchpad/bold.py`), listo para pegar.
+2. **Los textos para las herramientas del editor**, porque son campos distintos y no se repiten:
+   - **Etiqueta** (2-4 palabras, mayúsculas) para la placa.
+   - **Titular de placa** (máx. ~60 car., se lee en miniatura).
+   - **Bajada de placa** (1 línea, opcional).
+   - **Pie/crédito** exacto.
+   - **Formato** recomendado: 4:5 feed · 9:16 historias y Reels · 16:9 portada del sitio.
+3. **Enlace directo** a la imagen si ya está en el repo.
+
+**Lo que el director hace en el editor y NO cuesta tokens:** el mosaico (🧩, botón junto al campo
+de imagen, 2-4 fotos con Canvas en el navegador) y las placas (🎨 Placas → `editorial-templates.html`).
+Corren en su teléfono. Que Claude arme el arte con Pillow cuesta 30-50 mil tokens por pieza; que
+lo haga él, cero. **Regla: el arte lo hace él en el editor, salvo que pida lo contrario.** Corregir
+algo concreto que ya existe es mucho más barato que armarlo de cero.
+
+**Avisar el costo estimado antes de cualquier trabajo pesado** (auditorías, artes, tandas de
+agentes) y esperar su ok.
+
 ## Línea editorial
 
 - **Tono:** Profesional, directo, accesible
