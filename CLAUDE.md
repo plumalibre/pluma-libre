@@ -335,6 +335,28 @@ el titular.
 
 ## Imágenes: cómo llegan a Claude
 
+### Fotos DESCARGABLES y gratis (para Facebook y para portadas)
+
+**El embed de Getty NO sirve para esto:** no entrega archivo, solo se muestra desde su iframe.
+Cuando se necesita una foto que se pueda bajar y subir a redes, el orden es este:
+
+1. **Fotos oficiales de la institución que protagoniza la nota.** PNC, FGR, Comandos de
+   Salvamento, Bomberos, Protección Civil, Asamblea, alcaldías. Se bajan de su propia
+   publicación, son descargables y se usan **con crédito** («Foto: Policía Nacional Civil»).
+   Es la mejor fuente para lo local y la que más se ha usado.
+2. **Wikimedia Commons** — para personas conocidas, lugares y temas internacionales. Licencias
+   CC (hay que copiar autor y licencia al pie) o dominio público. Buscar con la API:
+   `commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=<tema>&gsrnamespace=6&prop=imageinfo&iiprop=url|extmetadata&format=json`
+3. **Obras del gobierno federal de EE. UU.** — dominio público, sin restricción (ver abajo).
+4. **Openverse** (`api.openverse.org/v1/images/?q=<tema>&license_type=all-cc`) — busca CC en
+   Flickr, Wikimedia y otros a la vez. Útil cuando Commons no tiene nada.
+5. **Unsplash, Pexels, Pixabay** — gratis y sin atribución obligatoria, pero son fotos de banco:
+   sirven para ilustrar un concepto, **nunca para representar un hecho concreto**.
+6. **Arte propio** (Pillow o el editor) cuando ninguna de las anteriores da algo honesto.
+
+**Lo que nunca:** la placa de otro medio, la foto de agencia sin licencia, ni una imagen de IA
+fotorrealista presentada como si documentara el hecho.
+
 **Fotos de agencia GRATIS para las notas del sitio: el embed de Getty (verificado 8-ago-2026).**
 Getty Images tiene un programa de embed activo con más de 70 millones de fotos editoriales que se
 pueden incrustar legalmente en páginas web: en gettyimages.com se filtra por «embeddable», se copia
