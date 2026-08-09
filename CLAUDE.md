@@ -343,6 +343,12 @@ el sitio** (Facebook no acepta embeds), **no sirve de portada ni de og:image** (
 siendo arte propio), y es solo para uso editorial. Ideal para internacionales: la foto de agencia
 que todos tienen, legal y gratis, dentro de la nota.
 
+**PENDIENTE para poder usarlo desde el editor:** el markup del editor solo entiende
+`[IMAGEN:]`, `[VIDEO_YOUTUBE:]`, `[VIDEO_FACEBOOK:]`, `[VIDEO_TIKTOK:]`, `[COL2]` y `---`.
+**No hay forma de pegar el `<iframe>` de Getty desde la pestaña Escribir.** Hace falta agregar
+un token `[GETTY:<id>]` que `genHTML()` traduzca al embed oficial. Mientras no exista, el embed
+solo se puede poner editando el HTML de la nota directamente en el repo.
+
 **Fotos de funcionarios de Estados Unidos: hay salida legal y gratis.** Las fotos oficiales de la
 Casa Blanca y de las agencias del gobierno federal estadounidense son **de dominio público** y se
 pueden usar acreditando al autor. Se bajan de Wikimedia Commons. Sirve cada vez que se necesite una
