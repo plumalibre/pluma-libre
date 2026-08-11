@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sun, 09 Aug 2026 19:02:53 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 11 Aug 2026 16:24:58 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Menos de 100 hablan náhuat y hoy los párvulos cantaron el himno</title>
+    <link>https://plumalibre.press/articulos/congreso-nahuat-sonsonate-parvulos-himno-nacional.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/congreso-nahuat-sonsonate-parvulos-himno-nacional.html</guid>
+    <description>Niños de Santa Catarina Masahuat, Santo Domingo de Guzmán y Nahuizalco entonaron el Himno Nacional en náhuat en el II Congreso Nacional sobre Revitalización Lingüística, que se desarrolla hoy en el Palacio Cultural de Sonsonate.</description>
+    <category>Cultura</category>
+    <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-congreso-nahuat-sonsonate.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</title>
     <link>https://plumalibre.press/articulos/dia-del-salvadoreno-los-angeles-festival-2026.html</link>
@@ -267,15 +276,6 @@
     <category>Cultura</category>
     <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
     <enclosure url="https://plumalibre.press/assets/nota-krisma-mancia.jpg" length="0" type="image/jpeg"/>
-  </item>
-  <item>
-    <title>Vacaciones agostinas 2026: los días de asueto y el plan vial, en un año con 820 muertes en carretera</title>
-    <link>https://plumalibre.press/articulos/vacaciones-agostinas-2026-asuetos-seguridad-vial.html</link>
-    <guid isPermaLink="true">https://plumalibre.press/articulos/vacaciones-agostinas-2026-asuetos-seguridad-vial.html</guid>
-    <description>Asuetos del 3, 5 y 6 de agosto. El país llega a las agostinas con 12,826 accidentes y 820 fallecidos en 2026, y un promedio diario que subió de 57 a 63 siniestros.</description>
-    <category>Social</category>
-    <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
-    <enclosure url="https://plumalibre.press/assets/nota-agostinas-carretera.jpg" length="0" type="image/jpeg"/>
   </item>
 </channel>
 </rss>
