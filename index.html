@@ -96,11 +96,34 @@
     <section class="home-hero">
       <div class="wrap">
         <div class="home-hero-grid">
-        <article class="card"><div class="thumb"><img src="assets/nota-congreso-nahuat-sonsonate.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Cultura</span><h3><a href="articulos/congreso-nahuat-sonsonate-parvulos-himno-nacional.html">Menos de 100 hablan náhuat y hoy los párvulos cantaron el himno</a></h3><p class="meta">11 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-dia-del-salvadoreno-los-angeles.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Cultura</span><h3><a href="articulos/dia-del-salvadoreno-los-angeles-festival-2026.html">El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</a></h3><p class="meta">9 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-captura-hipodromo-pnc.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html">Se entregó el conductor del accidente mortal del bulevar El Hipódromo</a></h3><p class="meta">8 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-pozo-izalco-comandos.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html">Muere un hombre al caer a un pozo de más de 20 metros en Izalco</a></h3><p class="meta">7 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-tps-permiso-trabajo-fallo.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html">Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</a></h3><p class="meta">7 de agosto, 2026</p></div></article>
+          <article class="home-hero-principal"><div class="img"><img src="assets/nota-congreso-nahuat-sonsonate.jpg" alt="" loading="eager"></div><div class="body"><span class="kicker">Cultura</span><h2><a href="articulos/congreso-nahuat-sonsonate-parvulos-himno-nacional.html">Menos de 100 hablan náhuat y hoy los párvulos cantaron el himno</a></h2><p class="meta">Por Pluma Libre · 11 de agosto, 2026</p></div></article>
+          <aside class="home-hero-sidebar">
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-dia-del-salvadoreno-los-angeles.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Cultura</span><h3><a href="articulos/dia-del-salvadoreno-los-angeles-festival-2026.html">El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-captura-hipodromo-pnc.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html">Se entregó el conductor del accidente mortal del bulevar El Hipódromo</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-pozo-izalco-comandos.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html">Muere un hombre al caer a un pozo de más de 20 metros en Izalco</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-tps-permiso-trabajo-fallo.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Internacional</span><h3><a href="articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html">Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</a></h3></div></article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner C (intercalado entre cards) · plantilla. JS lo clona y lo inserta cada N cards si banner_c_grid.activo===true -->
+    <template id="banner-c-tpl">
+      <article class="pl-ad pl-ad--banner-c" role="complementary" aria-label="Contenido publicitario">
+        <span class="pl-ad-label">Publicidad</span>
+        <div class="pl-ad-frame">
+          <a href="" target="_blank" rel="noopener nofollow sponsored" aria-label="Ir al sitio del patrocinador — se abre en una pestaña nueva">
+            <img src="" alt="">
+          </a>
+        </div>
+      </article>
+    </template>
+
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Últimas Noticias</h2>
+      </div>
+      <div class="news-grid">
         <article class="card"><div class="thumb"><img src="assets/nota-trump-tps-33-dias.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html">A los hijos no les quitan la ciudadanía. A los papás les quedan 33 días</a></h3><p class="meta">6 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/nota-kumamoto-norma-sismica.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/terremoto-kumamoto-japon-norma-sismica-el-salvador.html">Cayó un mall en Japón; El Salvador construye con una norma de 1994</a></h3><p class="meta">5 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/nota-turismo-partos-trump.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/trump-prohibe-turismo-de-partos-orden-ejecutiva.html">Trump prohíbe el turismo de partos: visa negada y expulsión</a></h3><p class="meta">7 de agosto, 2026</p></div></article>
@@ -207,6 +230,7 @@
         <article class="card"><div class="thumb"><img src="assets/686532603-1469036818239460-1941368822462683121-n.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/tragedia-aerea-en-guatemala.html">TRAGEDIA AÉREA EN GUATEMALA</a></h3><p class="meta">3 de mayo, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/68000.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/contribuyentes-tienen-hasta-el-30-de-abril-para-de.html">Contribuyentes tienen hasta el 30 de abril para declarar la renta</a></h3><p class="meta">2 de mayo, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="https://placehold.co/300x300/F39C12/ffffff?text=SOC" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/brigada-medica-atiende-200-personas-zona-rural.html">Brigada médica atiende a 200 personas en zona rural</a></h3><p class="meta">28 de abril, 2026</p></div></article>
+      
       </div>
 
       <section class="follow-us">
