@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Tue, 11 Aug 2026 16:32:45 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 17 Aug 2026 00:00:00 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Ramiro Landaverde ya es obispo de Zacatecoluca</title>
+    <link>https://plumalibre.press/articulos/ramiro-landaverde-nuevo-obispo-zacatecoluca.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/ramiro-landaverde-nuevo-obispo-zacatecoluca.html</guid>
+    <description>Fue ordenado obispo y tomó posesión de la diócesis el sábado 15 de agosto en la Catedral Nuestra Señora de los Pobres. Sucede a monseñor Elías Samuel Bolaños, que estuvo 28 años al frente y se retiró al cumplir los 75.</description>
+    <category>Religión</category>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-obispo-landaverde.jpg" length="0" type="image/jpeg"/>
+  </item>
   <item>
     <title>Menos de 100 hablan náhuat y hoy los párvulos cantaron el himno</title>
     <link>https://plumalibre.press/articulos/congreso-nahuat-sonsonate-parvulos-himno-nacional.html</link>
