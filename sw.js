@@ -7,7 +7,7 @@
 // - skipWaiting NO automático: el SW nuevo activa cuando todas las pestañas se cierran
 //   (en un sitio editorial es lo natural — el lector navega de una nota a otra).
 
-const CACHE_VERSION = 'pl-v10';
+const CACHE_VERSION = 'pl-v11';
 const SHELL = [
   '/',
   '/index.html',

@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -92,24 +92,75 @@
   <main>
 
     <!-- HOME HERO: 1 principal + 4 secundarias.
-         Las clases son .home-hero-principal y .home-hero-secondary; el editor las maneja con un selector de 3 estados. -->
+         Las clases son .home-hero-principal y .home-hero-secondary; el editor las maneja con un selector de 3 estados.
+         El script de abajo convierte principal+secundarias en un CARRUSEL (las secundarias hacen de pestañas). Sin JS queda el layout estático. -->
     <section class="home-hero">
       <div class="wrap">
         <div class="home-hero-grid">
-        <article class="card"><div class="thumb"><img src="assets/nota-santa-agata-catania.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/santa-agata-catania-reliquia-craneo-video-viral.html">Catania devuelve el cráneo de Santa Ágata a su relicario a 900 años del regreso de sus reliquias</a></h3><p class="meta">18 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-obispo-landaverde.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Religión</span><h3><a href="articulos/ramiro-landaverde-nuevo-obispo-zacatecoluca.html">Ramiro Landaverde ya es obispo de Zacatecoluca</a></h3><p class="meta">17 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-salud-privada-50-doctors.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Política</span><h3><a href="articulos/50-doctors-hospitales-privados-temor-privatizacion-salud.html">Hospitales privados de 50 Doctors reavivan el temor a la privatización</a></h3><p class="meta">15 de agosto, 2026</p></div></article>
-        <article class="card"><div class="thumb"><img src="assets/nota-incendio-santa-marta-sonsonate.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/incendio-casa-colonia-santa-marta-sonsonate.html">Se incendia una casa en la colonia Santa Marta de Sonsonate</a></h3><p class="meta">15 de agosto, 2026</p></div></article>
-          <article class="home-hero-principal"><div class="img"><img src="assets/mosaico-1786766040351.jpg" alt="" loading="eager"></div><div class="body"><span class="kicker">Social</span><h2><a href="articulos/llevan-jornada-medica-gratuita-al-canton-aleman-en.html"> ​Llevan jornada médica gratuita al cantón Alemán en Sonsonate Centro</a></h2><p class="meta">Por Pluma Libre · 14 de agosto, 2026</p></div></article>
+          <article class="home-hero-principal"><div class="img"><img src="assets/nota-santa-agata-catania.jpg" alt="" loading="eager" fetchpriority="high"></div><div class="body"><span class="kicker">Religión</span><h2><a href="articulos/santa-agata-catania-reliquia-craneo-video-viral.html">Catania devuelve el cráneo de Santa Ágata a su relicario a 900 años del regreso de sus reliquias</a></h2><p class="meta">Por Pluma Libre · 18 de agosto, 2026</p></div></article>
           <aside class="home-hero-sidebar">
-            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-dia-del-salvadoreno-los-angeles.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Cultura</span><h3><a href="articulos/dia-del-salvadoreno-los-angeles-festival-2026.html">El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</a></h3></div></article>
-            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-captura-hipodromo-pnc.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html">Se entregó el conductor del accidente mortal del bulevar El Hipódromo</a></h3></div></article>
-            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-pozo-izalco-comandos.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html">Muere un hombre al caer a un pozo de más de 20 metros en Izalco</a></h3></div></article>
-            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-tps-permiso-trabajo-fallo.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Internacional</span><h3><a href="articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html">Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-obispo-landaverde.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Religión</span><h3><a href="articulos/ramiro-landaverde-nuevo-obispo-zacatecoluca.html">Ramiro Landaverde ya es obispo de Zacatecoluca</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-salud-privada-50-doctors.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Política</span><h3><a href="articulos/50-doctors-hospitales-privados-temor-privatizacion-salud.html">Hospitales privados de 50 Doctors reavivan el temor a la privatización</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/nota-incendio-santa-marta-sonsonate.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/incendio-casa-colonia-santa-marta-sonsonate.html">Se incendia una casa en la colonia Santa Marta de Sonsonate</a></h3></div></article>
+            <article class="home-hero-secondary"><div class="thumb"><img src="assets/mosaico-1786766040351.jpg" alt="" loading="lazy"></div><div class="info"><span class="kicker">Social</span><h3><a href="articulos/llevan-jornada-medica-gratuita-al-canton-aleman-en.html">​Llevan jornada médica gratuita al cantón Alemán en Sonsonate Centro</a></h3></div></article>
           </aside>
         </div>
       </div>
     </section>
+    <script>
+    (function(){
+      var grid=document.querySelector('.home-hero-grid');if(!grid)return;
+      var principal=grid.querySelector('.home-hero-principal'),sidebar=grid.querySelector('.home-hero-sidebar');
+      if(!principal)return;
+      var secs=sidebar?[].slice.call(sidebar.querySelectorAll('.home-hero-secondary')):[];
+      function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+      function leer(el){var img=el.querySelector('img'),a=el.querySelector('h2 a,h3 a'),k=el.querySelector('.kicker'),m=el.querySelector('.meta');
+        if(!img||!a)return null;return{src:img.getAttribute('src'),alt:img.getAttribute('alt')||'',href:a.getAttribute('href'),titulo:a.textContent.trim(),kicker:k?k.textContent.trim():'',meta:m?m.textContent.trim():''};}
+      var items=[],p=leer(principal);if(p)items.push(p);
+      secs.forEach(function(s){var d=leer(s);if(d)items.push(d);});
+      if(items.length<2)return;
+      var n=items.length,car=document.createElement('div');
+      car.className='home-hero-carousel';car.setAttribute('aria-roledescription','carrusel');car.setAttribute('aria-label','Noticias destacadas');car.tabIndex=0;
+      var track=document.createElement('div');track.className='hh-track';
+      items.forEach(function(it,i){var s=document.createElement('article');s.className='hh-slide';s.setAttribute('role','group');s.setAttribute('aria-roledescription','noticia');s.setAttribute('aria-label',(i+1)+' de '+n);
+        s.innerHTML='<div class="img"><img src="'+esc(it.src)+'" alt="'+esc(it.alt)+'" loading="'+(i?'lazy':'eager')+'"'+(i?'':' fetchpriority="high"')+'></div><div class="hh-body">'+(it.kicker?'<span class="kicker">'+esc(it.kicker)+'</span>':'')+'<h2><a href="'+esc(it.href)+'">'+esc(it.titulo)+'</a></h2>'+(it.meta?'<p class="meta">'+esc(it.meta)+'</p>':'')+'</div>';
+        track.appendChild(s);});
+      car.appendChild(track);
+      var prev=document.createElement('button'),next=document.createElement('button');
+      prev.className='hh-nav hh-prev';prev.type='button';prev.setAttribute('aria-label','Noticia anterior');prev.innerHTML='&#8249;';
+      next.className='hh-nav hh-next';next.type='button';next.setAttribute('aria-label','Noticia siguiente');next.innerHTML='&#8250;';
+      var ctrl=document.createElement('div');ctrl.className='hh-ctrl';
+      var dots=document.createElement('div'),dotEls=[];dots.className='hh-dots';
+      items.forEach(function(it,i){var d=document.createElement('button');d.type='button';d.className='hh-dot';d.setAttribute('aria-label','Ir a la noticia '+(i+1));d.addEventListener('click',function(){go(i);reiniciar();});dots.appendChild(d);dotEls.push(d);});
+      ctrl.appendChild(prev);ctrl.appendChild(dots);ctrl.appendChild(next);car.appendChild(ctrl);
+      // La principal tambien aparece como pestaña en el sidebar, para que las 5 noticias tengan su atajo.
+      var tabs=[];
+      if(sidebar){var t=document.createElement('article');t.className='home-hero-secondary hh-tab-principal';
+        t.innerHTML='<div class="thumb"><img src="'+esc(p.src)+'" alt="" loading="lazy"></div><div class="info">'+(p.kicker?'<span class="kicker">'+esc(p.kicker)+'</span>':'')+'<h3><a href="'+esc(p.href)+'">'+esc(p.titulo)+'</a></h3></div>';
+        sidebar.insertBefore(t,sidebar.firstChild);tabs=[t].concat(secs);}
+      principal.parentNode.replaceChild(car,principal);
+      var cur=0,timer=null,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function go(i){cur=(i+n)%n;track.style.transform='translateX(-'+(cur*100)+'%)';
+        dotEls.forEach(function(d,j){if(j===cur)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current');});
+        tabs.forEach(function(t,j){t.classList.toggle('is-active',j===cur);});}
+      function parar(){if(timer){clearInterval(timer);timer=null;}}
+      function andar(){if(reduce||timer||document.hidden)return;timer=setInterval(function(){go(cur+1);},6000);}
+      function reiniciar(){parar();andar();}
+      prev.addEventListener('click',function(){go(cur-1);reiniciar();});
+      next.addEventListener('click',function(){go(cur+1);reiniciar();});
+      car.addEventListener('mouseenter',parar);car.addEventListener('mouseleave',andar);
+      car.addEventListener('focusin',parar);car.addEventListener('focusout',andar);
+      car.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){go(cur-1);e.preventDefault();}else if(e.key==='ArrowRight'){go(cur+1);e.preventDefault();}});
+      var x0=null,y0=null;
+      car.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;parar();},{passive:true});
+      car.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
+        if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?cur+1:cur-1);x0=y0=null;andar();},{passive:true});
+      tabs.forEach(function(t,i){t.addEventListener('mouseenter',function(){go(i);parar();});t.addEventListener('mouseleave',andar);
+        t.addEventListener('focusin',function(){go(i);parar();});t.addEventListener('focusout',andar);});
+      document.addEventListener('visibilitychange',function(){if(document.hidden)parar();else andar();});
+      go(0);andar();
+    })();
+    </script>
 
     <!-- Banner C (intercalado entre cards) · plantilla. JS lo clona y lo inserta cada N cards si banner_c_grid.activo===true -->
     <template id="banner-c-tpl">
@@ -135,6 +186,10 @@
         <article class="card"><div class="thumb"><img src="assets/1000021116.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/alcaldia-de-sonsonate-centro-envia-camion-canasta.html"> Alcaldía de Sonsonate Centro envía camión canasta para rescatar a personas atrapadas en la Chicago de Izalco</a></h3><p class="meta">12 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/1000021114.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Deportes</span><h3><a href="articulos/hazana-en-florida-el-leon-silencia-a-miami-y-elimi.html"> ¡Hazaña en Florida! El León silencia a Miami y elimina al Inter con Messi en la cancha</a></h3><p class="meta">12 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/1000021105.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/detenida-en-texas-con-seis-meses-de-embarazo-una-m.html"> Detenida en Texas con seis meses de embarazo, una madre denuncia malos tratos hacia su hijo de dos años en centro de ICE</a></h3><p class="meta">12 de agosto, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/nota-dia-del-salvadoreno-los-angeles.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Cultura</span><h3><a href="articulos/dia-del-salvadoreno-los-angeles-festival-2026.html">El Día del Salvadoreño volvió a Los Ángeles: hoy es el último día</a></h3><p class="meta">9 de agosto, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/nota-captura-hipodromo-pnc.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/capturan-conductor-accidente-mortal-bulevar-hipodromo.html">Se entregó el conductor del accidente mortal del bulevar El Hipódromo</a></h3><p class="meta">9 de agosto, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/nota-pozo-izalco-comandos.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Social</span><h3><a href="articulos/muere-hombre-al-caer-a-un-pozo-en-izalco.html">Muere un hombre al caer a un pozo de más de 20 metros en Izalco</a></h3><p class="meta">7 de agosto, 2026</p></div></article>
+        <article class="card"><div class="thumb"><img src="assets/nota-tps-permiso-trabajo-fallo.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/fallo-permisos-trabajo-tepesianos-salvadorenos.html">Un fallo federal deja sin permiso de trabajo a tepesianos salvadoreños</a></h3><p class="meta">7 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/nota-trump-tps-33-dias.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/donald-trump-firma-ordenes-ejecutivas-para-restrin.html">A los hijos no les quitan la ciudadanía. A los papás les quedan 33 días</a></h3><p class="meta">6 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/nota-kumamoto-norma-sismica.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/terremoto-kumamoto-japon-norma-sismica-el-salvador.html">Cayó un mall en Japón; El Salvador construye con una norma de 1994</a></h3><p class="meta">5 de agosto, 2026</p></div></article>
         <article class="card"><div class="thumb"><img src="assets/nota-turismo-partos-trump.jpg" alt="" loading="lazy"></div><div class="info"><span class="badge-sm">Internacional</span><h3><a href="articulos/trump-prohibe-turismo-de-partos-orden-ejecutiva.html">Trump prohíbe el turismo de partos: visa negada y expulsión</a></h3><p class="meta">7 de agosto, 2026</p></div></article>

@@ -426,6 +426,135 @@ body:has(.news-grid > article) .hero {
 }
 
 /* ============================================
+   HOME HERO — CARRUSEL (lo arma el JS del index a partir
+   de la principal + las secundarias; el sidebar hace de pestañas)
+   ============================================ */
+.home-hero-carousel {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  animation: fadeIn 0.5s var(--ease) both;
+}
+.home-hero-carousel:focus-visible { box-shadow: 0 0 0 3px var(--accent); }
+.hh-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.6s var(--ease);
+  will-change: transform;
+}
+.hh-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.hh-slide .img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--bg);
+}
+.hh-slide .img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.hh-slide:hover .img img { transform: scale(1.03); }
+.hh-slide .hh-body {
+  flex: 1;
+  padding: 10px 14px 40px;
+}
+.hh-slide .kicker {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  margin-bottom: 4px;
+}
+.hh-slide h2 {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* En movil la principal ya esta arriba: su pestaña repetida no aporta */
+@media (max-width: 899px) { .hh-tab-principal { display: none; } }
+.hh-slide h2 a:hover { color: var(--accent); }
+.hh-slide h2 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.hh-slide .meta {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+  font-weight: 500;
+}
+/* Controles: abajo a la derecha, sobre el cuerpo blanco */
+.hh-ctrl {
+  position: absolute;
+  right: 10px; bottom: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hh-nav {
+  width: 30px; height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--brand);
+  font-size: 1.35rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0 0 3px;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.hh-nav:hover, .hh-nav:focus-visible { background: var(--brand); color: #fff; border-color: var(--brand); }
+.hh-dots { display: flex; align-items: center; gap: 5px; padding: 0 4px; }
+.hh-dot {
+  width: 7px; height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: var(--border);
+  cursor: pointer;
+  transition: width 0.3s var(--ease), background 0.3s var(--ease);
+}
+.hh-dot:hover { background: var(--text-tertiary); }
+.hh-dot[aria-current="true"] { width: 20px; background: var(--accent); }
+.home-hero-secondary.is-active {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-card));
+}
+.home-hero-secondary.is-active h3 a { color: var(--accent); }
+@media (min-width: 900px) {
+  .hh-slide .img { aspect-ratio: 16/10; }
+  .hh-slide .hh-body { padding: 14px 20px 46px; }
+  .hh-slide h2 { font-size: 2rem; -webkit-line-clamp: 3; }
+  .hh-slide .meta { font-size: 0.76rem; }
+  .hh-ctrl { right: 14px; bottom: 12px; }
+  .hh-nav { width: 34px; height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hh-track { transition: none; }
+}
+
+/* ============================================
    SECTION TITLES
    ============================================ */
 .section-head {
