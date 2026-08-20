@@ -46,5 +46,16 @@
         "home_top"
       ]
     }
-  ]
+  ],
+  "banner_p_popup": {
+    "activo": true,
+    "tipo": "imagen",
+    "imagen": "assets/banner-p.jpg",
+    "link": "Https://Imeltex.com.sv",
+    "alt": "",
+    "ubicaciones": [
+      "nota_interno"
+    ],
+    "frecuencia_horas": 24
+  }
 }
