@@ -74,7 +74,9 @@
 // así el pop-up funciona en las 100+ notas sin tocar cada archivo.
 // Reglas: se muestra a lo sumo una vez cada `frecuencia_horas` por
 // visitante (localStorage), con retraso de 2 s, cierre con ✕, con
-// Escape o tocando el fondo. Si cambia la imagen (campaña nueva),
+// Escape o tocando el fondo. Si cambia la campaña (campo `v` que el
+// editor sella con cada imagen nueva — la ruta assets/banner-p.jpg
+// siempre es la misma, por eso NO sirve comparar solo la imagen),
 // vuelve a mostrarse aunque no haya vencido el plazo.
 (function(){
   var LS_TS='pl_popup_ts', LS_IMG='pl_popup_img';
@@ -109,7 +111,7 @@
     document.addEventListener('keydown',esc);
     document.body.appendChild(ov);
     requestAnimationFrame(function(){requestAnimationFrame(function(){ov.classList.add('on');});});
-    try{localStorage.setItem(LS_TS,String(Date.now()));localStorage.setItem(LS_IMG,String(b.imagen));}catch(e){}
+    try{localStorage.setItem(LS_TS,String(Date.now()));localStorage.setItem(LS_IMG,String(b.imagen)+'|'+String(b.v||''));}catch(e){}
   }
   function init(){
     fetch('/banners.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(c){
@@ -122,7 +124,7 @@
       try{
         var ts=parseInt(localStorage.getItem(LS_TS)||'0',10);
         var vista=localStorage.getItem(LS_IMG)||'';
-        if(vista===String(b.imagen)&&Date.now()-ts<horas*3600000)return;
+        if(vista===String(b.imagen)+'|'+String(b.v||'')&&Date.now()-ts<horas*3600000)return;
       }catch(e){}
       setTimeout(function(){mostrar(b);},2000);
     }).catch(function(){});
