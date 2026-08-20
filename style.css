@@ -1589,3 +1589,94 @@ main{overflow:hidden}
   .article-body h2{font-size:2.1rem}
 }
 @media(prefers-reduced-motion:reduce){.hh-track{transition:none}}
+
+
+/* ============================================
+   LISTADOS EDITORIALES — contenido primero
+   Portada: fotografia + titular.
+   Secciones: titular + resumen.
+   Escritorio usa composiciones propias.
+   ============================================ */
+body:has(.home-hero) .news-grid .badge-sm,
+body:has(.home-hero) .news-grid .meta{display:none}
+body:has(.home-hero) .news-grid .card h3{margin-top:0}
+body:not(.article-page):not(:has(.home-hero)) .card-lg .meta{display:none}
+body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.pl-rel-meta{display:none}
+.pl-rel-tit{padding-bottom:0}
+
+@media(min-width:900px){
+  /* Portada web: mosaico editorial, no una ampliacion del feed movil */
+  body:has(.home-hero) .news-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:54px 26px;
+    align-items:start;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child{
+    grid-column:span 2;
+    grid-row:span 2;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child h3{
+    font-size:2.25rem;
+    max-width:18ch;
+  }
+  body:has(.home-hero) .news-grid>.card:nth-child(2),
+  body:has(.home-hero) .news-grid>.card:nth-child(3){
+    grid-column:span 1;
+  }
+  body:has(.home-hero) .news-grid .card .thumb{aspect-ratio:4/3}
+  body:has(.home-hero) .news-grid>.card:first-child .thumb{aspect-ratio:16/9}
+  body:has(.home-hero) .news-grid .card h3{font-size:1.38rem;line-height:1.08}
+
+  /* Secciones web: filas amplias de lectura, alternadas */
+  body:not(.article-page):not(:has(.home-hero)) main>.wrap{
+    max-width:1120px;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .section-head{
+    margin-bottom:30px;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg{
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+    grid-template-rows:auto auto 1fr;
+    column-gap:38px;
+    align-items:start;
+    margin-bottom:58px;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg .img-wrap{
+    grid-column:1;
+    grid-row:1/4;
+    margin:0;
+    aspect-ratio:16/10;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg h3,
+  body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt,
+  body:not(.article-page):not(:has(.home-hero)) .card-lg .meta{
+    grid-column:2;
+    margin-inline:0;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg h3{
+    font-size:2rem;
+    padding-top:6px;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
+    font-size:1.05rem;
+    margin-top:14px;
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg:nth-of-type(even){
+    grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
+  }
+  body:not(.article-page):not(:has(.home-hero)) .card-lg:nth-of-type(even) .img-wrap{grid-column:2}
+  body:not(.article-page):not(:has(.home-hero)) .card-lg:nth-of-type(even) h3,
+  body:not(.article-page):not(:has(.home-hero)) .card-lg:nth-of-type(even) .excerpt,
+  body:not(.article-page):not(:has(.home-hero)) .card-lg:nth-of-type(even) .meta{grid-column:1}
+
+  /* Relacionadas web: imagen y titular, sin ruido de interfaz */
+  .article-page .pl-rel-grid{gap:28px}
+  .article-page .pl-rel-tit{font-size:1.12rem;line-height:1.15;padding-top:12px}
+}
