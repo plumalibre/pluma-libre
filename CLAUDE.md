@@ -245,15 +245,22 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
   sintió acá, hay salvadoreños adentro, toca el bolsillo, sirve de vara para medir, o hay un personaje
   conocido. Sin puente no se leen. Ejemplo de vara: los 385,756 evacuados de China contra los 470,455
   habitantes del departamento de Sonsonate (censo 2024).
-- 2026-08-20: **el puente hay que rotarlo.** El puente es obligatorio, pero **la misma vara no se
-  puede usar en todas las notas**. Se cayó en el vicio con el **terremoto del 13 de febrero de 2001**:
-  sirve una vez para explicar que manda la profundidad y no la magnitud, y a la tercera el lector ya
-  no lo lee. Decisión del director: en la nota del sismo de Ayacucho se deja, pero **de aquí en
-  adelante hay que buscar otra**. Varas alternativas para lo sísmico, sin repetir 2001: la **Norma
-  Técnica para Diseño por Sismo de 1994** (ya usada en la de Kumamoto — también se gasta), qué hace
-  hoy **Protección Civil y el MARN**, los simulacros en centros escolares, la construcción sin
-  permiso en las laderas, o el dato local que nadie ha pedido. **Antes de cerrar una internacional:
-  ¿esta vara ya la usamos este mes?** Si la respuesta es sí, se cambia.
+- 2026-08-20: **el puente no es obligatorio, y cuando se usa hay que rotarlo.** Dos precisiones del
+  director sobre la regla del 4-ago:
+  1. **Una internacional no tiene que amarrarse a El Salvador para publicarse.** Si el hecho se
+     sostiene solo —un derrumbe con más de 100 muertos, un rescate que se ve— es noticia y punto.
+     El puente es una **herramienta para que rinda más**, no un peaje. Forzarlo se nota y sale peor
+     que no ponerlo.
+  2. **Cuando sí se usa, la misma vara no puede repetirse.** Se cayó en el vicio con el **terremoto
+     del 13 de febrero de 2001**: sirve una vez para explicar que manda la profundidad y no la
+     magnitud, y a la tercera el lector ya no lo lee. **Y si se usa, que sea reciente:** en la nota
+     del sismo de Ayacucho se cambió por **Juayúa, 4 de marzo de 2026** —un 3.2 a 4.2 km que sí se
+     sintió, contra un 7.2 a 108 km que no—, que además es del departamento.
+  Varas alternativas para lo sísmico, sin repetir 2001: la **Norma Técnica para Diseño por Sismo de
+  1994** (ya usada en la de Kumamoto — también se gasta), el sismo de **5.7 frente a Usulután del
+  12-ago-2026**, los **416 sismos de enero y febrero de los que solo se sintió el 11%**, qué hace hoy
+  **Protección Civil y el MARN**, o los simulacros escolares. **Antes de cerrar una internacional:
+  ¿de verdad necesita puente? Y si lo lleva, ¿esta vara ya la usamos este mes?**
 - 2026-08-04: **el arte ilustrado se hace con Gemini, las caras no.** Se probó recortar con Gemini una
   foto real del alcalde Aquino y **le inventó los ojos, las cejas y el pelo**: quedó descartado. La
   regla que sirvió: Gemini para ilustración conceptual (la de la estafa salió perfecta a la primera,
