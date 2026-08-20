@@ -1688,3 +1688,22 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
   .home-hero>.wrap{max-width:1440px;margin-inline:auto}
   .home-hero-grid{border-radius:18px;overflow:hidden}
 }
+
+
+/* HOTFIX: evita el bucle de scroll causado por cambiar la altura
+   del header justo al cruzar el umbral scrollY > 20. */
+.header .wrap,
+.header.scrolled .wrap{
+  height:54px;
+  transition:none;
+}
+
+
+/* Carrusel: preserva la fotografia completa sin recortes ni desenfoque.
+   El espacio sobrante usa el navy de marca como marco editorial. */
+.hh-slide .img{background:#081A41}
+.hh-slide .img img{
+  object-fit:contain;
+  object-position:center;
+  background:#081A41;
+}
