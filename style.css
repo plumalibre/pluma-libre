@@ -1412,3 +1412,18 @@ body:has(.news-grid > article) .hero {
 .contact-cta p:last-child { margin-bottom: 0; }
 .contact-cta a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .contact-cta a:hover { text-decoration: underline; }
+
+
+/* ============ NOTAS RELACIONADAS (interlinking SEO, ago-2026) ============
+   El bloque lo genera el editor al publicar (y un script una vez para las
+   notas viejas). Enlaza 3 notas: misma seccion, relleno con recientes. */
+.pl-rel{margin:30px 0 6px;border-top:3px solid var(--brand);padding-top:16px}
+.pl-rel-t{font-family:var(--font-display);font-size:1.15rem;color:var(--brand);margin:0 0 14px}
+.pl-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pl-rel-card{display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:border-color .15s ease,box-shadow .15s ease}
+.pl-rel-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-sm)}
+.pl-rel-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--brand)}
+.pl-rel-txt{display:block}
+.pl-rel-tit{display:block;padding:9px 11px 3px;font-weight:600;font-size:.86rem;line-height:1.35;color:var(--text-primary)}
+.pl-rel-meta{display:block;padding:0 11px 11px;font-size:.7rem;color:var(--text-tertiary)}
+@media(max-width:640px){.pl-rel-grid{grid-template-columns:1fr;gap:10px}.pl-rel-card{display:flex;align-items:center}.pl-rel-card img{width:104px;aspect-ratio:1/1;flex:none}.pl-rel-txt{flex:1;min-width:0}.pl-rel-tit{padding:8px 10px 2px}.pl-rel-meta{padding:0 10px 8px}}
