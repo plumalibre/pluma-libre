@@ -245,6 +245,15 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
   sintió acá, hay salvadoreños adentro, toca el bolsillo, sirve de vara para medir, o hay un personaje
   conocido. Sin puente no se leen. Ejemplo de vara: los 385,756 evacuados de China contra los 470,455
   habitantes del departamento de Sonsonate (censo 2024).
+- 2026-08-20: **el puente hay que rotarlo.** El puente es obligatorio, pero **la misma vara no se
+  puede usar en todas las notas**. Se cayó en el vicio con el **terremoto del 13 de febrero de 2001**:
+  sirve una vez para explicar que manda la profundidad y no la magnitud, y a la tercera el lector ya
+  no lo lee. Decisión del director: en la nota del sismo de Ayacucho se deja, pero **de aquí en
+  adelante hay que buscar otra**. Varas alternativas para lo sísmico, sin repetir 2001: la **Norma
+  Técnica para Diseño por Sismo de 1994** (ya usada en la de Kumamoto — también se gasta), qué hace
+  hoy **Protección Civil y el MARN**, los simulacros en centros escolares, la construcción sin
+  permiso en las laderas, o el dato local que nadie ha pedido. **Antes de cerrar una internacional:
+  ¿esta vara ya la usamos este mes?** Si la respuesta es sí, se cambia.
 - 2026-08-04: **el arte ilustrado se hace con Gemini, las caras no.** Se probó recortar con Gemini una
   foto real del alcalde Aquino y **le inventó los ojos, las cejas y el pelo**: quedó descartado. La
   regla que sirvió: Gemini para ilustración conceptual (la de la estafa salió perfecta a la primera,
