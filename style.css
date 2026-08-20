@@ -1688,3 +1688,12 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
   .home-hero>.wrap{max-width:1440px;margin-inline:auto}
   .home-hero-grid{border-radius:18px;overflow:hidden}
 }
+
+
+/* HOTFIX: evita el bucle de scroll causado por cambiar la altura
+   del header justo al cruzar el umbral scrollY > 20. */
+.header .wrap,
+.header.scrolled .wrap{
+  height:54px;
+  transition:none;
+}
