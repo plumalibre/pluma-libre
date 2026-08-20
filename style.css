@@ -1697,3 +1697,13 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
   height:54px;
   transition:none;
 }
+
+
+/* Carrusel: preserva la fotografia completa sin recortes ni desenfoque.
+   El espacio sobrante usa el navy de marca como marco editorial. */
+.hh-slide .img{background:#081A41}
+.hh-slide .img img{
+  object-fit:contain;
+  object-position:center;
+  background:#081A41;
+}
