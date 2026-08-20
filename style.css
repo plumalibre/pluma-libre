@@ -1680,3 +1680,11 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
   .article-page .pl-rel-grid{gap:28px}
   .article-page .pl-rel-tit{font-size:1.12rem;line-height:1.15;padding-top:12px}
 }
+
+
+/* Portada web enmarcada; el full-bleed queda reservado para movil */
+@media(min-width:900px){
+  .home-hero{padding:30px 32px 0}
+  .home-hero>.wrap{max-width:1440px;margin-inline:auto}
+  .home-hero-grid{border-radius:18px;overflow:hidden}
+}
