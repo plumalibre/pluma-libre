@@ -2044,3 +2044,13 @@ body .home-hero-carousel .hh-slide .hh-body{
   .article-header h1{font-size:4rem}
   body:not(.article-page):not(:has(.home-hero)) .card-lg h3{font-size:1.75rem}
 }
+
+/* Nitidez y continuidad real del carrusel. */
+.hh-track.is-jumping{transition:none!important}
+.home-hero-carousel .hh-slide .img img,
+.home-hero-carousel .hh-slide:hover .img img{
+  transform:none!important;
+  transition:none!important;
+  filter:none!important;
+  image-rendering:auto;
+}
