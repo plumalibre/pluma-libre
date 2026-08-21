@@ -1789,3 +1789,34 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
   .article-header h1{font-size:4rem}
   body:not(.article-page):not(:has(.home-hero)) .card-lg h3{font-size:1.75rem}
 }
+
+
+/* Paneles del carrusel adaptados a la paleta de cada fotografia.
+   Fallback marfil para nuevas imagenes sin regla especifica. */
+.hh-slide .hh-body{
+  background:#F4F1EA;
+  color:var(--brand);
+}
+.hh-slide:has(img[src*="nota-santa-agata-catania-carousel"]) .hh-body{background:#E9E4DD}
+.hh-slide:has(img[src*="nota-obispo-landaverde-carousel"]) .hh-body{background:#F3E9D2}
+.hh-slide:has(img[src*="nota-salud-privada-50-doctors-carousel"]) .hh-body{background:#F2E2BF}
+.hh-slide:has(img[src*="nota-incendio-santa-marta-sonsonate-carousel"]) .hh-body{background:#E7ECE6}
+.hh-slide:has(img[src*="mosaico-1786766040351-carousel"]) .hh-body{background:#E7F0EC}
+
+.hh-slide h2,
+.hh-slide h2 a{color:var(--brand);text-shadow:none}
+.hh-slide h2 a:hover{color:var(--accent)}
+.hh-slide .kicker{color:var(--accent)}
+.hh-slide .meta{color:#536174}
+
+.hh-nav{
+  border-color:rgba(11,37,69,.32);
+  background:rgba(255,255,255,.66);
+  color:var(--brand);
+  backdrop-filter:none;
+}
+.hh-nav:hover,
+.hh-nav:focus-visible{background:var(--brand);color:#fff;border-color:var(--brand)}
+.hh-dot{background:rgba(11,37,69,.28)}
+.hh-dot:hover{background:rgba(11,37,69,.55)}
+.hh-dot[aria-current=true]{background:var(--brand)}
