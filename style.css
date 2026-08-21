@@ -2074,3 +2074,233 @@ body .home-hero-carousel .hh-slide .hh-body{
   .home-hero-carousel{border-radius:0}
   .home-hero-carousel{border-inline:0;box-shadow:none}
 }
+
+/* ============================================
+   PORTADA EDITORIAL REFINADA
+   Navegacion compacta, jerarquia clara y tarjetas sobrias.
+   ============================================ */
+.section-rail{
+  padding:7px 0;
+  background:rgba(255,255,255,.98);
+  border-block:1px solid #E4E9EF;
+  box-shadow:0 6px 20px rgba(8,26,65,.035);
+}
+.section-rail__track{
+  max-width:1240px;
+  margin-inline:auto;
+  gap:6px;
+  padding:0 16px;
+  scroll-padding-inline:16px;
+}
+.section-rail a{
+  min-height:34px;
+  height:34px;
+  padding:0 13px;
+  border:1px solid #D9E1E9;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:none;
+  color:#17324F;
+  font-size:.69rem;
+  font-weight:700;
+  letter-spacing:.045em;
+}
+.section-rail a:hover,
+.section-rail a:focus-visible{
+  border-color:var(--brand);
+  background:var(--brand);
+  color:#fff;
+  transform:none;
+}
+
+body:has(.home-hero) main{background:#F5F7F9}
+body:has(.home-hero) .home-hero{
+  background:#fff;
+  border-bottom:1px solid #E8ECF1;
+}
+body:has(.home-hero) main>.wrap{max-width:1240px}
+
+body:has(.home-hero) .section-head{
+  position:relative;
+  margin:30px 0 18px;
+  padding:0 0 14px;
+  border-bottom:1px solid #DDE3EA;
+}
+body:has(.home-hero) .section-head::after{
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:56px;
+  height:2px;
+  margin:0;
+  border-radius:2px;
+  background:var(--accent);
+}
+body:has(.home-hero) .section-head h2{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  font-family:var(--font-display);
+  font-size:clamp(1.85rem,7vw,2.2rem);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.035em;
+  color:var(--brand);
+}
+body:has(.home-hero) .section-head h2::before{
+  content:"ACTUALIDAD";
+  font-family:var(--font-body);
+  font-size:.64rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.17em;
+  color:var(--accent);
+}
+
+@media(max-width:639px){
+  body:has(.home-hero) main>.wrap{padding-inline:16px}
+  body:has(.home-hero) .news-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    padding-bottom:28px;
+  }
+  body:has(.home-hero) .news-grid>.card{
+    display:grid;
+    grid-template-columns:112px minmax(0,1fr);
+    align-items:center;
+    gap:13px;
+    min-height:0;
+    margin:0;
+    padding:9px;
+    overflow:hidden;
+    border:1px solid #E3E8EE;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(8,26,65,.045);
+  }
+  body:has(.home-hero) .news-grid>.card .thumb{
+    width:112px;
+    height:88px;
+    aspect-ratio:auto;
+    border-radius:10px;
+  }
+  body:has(.home-hero) .news-grid>.card .info{padding:0}
+  body:has(.home-hero) .news-grid>.card h3{
+    font-size:1.08rem;
+    line-height:1.12;
+    letter-spacing:-.015em;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child{
+    display:block;
+    padding:0;
+    border-radius:18px;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child .thumb{
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    border-radius:0;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child .info{padding:16px 17px 18px}
+  body:has(.home-hero) .news-grid>.card:first-child h3{
+    max-width:24ch;
+    font-size:1.62rem;
+    line-height:1.08;
+  }
+}
+
+@media(min-width:640px){
+  .section-rail__track{padding-inline:24px}
+  body:has(.home-hero) .news-grid{gap:24px}
+  body:has(.home-hero) .news-grid>.card{
+    display:block;
+    height:100%;
+    overflow:hidden;
+    border:1px solid #E3E8EE;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 10px 28px rgba(8,26,65,.045);
+  }
+  body:has(.home-hero) .news-grid>.card:hover{
+    border-color:#CBD5E1;
+    box-shadow:0 16px 36px rgba(8,26,65,.09);
+    transform:translateY(-3px);
+  }
+  body:has(.home-hero) .news-grid>.card .thumb{
+    width:100%;
+    height:auto;
+    border-radius:0;
+  }
+  body:has(.home-hero) .news-grid>.card .info{padding:15px 17px 19px}
+}
+
+@media(min-width:900px){
+  .header .wrap{max-width:1240px;height:64px}
+  .section-rail__track{padding-inline:0}
+  .section-rail a{min-height:36px;height:36px;padding-inline:15px;font-size:.71rem}
+
+  body:has(.home-hero) .home-hero{padding:26px 32px 12px}
+  body:has(.home-hero) .home-hero>.wrap{max-width:1240px}
+  body:has(.home-hero) .home-hero-grid{
+    grid-template-columns:minmax(0,1fr) 340px;
+    overflow:hidden;
+    border:1px solid #E3E8EE;
+    border-radius:20px;
+    background:#fff;
+    box-shadow:0 18px 48px rgba(8,26,65,.10);
+  }
+  body:has(.home-hero) .hh-slide{
+    height:clamp(500px,42vw,580px);
+    min-height:500px;
+  }
+  body:has(.home-hero) .hh-slide h2{
+    max-width:19ch;
+    font-size:clamp(2.65rem,3.35vw,3.75rem);
+    line-height:1.01;
+  }
+  body:has(.home-hero) .home-hero-sidebar{
+    gap:0;
+    padding:10px 22px;
+    border-left:1px solid #E8ECF1;
+    background:#fff;
+  }
+  body:has(.home-hero) .home-hero-secondary{
+    grid-template-columns:96px minmax(0,1fr);
+    gap:14px;
+    min-height:0;
+    margin:0;
+    padding:14px 0;
+    border:0;
+    border-bottom:1px solid #E8ECF1;
+    border-radius:0;
+    background:transparent;
+  }
+  body:has(.home-hero) .home-hero-secondary:last-child{border-bottom:0}
+  body:has(.home-hero) .home-hero-secondary .thumb{
+    width:96px;
+    height:78px;
+    border-radius:10px;
+  }
+  body:has(.home-hero) .home-hero-secondary h3{
+    font-size:1rem;
+    line-height:1.13;
+  }
+  body:has(.home-hero) .home-hero-secondary.is-active{
+    margin-inline:-12px;
+    padding-inline:12px;
+    border-bottom-color:transparent;
+    border-radius:11px;
+    background:#F3F6F9;
+    box-shadow:inset 3px 0 0 var(--accent);
+  }
+
+  body:has(.home-hero) .section-head{margin-top:44px}
+  body:has(.home-hero) .section-head h2{font-size:2.35rem}
+  body:has(.home-hero) .news-grid{
+    gap:30px 22px;
+    padding-bottom:44px;
+  }
+  body:has(.home-hero) .news-grid>.card:first-child h3{font-size:2.05rem}
+  body:has(.home-hero) .news-grid>.card h3{font-size:1.23rem;line-height:1.13}
+}
