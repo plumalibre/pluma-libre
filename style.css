@@ -1820,3 +1820,37 @@ body:not(.article-page):not(:has(.home-hero)) .card-lg .excerpt{
 .hh-dot{background:rgba(11,37,69,.28)}
 .hh-dot:hover{background:rgba(11,37,69,.55)}
 .hh-dot[aria-current=true]{background:var(--brand)}
+
+
+/* Carrusel minimalista: panel translucido que toma un tinte de la foto. */
+.home-hero-carousel,
+.hh-slide{background:#fff}
+.hh-slide .hh-body{
+  position:relative;
+  z-index:3;
+  margin:-26px 12px 0;
+  border-radius:14px 14px 0 0;
+  background:rgba(248,247,243,.90)!important;
+  -webkit-backdrop-filter:saturate(125%) blur(12px);
+  backdrop-filter:saturate(125%) blur(12px);
+  box-shadow:0 -8px 28px rgba(8,26,65,.08);
+}
+.hh-slide:has(img[src*="nota-santa-agata-catania-carousel"]) .hh-body{background:rgba(239,235,229,.90)!important}
+.hh-slide:has(img[src*="nota-obispo-landaverde-carousel"]) .hh-body{background:rgba(249,240,219,.90)!important}
+.hh-slide:has(img[src*="nota-salud-privada-50-doctors-carousel"]) .hh-body{background:rgba(247,232,198,.90)!important}
+.hh-slide:has(img[src*="nota-incendio-santa-marta-sonsonate-carousel"]) .hh-body{background:rgba(238,242,237,.90)!important}
+.hh-slide:has(img[src*="mosaico-1786766040351-carousel"]) .hh-body{background:rgba(235,244,240,.90)!important}
+
+/* Pagina aislada para revisar una imagen creada con la proporcion correcta. */
+.carousel-design-demo{max-width:1120px;margin:42px auto 72px;padding:0 16px}
+.carousel-design-demo .demo-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:12px}
+.carousel-design-example{overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 18px 50px rgba(8,26,65,.12)}
+.carousel-design-example img{width:100%;aspect-ratio:20/9;object-fit:cover}
+.carousel-design-example .demo-copy{position:relative;margin:-30px 16px 0;padding:22px 24px 24px;border-radius:14px 14px 0 0;background:rgba(247,242,231,.90);-webkit-backdrop-filter:saturate(125%) blur(12px);backdrop-filter:saturate(125%) blur(12px)}
+.carousel-design-example h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.35rem);line-height:1.02;color:var(--brand);max-width:22ch}
+.carousel-design-example p{margin-top:10px;color:var(--text-secondary);font-size:.9rem}
+.demo-back{display:inline-flex;margin-top:22px;color:var(--brand);font-weight:600}
+@media(min-width:900px){
+  .hh-slide .hh-body{margin:-34px 28px 0;border-radius:16px 16px 0 0}
+  .carousel-design-example .demo-copy{margin:-38px 28px 0;padding:28px 34px 30px}
+}
