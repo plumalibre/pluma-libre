@@ -2058,3 +2058,10 @@ body .home-hero-carousel .hh-slide .hh-body{
   filter:none!important;
   image-rendering:auto;
 }
+
+/* Encuadre editorial por foto: el punto focal sigue al sujeto, no al centro geometrico. */
+.hh-slide:has(img[src*="nota-santa-agata-catania-carousel"]) .img img{object-position:58% 50%}
+.hh-slide:has(img[src*="nota-obispo-landaverde-carousel"]) .img img{object-position:67% 50%}
+.hh-slide:has(img[src*="nota-salud-privada-50-doctors-carousel"]) .img img{object-position:68% 50%}
+.hh-slide:has(img[src*="nota-incendio-santa-marta-sonsonate-carousel"]) .img img{object-position:50% 50%}
+.hh-slide:has(img[src*="mosaico-1786766040351-carousel"]) .img img{object-position:46% 50%}

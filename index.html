@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -138,7 +138,7 @@
       car.className='home-hero-carousel';car.setAttribute('aria-roledescription','carrusel');car.setAttribute('aria-label','Noticias destacadas');car.tabIndex=0;
       var track=document.createElement('div');track.className='hh-track';
       items.forEach(function(it,i){var s=document.createElement('article');s.className='hh-slide';s.setAttribute('role','group');s.setAttribute('aria-roledescription','noticia');s.setAttribute('aria-label',(i+1)+' de '+n);
-        s.innerHTML='<div class="img"><img src="'+esc(it.src)+'" alt="'+esc(it.alt)+'" loading="'+(i?'lazy':'eager')+'"'+(i?'':' fetchpriority="high"')+'></div><div class="hh-body">'+(it.kicker?'<span class="kicker">'+esc(it.kicker)+'</span>':'')+'<h2><a href="'+esc(it.href)+'">'+esc(it.titulo)+'</a></h2>'+(it.meta?'<p class="meta">'+esc(it.meta)+'</p>':'')+'</div>';
+        s.innerHTML='<div class="img"><img src="'+esc(it.src)+'" alt="'+esc(it.alt)+'" loading="eager" decoding="async"'+(i?'':' fetchpriority="high"')+'></div><div class="hh-body">'+(it.kicker?'<span class="kicker">'+esc(it.kicker)+'</span>':'')+'<h2><a href="'+esc(it.href)+'">'+esc(it.titulo)+'</a></h2>'+(it.meta?'<p class="meta">'+esc(it.meta)+'</p>':'')+'</div>';
         track.appendChild(s);});
       var firstClone=track.firstElementChild.cloneNode(true),lastClone=track.lastElementChild.cloneNode(true);
       [firstClone,lastClone].forEach(function(clone){clone.setAttribute('aria-hidden','true');[].forEach.call(clone.querySelectorAll('a,button'),function(el){el.tabIndex=-1;});});
@@ -157,7 +157,7 @@
         t.innerHTML='<div class="thumb"><img src="'+esc(p.src)+'" alt="" loading="lazy"></div><div class="info">'+(p.kicker?'<span class="kicker">'+esc(p.kicker)+'</span>':'')+'<h3><a href="'+esc(p.href)+'">'+esc(p.titulo)+'</a></h3></div>';
         sidebar.insertBefore(t,sidebar.firstChild);tabs=[t].concat(secs);}
       principal.parentNode.replaceChild(car,principal);
-      var cur=0,visual=1,timer=null,animando=false,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cur=0,visual=1,timer=null,animando=false,animReset=null,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
       function mover(pos,conAnimacion){track.classList.toggle('is-jumping',!conAnimacion);track.style.transform='translateX(-'+(pos*100)+'%)';
         if(!conAnimacion){track.offsetWidth;track.classList.remove('is-jumping');}}
       function marcar(){
@@ -165,15 +165,19 @@
         tabs.forEach(function(t,j){t.classList.toggle('is-active',j===cur);});}
       function go(i){
         if(animando&&!reduce)return;
-        if(reduce){cur=(i+n)%n;visual=cur+1;mover(visual,false);marcar();return;}
-        if(i===n&&cur===n-1){cur=0;visual=n+1;}
-        else if(i===-1&&cur===0){cur=n-1;visual=0;}
-        else{cur=(i+n)%n;visual=cur+1;}
-        animando=true;mover(visual,true);marcar();}
-      track.addEventListener('transitionend',function(e){if(e.propertyName!=='transform')return;
+        var destino=(i+n)%n,cruzaFinal=i===n&&cur===n-1,cruzaInicio=i===-1&&cur===0;
+        if(!cruzaFinal&&!cruzaInicio&&destino===cur){marcar();return;}
+        if(reduce){cur=destino;visual=cur+1;mover(visual,false);marcar();return;}
+        if(cruzaFinal){cur=0;visual=n+1;}
+        else if(cruzaInicio){cur=n-1;visual=0;}
+        else{cur=destino;visual=cur+1;}
+        animando=true;mover(visual,true);marcar();
+        clearTimeout(animReset);animReset=setTimeout(finalizar,700);}
+      function finalizar(){
         if(visual===n+1){visual=1;mover(visual,false);}
         else if(visual===0){visual=n;mover(visual,false);}
-        animando=false;});
+        animando=false;clearTimeout(animReset);animReset=null;}
+      track.addEventListener('transitionend',function(e){if(e.propertyName==='transform')finalizar();});
       function parar(){if(timer){clearInterval(timer);timer=null;}}
       function andar(){if(reduce||timer||document.hidden)return;timer=setInterval(function(){go(cur+1);},6000);}
       function reiniciar(){parar();andar();}
