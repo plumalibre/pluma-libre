@@ -4,9 +4,9 @@ Estas reglas aplican a toda noticia que vaya a ocupar la portada principal o una
 
 ## Formato obligatorio
 
-- Proporción horizontal 16:9.
-- Tamaño recomendado: 1600 × 900 px.
-- Tamaño mínimo: 1200 × 675 px.
+- Proporción panorámica 20:9 para portada.
+- Tamaño recomendado: 1600 × 720 px.
+- Tamaño mínimo: 1200 × 540 px.
 - JPG progresivo o WebP optimizado.
 - Peso recomendado: menos de 350 KB.
 
