@@ -26,3 +26,8 @@ No generar ni reconstruir con IA partes de una fotografía periodística. Si una
 ## Nombres
 
 Las versiones preparadas exclusivamente para portada deben terminar en `-carousel.jpg`, preservando siempre el archivo original.
+
+
+## Criterio de encuadre
+
+Las fotografías horizontales deben llenar el lienzo 20:9. Si la fuente tiene otra proporción, se permite recortar únicamente los bordes con menor valor informativo, preservando rostros, sujetos y contexto. Las fotografías verticales se muestran completas con navy únicamente a los lados; nunca con franjas arriba y abajo.
