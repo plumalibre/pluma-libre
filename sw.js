@@ -4,10 +4,10 @@
 // - Assets mismo-origen: stale-while-revalidate; fallback a Response 504.
 // - banners.json: red directa, sin cache (siempre fresco).
 // - Otros orígenes (fonts, Google Analytics, etc.): sin interceptar.
-// - skipWaiting NO automático: el SW nuevo activa cuando todas las pestañas se cierran
-//   (en un sitio editorial es lo natural — el lector navega de una nota a otra).
+// - Actualización inmediata: instala la versión nueva y toma control sin esperar
+//   a que el lector cierre todas las pestañas.
 
-const CACHE_VERSION = 'pl-v30';
+const CACHE_VERSION = 'pl-v31';
 const SHELL = [
   '/',
   '/index.html',
@@ -25,9 +25,9 @@ const OFFLINE_HTML = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"
 self.addEventListener('install', (e) => {
   // allSettled: un 404 en un asset NO tumba toda la instalación.
   e.waitUntil(
-    caches.open(CACHE_VERSION).then((c) =>
-      Promise.allSettled(SHELL.map((url) => c.add(url)))
-    )
+    caches.open(CACHE_VERSION)
+      .then((c) => Promise.allSettled(SHELL.map((url) => c.add(url))))
+      .then(() => self.skipWaiting())
   );
 });
 

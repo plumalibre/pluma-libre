@@ -2065,3 +2065,12 @@ body .home-hero-carousel .hh-slide .hh-body{
 .hh-slide:has(img[src*="nota-salud-privada-50-doctors-carousel"]) .img img{object-position:68% 50%}
 .hh-slide:has(img[src*="nota-incendio-santa-marta-sonsonate-carousel"]) .img img{object-position:50% 50%}
 .hh-slide:has(img[src*="mosaico-1786766040351-carousel"]) .img img{object-position:46% 50%}
+
+/* Full bleed real en movil y tablet: el carrusel toca ambos bordes de la pantalla. */
+@media(max-width:899px){
+  .home-hero{padding:0 0 8px}
+  .home-hero>.wrap{width:100%;max-width:none;padding-inline:0}
+  .home-hero-grid,
+  .home-hero-carousel{border-radius:0}
+  .home-hero-carousel{border-inline:0;box-shadow:none}
+}
