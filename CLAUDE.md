@@ -128,7 +128,7 @@ agentes) y esperar su ok.
 
 El sitio tiene tres slots de banner que se controlan desde `banners.json` en la raíz del repo:
 
-- **Banner A** — aparece en el home (entre hero y grid de noticias). Se **achica al scrollear** (250→100px desktop, 150→70px mobile, vuelve a tamaño original al subir el scroll).
+- **Banner A** — aparece arriba de todo en el home, antes de la barra de fecha. Usa un lienzo panorámico **4:1 de 1200×300 px** y se reduce proporcionalmente en tablet y celular, sin deformarse. Se oculta al bajar la página y reaparece al volver al inicio.
 - **Banner B** — aparece dentro de las notas (entre el 3er y 4to párrafo).
 - **Banner C** — intercalado entre cards del grid de Últimas Noticias en el home, cada N cards (configurable, default 5). Se renderiza como una card más del grid (mismo aspect, sombra, border-radius). Dimensiones recomendadas: 600×600 (1:1) o 800×600 (4:3) px, JPG/PNG, máx 150KB. Tiene campo extra `frecuencia` (3-10) en `banners.json`. **Pendiente futuro:** cuando las páginas de sección (`secciones/*.html`) tengan más cards, extender Banner C a esas páginas también (hoy solo aparece en home).
 
@@ -173,7 +173,7 @@ Poner `"activo": false` y guardar. El banner desaparece en el próximo redeploy.
 
 ### Limitación actual
 
-`banners.json` acepta una sola `imagen` por banner. El HTML tiene 3 slots responsive para Banner A (billboard 970×250, leaderboard 728×90, mobile 320×100) y 2 para Banner B (leaderboard + mobile). El script pone la misma imagen en todos los slots: queda legible pero puede verse deformada si el aspect-ratio no calza. Si en el futuro se quiere una imagen distinta por viewport, el JSON tiene que evolucionar a `{ billboard, leaderboard, mobile }` y el script cambiar en consecuencia.
+`banners.json` acepta una sola `imagen` por banner. Para Banner A se recomienda **1200×300 px (4:1), JPG/PNG y hasta 250 KB**: el sitio usa el aspect ratio real y la escala proporcionalmente en los 3 viewports, sin deformarla ni recortarla. Banner B mantiene 728×90 y su variante móvil. Si en el futuro se quiere una creatividad distinta por viewport, el JSON tiene que evolucionar a `{ billboard, leaderboard, mobile }` y el script cambiar en consecuencia.
 
 ## Historial reciente importante
 

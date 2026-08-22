@@ -7,7 +7,7 @@
 // - Actualización inmediata: instala la versión nueva y toma control sin esperar
 //   a que el lector cierre todas las pestañas.
 
-const CACHE_VERSION = 'pl-v32';
+const CACHE_VERSION = 'pl-v33';
 const SHELL = [
   '/',
   '/index.html',

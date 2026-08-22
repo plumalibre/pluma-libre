@@ -1143,8 +1143,9 @@ body:has(.news-grid > article) .hero {
   max-width: 100%;
   max-height: 500px;
 }
-/* Banner A - home: 3 tamaños responsive (la imagen real determina el alto) */
-.pl-ad--banner-a { max-width: 970px; }
+/* Banner A - home: lienzo 4:1 de hasta 1200×300. La imagen real determina
+   el alto y se reduce proporcionalmente en tablet y celular. */
+.pl-ad--banner-a { width: 100%; max-width: 1200px; }
 .pl-ad--banner-a .pl-ad-img-billboard   { display: block; }
 .pl-ad--banner-a .pl-ad-img-leaderboard { display: none; }
 .pl-ad--banner-a .pl-ad-img-mobile      { display: none; }
@@ -1536,7 +1537,7 @@ main{overflow:hidden}
 .pl-rel-meta{padding:0;font-size:.68rem}
 .pl-ad{margin-block:22px}
 .pl-ad-sobria .pl-ad-frame,.pl-ad-integrada{border:0;border-radius:0}
-.pl-ad--banner-a{margin-top:0}
+.pl-ad--banner-a{margin:0 auto}
 .pl-ad--banner-c{margin:10px -16px 34px}
 .pl-ad--banner-c .pl-ad-label{padding-inline:16px}
 .pl-ad--banner-c .pl-ad-frame{aspect-ratio:16/9}
