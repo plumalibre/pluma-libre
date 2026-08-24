@@ -5,8 +5,17 @@
   <link>https://plumalibre.press/</link>
   <description>Medio de comunicación digital independiente de Sonsonate, El Salvador. Cobertura local, nacional e internacional.</description>
   <language>es-SV</language>
-  <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
   <atom:link href="https://plumalibre.press/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Corte de energía de 10 horas afectará Acajutla y Santo Domingo de Guzmán</title>
+    <link>https://plumalibre.press/articulos/corte-energia-acajutla-santo-domingo-guzman-28-agosto.html</link>
+    <guid isPermaLink="true">https://plumalibre.press/articulos/corte-energia-acajutla-santo-domingo-guzman-28-agosto.html</guid>
+    <description>AES CLESA suspenderá el servicio de 7:00 a. m. a 5:00 p. m. este viernes 28 de agosto en decenas de comunidades.</description>
+    <category>Social</category>
+    <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://plumalibre.press/assets/nota-corte-energia-acajutla-28-agosto.jpg" length="337921" type="image/jpeg"/>
+  </item>
   <item>
     <title>El Salvador alcanza 42 °C y rompe tres récords en un día</title>
     <link>https://plumalibre.press/articulos/el-salvador-42-grados-tres-records-temperatura.html</link>
