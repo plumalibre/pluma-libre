@@ -827,4 +827,10 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/algoritmos-vs-democracia-incautan-dinero-y-equipos.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
