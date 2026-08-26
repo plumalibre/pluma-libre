@@ -899,4 +899,10 @@
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/seguro-social-sonsonate-sin-citas-por-caida-del-sistema.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
