@@ -911,4 +911,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/la-apes-anunciara-becas-para-periodistas-salvadore.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
