@@ -1,3 +1,8 @@
+/* Tipografia del sitio (31-ago-2026, pedido de Javier): look Helvetica en todo el sitio.
+   Helvetica no se puede servir legalmente por web (licencia Monotype): se usa Inter, su
+   heredera para pantalla, con Helvetica/Arial de respaldo en la pila. El @import evita
+   tener que tocar el <link> de fuentes en cada articulo ya publicado. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 /* ============================================
    PLUMA LIBRE v3 — Clean Modern Design
    Inspired by Apple's design language
@@ -28,8 +33,8 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-  --font-display: 'Newsreader', Georgia, serif;
-  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --max-w: 1080px;
 }
