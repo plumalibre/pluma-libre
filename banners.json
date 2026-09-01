@@ -1,62 +1,62 @@
 {
-    "banner_a_home":  {
-                          "activo":  true,
-                          "tipo":  "imagen",
-                          "imagen":  "assets/banner-a.jpg",
-                          "link":  "https://www.facebook.com/plumalibre.press/",
-                          "alt":  "Pluma Libre",
-                          "ubicaciones":  [
-                                              "home_top",
-                                              "nota_interno",
-                                              "home_grid"
-                                          ]
-                      },
-    "banner_b_nota":  {
-                          "activo":  false,
-                          "tipo":  "imagen",
-                          "imagen":  "assets/banner-b.jpg",
-                          "link":  "https://www.facebook.com/plumalibre.press/",
-                          "alt":  "",
-                          "ubicaciones":  [
-                                              "nota_interno"
-                                          ],
-                          "frecuencia":  5
-                      },
-    "banner_c_grid":  {
-                          "activo":  true,
-                          "tipo":  "imagen",
-                          "imagen":  "assets/banner-c.jpg",
-                          "link":  "https://www.facebook.com/plumalibre.press/",
-                          "alt":  "Pluma Libre",
-                          "ubicaciones":  [
-                                              "nota_interno",
-                                              "home_grid"
-                                          ],
-                          "frecuencia":  5
-                      },
-    "banners_grid_individuales":  [
-                                      {
-                                          "activo":  true,
-                                          "tipo":  "imagen",
-                                          "imagen":  "assets/grid-ind-1.jpg",
-                                          "link":  "https://api.whatsapp.com/send/?phone=50373650453\u0026text=Hola+Exifot+\u0026type=phone_number\u0026app_absent=0",
-                                          "alt":  "",
-                                          "ubicaciones":  [
-                                                              "home_grid",
-                                                              "home_top"
-                                                          ]
-                                      }
-                                  ],
-    "banner_p_popup":  {
-                           "activo":  true,
-                           "tipo":  "imagen",
-                           "imagen":  "assets/banner-p.jpg",
-                           "link":  "Https://Imeltex.com.sv",
-                           "alt":  "",
-                           "ubicaciones":  [
-                                               "nota_interno"
-                                           ],
-                           "frecuencia_horas":  1,
-                           "v":  1787247720925
-                       }
+  "banner_a_home": {
+    "activo": true,
+    "tipo": "imagen",
+    "imagen": "assets/banner-a.jpg",
+    "link": "https://www.facebook.com/plumalibre.press/",
+    "alt": "Pluma Libre",
+    "ubicaciones": [
+      "home_top",
+      "nota_interno",
+      "home_grid"
+    ]
+  },
+  "banner_b_nota": {
+    "activo": false,
+    "tipo": "imagen",
+    "imagen": "assets/banner-b.jpg",
+    "link": "https://www.facebook.com/plumalibre.press/",
+    "alt": "",
+    "ubicaciones": [
+      "nota_interno"
+    ],
+    "frecuencia": 5
+  },
+  "banner_c_grid": {
+    "activo": true,
+    "tipo": "imagen",
+    "imagen": "assets/banner-c.jpg",
+    "link": "https://www.facebook.com/plumalibre.press/",
+    "alt": "Pluma Libre",
+    "ubicaciones": [
+      "nota_interno",
+      "home_grid"
+    ],
+    "frecuencia": 5
+  },
+  "banners_grid_individuales": [
+    {
+      "activo": true,
+      "tipo": "imagen",
+      "imagen": "assets/grid-ind-1.jpg",
+      "link": "https://api.whatsapp.com/send/?phone=50373650453&text=Hola+Exifot+&type=phone_number&app_absent=0",
+      "alt": "",
+      "ubicaciones": [
+        "home_grid",
+        "home_top"
+      ]
+    }
+  ],
+  "banner_p_popup": {
+    "activo": true,
+    "tipo": "imagen",
+    "imagen": "assets/banner-p.jpg",
+    "link": "Https://Imeltex.com.sv",
+    "alt": "",
+    "ubicaciones": [
+      "nota_interno"
+    ],
+    "frecuencia_horas": 1,
+    "v": 1788291968800
+  }
 }
