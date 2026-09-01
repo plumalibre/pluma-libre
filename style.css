@@ -2966,3 +2966,81 @@ body:has(.home-hero) .news-grid > .pl-ad--banner-c .pl-ad-frame iframe {
     box-shadow: none;
   }
 }
+
+/* ============================================
+   BARRA COMPACTA CON SECCIONES + COLUMNA UNICA — v25
+   ============================================ */
+
+/* Los enlaces solo existen en la barra navy: en reposo manda el riel grande. */
+.header-rail { display: none; }
+.header.scrolled .header-rail {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-inline: 14px 8px;
+}
+.header.scrolled .header-rail__track {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.header.scrolled .header-rail__track::-webkit-scrollbar { display: none; }
+.header.scrolled .header-rail a {
+  flex: 0 0 auto;
+  padding: 6px 11px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .86);
+  font-size: .74rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+.header.scrolled .header-rail a:hover,
+.header.scrolled .header-rail a:focus-visible {
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+}
+.header.scrolled .header-rail a.on {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Con los enlaces adentro el logo deja el centro y encabeza la fila. */
+.header.scrolled .wrap { justify-content: flex-start; }
+.header.scrolled .logo {
+  position: static;
+  flex: 0 0 auto;
+  transform: none;
+}
+.header.scrolled .menu-btn { margin-left: auto; }
+
+@media (max-width: 639px) {
+  .header.scrolled .header-rail { margin-inline: 10px 6px; }
+  .header.scrolled .header-rail a { padding: 5px 9px; font-size: .69rem; }
+}
+
+/* Una sola columna para todo el sitio en pantallas grandes. Antes cada bloque
+   traia su propio ancho —header 1240, riel e hero 1440, pie 1120— y se veian
+   como escalones, sin margen real contra el borde de la ventana.
+   La portada define esos anchos con body:has(.home-hero), que pesa mas que un
+   selector suelto: hay que repetir el prefijo para no perder la cascada. */
+@media (min-width: 1000px) {
+  .header .wrap,
+  .footer .wrap,
+  main > .wrap,
+  .section-rail__track,
+  body:has(.home-hero) main > .wrap,
+  body:has(.home-hero) .home-hero > .wrap,
+  body:has(.home-hero) .section-rail__track {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+}

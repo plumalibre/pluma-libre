@@ -131,3 +131,61 @@
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
+// Secciones en la barra compacta — v25.
+// Al bajar, el header se vuelve navy y el riel de secciones queda fuera de
+// vista: estos enlaces lo reemplazan sin tocar la altura del header (cambiarla
+// al cruzar el umbral reintroduce el bucle de scroll del hotfix de style.css).
+// Se inyecta por JS y no en el HTML porque el header esta repetido en las 167
+// paginas del sitio.
+(function(){
+  var SECCIONES = [
+    ['Politica', '/secciones/politico.html'],
+    ['Economia', '/secciones/economico.html'],
+    ['Deportes', '/secciones/deportivo.html'],
+    ['Social', '/secciones/social.html'],
+    ['Religion', '/secciones/religioso.html'],
+    ['Cultura', '/secciones/cultural.html'],
+    ['Internacional', '/secciones/internacional.html'],
+    ['Opinion', '/secciones/opinion.html'],
+    ['Tecnologia', '/secciones/tecnologico.html'],
+    ['Entrevistas', '/secciones/entrevistas.html']
+  ];
+  // Con acentos para mostrar; el array de arriba se mantiene sin ellos para no
+  // depender del encoding del archivo.
+  var ACENTOS = {
+    'Politica': 'Política',
+    'Economia': 'Economía',
+    'Religion': 'Religión',
+    'Opinion': 'Opinión',
+    'Tecnologia': 'Tecnología'
+  };
+
+  function montar(){
+    var wrap = document.querySelector('.header .wrap');
+    if(!wrap || wrap.querySelector('.header-rail')) return;
+    var boton = wrap.querySelector('.menu-btn');
+
+    var nav = document.createElement('nav');
+    nav.className = 'header-rail';
+    nav.setAttribute('aria-label', 'Secciones');
+
+    var track = document.createElement('div');
+    track.className = 'header-rail__track';
+
+    var actual = location.pathname.replace(/\/+$/, '');
+    SECCIONES.forEach(function(s){
+      var a = document.createElement('a');
+      a.href = s[1];
+      a.textContent = ACENTOS[s[0]] || s[0];
+      if(actual && actual.indexOf(s[1]) === 0) a.className = 'on';
+      track.appendChild(a);
+    });
+
+    nav.appendChild(track);
+    if(boton) wrap.insertBefore(nav, boton); else wrap.appendChild(nav);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', montar);
+  else montar();
+})();
