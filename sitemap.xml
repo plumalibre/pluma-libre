@@ -978,4 +978,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://plumalibre.press/articulos/sonsonate-centro-inaugura-de-forma-oficial-el-mes.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
