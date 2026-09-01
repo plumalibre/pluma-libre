@@ -2922,6 +2922,10 @@ body:has(.home-hero) .news-grid > .pl-ad--banner-c .pl-ad-frame video,
 body:has(.home-hero) .news-grid > .pl-ad--banner-c .pl-ad-frame iframe {
   display: block;
   width: 100% !important;
+  /* Sin min-*: 0 el arte no encoge bajo su tamaño intrinseco y desborda la
+     celda, que lo recorta. Pasa con los banners cuadrados de 800x800. */
+  min-width: 0;
+  min-height: 0;
   height: 100% !important;
   border: 0;
   object-fit: contain !important;
