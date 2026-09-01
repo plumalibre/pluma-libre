@@ -28,6 +28,18 @@ assert(/max-width:\s*1240px;\s*\r?\n\s*margin-inline:\s*auto;/.test(css));
 assert.strictEqual((css.match(/\/\*/g) || []).length, (css.match(/\*\//g) || []).length,
   'comentarios CSS desbalanceados');
 
+// v26: menu.json manda sobre la barra, el carrusel y el "ver mas".
+const menu = JSON.parse(fs.readFileSync(path.join(root, 'menu.json'), 'utf8'));
+assert(Array.isArray(menu.barra_secciones.items) && menu.barra_secciones.items.length);
+assert(['automatico', 'manual', 'mixto'].includes(menu.carrusel.modo));
+assert(parseInt(menu.ver_mas.iniciales, 10) > 0);
+assert(js.includes("fetch('/menu.json'"), 'install.js no lee menu.json');
+assert(home.includes("fetch('menu.json'"), 'la portada no lee el modo del carrusel');
+assert(home.includes('.news-grid > article.card'), 'el carrusel no mira las notas recientes');
+assert(css.includes('.ver-mas'));
+// Si el service worker cachea la config, editarla no cambia nada y parece rota.
+assert(sw.includes("url.pathname === '/menu.json'"), 'el sw cachea menu.json');
+
 // Las versiones no se fijan a un numero: lo que importa es que index y sw vayan
 // sincronizados, porque si no el service worker sirve el CSS viejo.
 const vCss = home.match(/style\.css\?v=(\d+)/);

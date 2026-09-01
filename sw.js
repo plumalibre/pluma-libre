@@ -7,7 +7,7 @@
 // - Actualización inmediata: instala la versión nueva y toma control sin esperar
 //   a que el lector cierre todas las pestañas.
 
-const CACHE_VERSION = 'pl-v39';
+const CACHE_VERSION = 'pl-v40';
 const SHELL = [
   '/',
   '/index.html',
@@ -51,8 +51,9 @@ self.addEventListener('fetch', (e) => {
   // Otros orígenes: red directa. No interceptamos.
   if (url.origin !== self.location.origin) return;
 
-  // banners.json siempre fresco — no cachear.
-  if (url.pathname === '/banners.json') return;
+  // Configuracion siempre fresca — no cachear. Si se cachea, editar el archivo
+  // no cambia nada hasta que caduque y parece que la edicion no sirvio.
+  if (url.pathname === '/banners.json' || url.pathname === '/menu.json') return;
 
   const accept = req.headers.get('accept') || '';
   const isNavigation = req.mode === 'navigate' || accept.includes('text/html');

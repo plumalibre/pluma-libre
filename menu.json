@@ -1,0 +1,30 @@
+{
+  "_leeme": "Configuracion de la portada. Se edita aca sin tocar codigo, igual que banners.json. Si este archivo falla o tiene un error, el sitio usa sus valores por defecto y no se rompe nada.",
+
+  "barra_secciones": {
+    "_ayuda": "Secciones que se ven en la barra azul al bajar. Quita o agrega las que quieras y cambia el orden: se muestran en el orden de esta lista. Las que no esten aca siguen estando en el boton de menu, y en el celular la barra se desliza con el dedo.",
+    "activo": true,
+    "items": [
+      { "nombre": "Politica", "url": "/secciones/politico.html" },
+      { "nombre": "Economia", "url": "/secciones/economico.html" },
+      { "nombre": "Social", "url": "/secciones/social.html" },
+      { "nombre": "Deportes", "url": "/secciones/deportivo.html" },
+      { "nombre": "Internacional", "url": "/secciones/internacional.html" },
+      { "nombre": "Cultura", "url": "/secciones/cultural.html" }
+    ]
+  },
+
+  "carrusel": {
+    "_ayuda": "Que notas van en el carrusel de arriba. 'automatico' = las mas recientes entran solas y las que salen bajan a Ultimas Noticias. 'manual' = manda lo que armes en el editor con el selector de portada, tal cual. 'mixto' = primero lo que armaste a mano y se completa con lo mas reciente.",
+    "modo": "automatico",
+    "cantidad": 5
+  },
+
+  "ver_mas": {
+    "_ayuda": "Cuantas noticias se ven en la portada antes del boton. 'iniciales' es lo que carga de entrada y 'por_tanda' cuantas suma cada clic.",
+    "activo": true,
+    "iniciales": 12,
+    "por_tanda": 12,
+    "texto": "Ver más noticias"
+  }
+}

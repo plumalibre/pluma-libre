@@ -161,11 +161,23 @@
     'Tecnologia': 'Tecnología'
   };
 
-  function montar(){
-    var wrap = document.querySelector('.header .wrap');
-    if(!wrap || wrap.querySelector('.header-rail')) return;
-    var boton = wrap.querySelector('.menu-btn');
+  // Mismo criterio que banners.json: una ruta relativa simple o un https.
+  // Cualquier otra cosa (javascript:, data:, //otro-dominio) se descarta.
+  function urlSegura(u){
+    u = String(u || '');
+    if(/^https:\/\//.test(u)) return u;
+    if(/^\/[A-Za-z0-9._\/-]*$/.test(u)) return u;
+    return '';
+  }
 
+  function pintar(items){
+    var wrap = document.querySelector('.header .wrap');
+    if(!wrap) return;
+    var previo = wrap.querySelector('.header-rail');
+    if(previo) previo.remove();
+    if(!items.length) return;
+
+    var boton = wrap.querySelector('.menu-btn');
     var nav = document.createElement('nav');
     nav.className = 'header-rail';
     nav.setAttribute('aria-label', 'Secciones');
@@ -174,18 +186,119 @@
     track.className = 'header-rail__track';
 
     var actual = location.pathname.replace(/\/+$/, '');
-    SECCIONES.forEach(function(s){
+    items.forEach(function(it){
+      var url = urlSegura(it.url);
+      if(!url) return;
       var a = document.createElement('a');
-      a.href = s[1];
-      a.textContent = ACENTOS[s[0]] || s[0];
-      if(actual && actual.indexOf(s[1]) === 0) a.className = 'on';
+      a.href = url;
+      a.textContent = ACENTOS[it.nombre] || it.nombre;
+      if(actual && actual.indexOf(url) === 0) a.className = 'on';
       track.appendChild(a);
     });
+    if(!track.children.length) return;
 
     nav.appendChild(track);
     if(boton) wrap.insertBefore(nav, boton); else wrap.appendChild(nav);
   }
 
+  function montar(){
+    // Se pintan las de siempre y, si menu.json trae otra lista, se repinta con
+    // esa. Asi la barra aparece aunque el archivo tarde o no exista.
+    pintar(SECCIONES.map(function(s){ return {nombre:s[0], url:s[1]}; }));
+
+    fetch('/menu.json', {cache:'no-store'}).then(function(r){
+      return r.ok ? r.json() : null;
+    }).then(function(cfg){
+      if(!cfg || !cfg.barra_secciones) return;
+      var b = cfg.barra_secciones;
+      if(b.activo === false){ pintar([]); return; }
+      if(!Array.isArray(b.items)) return;
+      var items = b.items.filter(function(it){ return it && it.nombre && it.url; });
+      if(items.length) pintar(items);
+    }).catch(function(){});
+  }
+
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', montar);
   else montar();
+})();
+
+// "Ver mas" en la portada — v26.
+// La portada servia las 143 notas de golpe y medía casi 19.000 px de alto.
+// Ahora arranca con unas pocas y el resto se pide con el boton. Cuantas se ven
+// se configura en menu.json.
+(function(){
+  var POR_DEFECTO = { activo: true, iniciales: 12, por_tanda: 12, texto: 'Ver mas noticias' };
+
+  function arrancar(cfg){
+    var grid = document.querySelector('.news-grid');
+    if(!grid || cfg.activo === false) return;
+
+    var cards = function(){ return [].slice.call(grid.querySelectorAll(':scope > article.card')); };
+    if(cards().length <= cfg.iniciales) return;
+
+    var visibles = cfg.iniciales;
+
+    // Se oculta por posicion dentro del grid, no solo las cards: los banners
+    // intercalados son hijos del mismo contenedor y tienen que irse con ellas.
+    function aplicar(){
+      var corte = null, n = 0;
+      [].slice.call(grid.children).forEach(function(el){
+        if(el.classList.contains('card')){
+          n++;
+          if(n > visibles && corte === null) corte = el;
+        }
+        if(corte !== null) el.classList.add('is-oculta');
+        else el.classList.remove('is-oculta');
+      });
+      return corte !== null;
+    }
+
+    var boton = document.createElement('button');
+    boton.type = 'button';
+    boton.className = 'ver-mas';
+    boton.textContent = cfg.texto || POR_DEFECTO.texto;
+
+    function refrescar(){
+      var quedan = aplicar();
+      boton.hidden = !quedan;
+    }
+
+    boton.addEventListener('click', function(){
+      var antes = grid.querySelectorAll(':scope > article.card:not(.is-oculta)').length;
+      visibles += (cfg.por_tanda || POR_DEFECTO.por_tanda);
+      refrescar();
+      // El foco va a la primera nota nueva para no perder el lugar al volver.
+      var nuevas = grid.querySelectorAll(':scope > article.card:not(.is-oculta)');
+      var primera = nuevas[antes];
+      var enlace = primera && primera.querySelector('a');
+      if(enlace) enlace.focus({preventScroll:true});
+    });
+
+    grid.parentNode.insertBefore(boton, grid.nextSibling);
+    refrescar();
+
+    // Los banners se insertan despues de que esto corre: hay que reaplicar
+    // cuando el grid cambie, o aparecen sueltos en la zona oculta.
+    if(window.MutationObserver){
+      var mo = new MutationObserver(function(){ refrescar(); });
+      mo.observe(grid, {childList: true});
+    }
+  }
+
+  function init(){
+    fetch('/menu.json', {cache:'no-store'}).then(function(r){
+      return r.ok ? r.json() : null;
+    }).then(function(cfg){
+      var v = (cfg && cfg.ver_mas) || {};
+      arrancar({
+        activo: v.activo !== false,
+        iniciales: parseInt(v.iniciales, 10) > 0 ? parseInt(v.iniciales, 10) : POR_DEFECTO.iniciales,
+        por_tanda: parseInt(v.por_tanda, 10) > 0 ? parseInt(v.por_tanda, 10) : POR_DEFECTO.por_tanda,
+        texto: v.texto || POR_DEFECTO.texto
+      });
+    }).catch(function(){ arrancar(POR_DEFECTO); });
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
